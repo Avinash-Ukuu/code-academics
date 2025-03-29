@@ -4,6 +4,7 @@ namespace App\Http\Controllers\cms;
 
 use App\Models\User;
 use App\Models\Course;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CourseRequest;
@@ -21,6 +22,8 @@ class CourseController extends Controller
             $data       =   Course::join('users', 'users.id', '=', 'courses.added_by')->select(
                 'courses.id as id',
                 'courses.name as name',
+                'courses.slug as slug',
+                'courses.is_active as is_active',
                 'users.name as added_by'
             );
 
@@ -33,6 +36,14 @@ class CourseController extends Controller
                 ->filterColumn('added_by', function ($query, $keyword) {
                     $sql = "users.name LIKE ?";
                     $query->whereRaw($sql, ["%{$keyword}%"]);
+                })
+                ->editColumn('is_active', function($data){
+                    if($data->is_active == 1)
+                    {
+                        return '<span class="badge badge-success"> Active </span>';
+                    }else{
+                        return '<span class="badge badge-danger"> In Active </span>';
+                    }
                 })
                 ->editColumn('action', function ($data) {
 
@@ -50,7 +61,7 @@ class CourseController extends Controller
 
                     return $btn;
                 })
-                ->rawColumns(['added_by', 'action'])
+                ->rawColumns(['added_by', 'is_active' ,'action'])
                 ->make(true);
         }
 
@@ -76,7 +87,9 @@ class CourseController extends Controller
     {
         $course                 =       new Course();
         $course->name           =       $request->name;
+        $course->slug           =       Str::slug($request->name, '-');
         $course->added_by       =       auth()->user()->id;
+        $course->is_active      =       isset($request->is_active) ? 1 : 0;
         $course->save();
 
         foreach ($request->durations as $durationData) {
@@ -130,6 +143,8 @@ class CourseController extends Controller
     {
         $course                 =       Course::find($id);
         $course->name           =       $request->name;
+        $course->slug           =       Str::slug($request->name, '-');
+        $course->is_active      =       isset($request->is_active) ? 1 : 0;
         $course->update();
 
         $existingDurationIds = $course->durations()->pluck('id')->toArray();

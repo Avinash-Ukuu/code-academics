@@ -7,7 +7,6 @@
             <th>Email</th>
             <th>Father Name</th>
             <th>Mobile</th>
-            <th>Institute</th>
             <th>Monthly Payment</th>
         </tr>
     </thead>
@@ -20,7 +19,6 @@
                 <td>{{ $student->email }}</td>
                 <td>{{ $student->father_name }}</td>
                 <td>{{ $student->mobile }}</td>
-                <td>{{ $student->institute }}</td>
                 <td>{{ $student->studentCourse->monthly_payment }}</td>
             </tr>
         @endforeach --}}

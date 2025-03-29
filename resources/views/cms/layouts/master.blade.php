@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Institute | Dashboard</title>
+    <title>Code Accademics | Dashboard</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -128,10 +128,9 @@
                 allowClear: true
             });
 
-
-
-
-
+            $('#summernote').summernote({
+                height: 300,
+            });
 
         });
 

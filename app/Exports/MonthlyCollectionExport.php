@@ -42,7 +42,7 @@ class MonthlyCollectionExport implements FromCollection, WithHeadings, WithMappi
     public function headings(): array
     {
         return [
-            'U-ID', 'First Name', 'Last Name', 'Email', 'Father Name', 'Mobile', 'Institute', 'Monthly Payment'
+            'U-ID', 'First Name', 'Last Name', 'Email', 'Father Name', 'Mobile', 'Monthly Payment'
         ];
     }
 
@@ -55,7 +55,6 @@ class MonthlyCollectionExport implements FromCollection, WithHeadings, WithMappi
             $student->email,
             $student->father_name,
             $student->mobile,
-            $student->institute,
             $student->studentCourse->monthly_payment,
         ];
     }

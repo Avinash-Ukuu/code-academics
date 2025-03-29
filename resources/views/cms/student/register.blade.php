@@ -130,11 +130,11 @@
                         <div class="row">
                             <div class="form-group col-3">
                                 {{ Form::label('installment', 'First Installment', []) }}
-                                {{ Form::number('installment', null, ['class' => 'form-control', 'placeholder' => 'Enter first installment', 'id' => 'installment']) }}
+                                {{ Form::number('installment', null, ['class' => 'form-control', 'placeholder' => 'Enter first installment', 'id' => 'installment','min'=>'0']) }}
                             </div>
                             <div class="form-group col-3">
                                 {{ Form::label('installment_months', 'Installment Months', []) }}
-                                {{ Form::number('installment_months', null, ['class' => 'form-control', 'placeholder' => 'Enter number of months', 'id' => 'installment_months']) }}
+                                {{ Form::number('installment_months', null, ['class' => 'form-control', 'placeholder' => 'Enter number of months', 'id' => 'installment_months','min'=>'0']) }}
                             </div>
                             <div class="form-group col-3">
                                 {{ Form::label('monthly_payment', 'Monthly Payment', []) }}

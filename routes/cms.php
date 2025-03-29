@@ -11,6 +11,8 @@ use App\Http\Controllers\cms\SettingController;
 use App\Http\Controllers\cms\StudentController;
 use App\Http\Controllers\cms\DashboardController;
 use App\Http\Controllers\cms\ActivityLogsController;
+use App\Http\Controllers\cms\BlogController;
+use App\Http\Controllers\cms\EnquiryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,15 +42,29 @@ Route::post("/update/password",             [UserController::class,'updatePasswo
 Route::get("switch/user/form",              [UserController::class,'switchUserForm'])->name('switchUserForm');
 Route::post("switch/user",                  [UserController::class,'switchUser'])->name('switchUser');
 Route::get("logout/switch/user",            [UserController::class,'logoutSwitchUser'])->name('logoutSwitchUser');
+
+//Setting
 Route::resource('setting',                  SettingController::class);
+
+//Activity Logs
 Route::get("activity/logs",                 [ActivityLogsController::class,'index'])->name("activityLogs");
+
+//Students
 Route::resource('student',                  StudentController::class);
-Route::resource('course',                   CourseController::class);
 Route::post('store-monthly-installment',    [StudentController::class,'storeMonthlyInstallment'])->name('storeMonthlyInstallment');
 Route::get('manage-student-installment',    [StudentController::class,'manageStudentInstallment'])->name('manageStudentInstallment');
 Route::get('monthly-collection',            [StudentController::class,'monthlyCollection'])->name('monthlyCollection');
 Route::get('export-monthly-collection',     [StudentController::class, 'exportMonthlyCollection'])->name('exportMonthlyCollection');
 Route::get('export-students-data',          [StudentController::class, 'exportStudentsData'])->name('exportStudentsData');
+
+//Courses
+Route::resource('course',                   CourseController::class);
+
+//Enquiry
+Route::resource('enquiry',                  EnquiryController::class);
+
+//Blog
+Route::resource('blog',                     BlogController::class);
 
 //Ajax Routes
 Route::get('get-course-details/{id}',       [CommonController::class, 'getCourse'])->name('getCourse');

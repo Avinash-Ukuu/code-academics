@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Institute</title>
+    <title>Code Academics</title>
 </head>
 <body>
     @php
@@ -15,7 +15,6 @@
     @endphp
     <h1>Hi {{$student->first_name}} {{$student->last_name}},</h1>
     <p>ID :- <b>{{$student->unique_id}}</b></p>
-    <p>Institute :- <b>{{ucfirst($student->institute)}}</b></p>
     <p>Course Name :- <b>{{$student->studentCourse->course->name}}</b></p>
     <p>Payment Mode :- <b>@if($student->studentCourse->payment_mode == 'full_pay') Full Payment @else Installment @endif</b></p>
     @if($student->studentCourse->payment_mode == 'installment')

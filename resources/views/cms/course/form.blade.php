@@ -35,6 +35,12 @@
                         {{ Form::label('name', 'Name', []) }}<span style="color: red;"> *</span>
                         {{ Form::text('name', null, ['class' => 'form-control name', 'placeholder' => 'Enter Name', 'required']) }}
                     </div>
+
+                    <div class="form-check col-6">
+                        <input id="is_active" class="form-check-input" type="checkbox" name="is_active"
+                            value="1" @if ($object->is_active == 1) checked @endif>
+                        <label for="is_active" class="form-check-label">Is Active</label>
+                    </div>
                 </div>
 
                 <div id="durationContainer">

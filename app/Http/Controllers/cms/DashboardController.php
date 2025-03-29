@@ -12,7 +12,7 @@ class DashboardController extends Controller
     public function dashboard()
     {
         $data['studentCount']           =       Student::count();
-        $data['courseCount']            =       Course::count();
+        $data['courseCount']            =       Course::where('is_active',1)->count();
         $students                       =       Student::whereHas('studentCourse', function ($query) {
                                                     $query->whereHas('payments', function ($paymentQuery) {
                                                         $paymentQuery->where('payment_mode', 'installment');

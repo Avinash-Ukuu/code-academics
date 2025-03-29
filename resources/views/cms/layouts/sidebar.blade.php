@@ -8,7 +8,7 @@
             <img src="{{ asset('assets/adminlte/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
                 class="brand-image img-circle elevation-3" style="opacity: .8">
         @endif
-        <span class="brand-text font-weight-light">{{ !empty($setting->name) ? $setting->name : 'Institute' }}</span>
+        <span class="brand-text font-weight-light">{{ !empty($setting->name) ? $setting->name : 'Code Academics' }}</span>
     </a>
 
     <!-- Sidebar -->
@@ -154,6 +154,22 @@
                         class="nav-link @if (Route::currentRouteName() == 'monthlyCollection') active @endif">
                         <i class="fa fa-cash-register nav-icon"></i>
                         <p>Monthly Collection</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('blog.index') }}"
+                        class="nav-link @if (Route::currentRouteName() == 'blog.index') active @endif">
+                        <i class="fa fa-images nav-icon"></i>
+                        <p>Blogs</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('enquiry.index') }}"
+                        class="nav-link @if (Route::currentRouteName() == 'enquiry.index') active @endif">
+                        <i class="fa fa-envelopes-bulk nav-icon"></i>
+                        <p>Enquiries</p>
                     </a>
                 </li>
 

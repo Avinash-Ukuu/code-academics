@@ -6,7 +6,7 @@
                 <div class="col">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                        <li class="breadcrumb-item active">Course List</li>
+                        <li class="breadcrumb-item active">Enquiry List</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -15,20 +15,24 @@
     <div class="col-12">
         <div class="card card-primary card-outline">
             <div class="card-header">
-                <h3 class="card-title">Course List</h3>
+                <h3 class="card-title">Enquiry List</h3>
+                <div class="card-tools">
+                    <a class="btn-success btn" href="{{ route('enquiry.create') }}"><i class="far fa-plus mr-2"></i>Add</a>
+                </div>
             </div>
             <div class="table-responsive">
                 <div class="card-body">
                     <table id="example1" class="table table-bordered table-hover">
                         <thead>
                             <tr>
+                                <th>Date</th>
                                 <th>Name</th>
-                                <th>Slug</th>
-                                <th>Is Active</th>
-                                @if(auth()->user()->hasRole('admin'))
-                                    <th>Added By</th>
-                                @endif
-                                <th>Action</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Education Level</th>
+                                <th>Source</th>
+                                <th>Course Name</th>
+                                <th>Note</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -49,30 +53,39 @@
                 processing: true,
                 serverSide: true,
                 order: [],
-                ajax: "{{ route('course.index') }}",
+                ajax: "{{ route('enquiry.index') }}",
                 columns: [
+                    {
+                        data: 'date',
+                        name: 'date'
+                    },
                     {
                         data: 'name',
                         name: 'name'
                     },
                     {
-                        data: 'slug',
-                        name: 'slug'
+                        data: 'email',
+                        name: 'email'
                     },
                     {
-                        data: 'is_active',
-                        name: 'is_active'
+                        data: 'phone',
+                        name: 'phone'
                     },
-                    @if(auth()->user()->hasRole('admin'))
-                        {
-                            data: 'added_by',
-                            name: 'added_by'
-                    },@endif
                     {
-                        data: 'action',
-                        name: 'action',
-                        orderable: false,
-                        searchable: false
+                        data: 'education_level',
+                        name: 'education_level'
+                    },
+                    {
+                        data: 'source',
+                        name: 'source'
+                    },
+                    {
+                        data: 'course_name',
+                        name: 'course_name'
+                    },
+                    {
+                        data: 'notes',
+                        name: 'notes'
                     },
 
                 ]

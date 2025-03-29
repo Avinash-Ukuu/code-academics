@@ -32,7 +32,7 @@
             <div class="small-box bg-info">
                 <div class="inner">
                     <h3>{{ $courseCount }}</h3>
-                    <p>Total Courses</p>
+                    <p>Active Courses</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-ios-book"></i>
