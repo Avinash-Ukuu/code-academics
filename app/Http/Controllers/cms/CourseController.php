@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\cms;
 
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Course;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CourseRequest;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -87,6 +89,7 @@ class CourseController extends Controller
     {
         $course                 =       new Course();
         $course->name           =       $request->name;
+        $course->description    =       $request->description;
         $course->slug           =       Str::slug($request->name, '-');
         $course->added_by       =       auth()->user()->id;
         $course->is_active      =       isset($request->is_active) ? 1 : 0;
@@ -144,6 +147,7 @@ class CourseController extends Controller
         $course                 =       Course::find($id);
         $course->name           =       $request->name;
         $course->slug           =       Str::slug($request->name, '-');
+        $course->description    =       $request->description;
         $course->is_active      =       isset($request->is_active) ? 1 : 0;
         $course->update();
 
@@ -199,7 +203,6 @@ class CourseController extends Controller
             Session::flash("error", "Course Already Deleted");
             return back();
         }
-
         $course->durations()->delete();
         $data['message']        =   auth()->user()->name . " has deleted $course->name";
         $data['action']         =   "deleted";

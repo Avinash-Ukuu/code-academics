@@ -25,7 +25,7 @@ class BlogController extends Controller
                 'blogs.id as id',
                 'blogs.title as title',
                 'blogs.publish_type as publish_type',
-                'blogs.created_at as created_at',
+                'blogs.blog_created_at as created_at',
             );
 
             if ($request->order == null) {
@@ -89,6 +89,7 @@ class BlogController extends Controller
         $blog->meta_keywords        =       $request->meta_keywords;
         $blog->content              =       $request->content;
         $blog->publish_type         =       'publish';
+        $blog->blog_created_at      =       now();
         if ($request->has("image")) {
             $imageName  = "blog_" . Carbon::now()->timestamp . '.' . $request->file('image')->getClientOriginalExtension();
             $request->file('image')->move(public_path('uploads/blogs/'), $imageName);

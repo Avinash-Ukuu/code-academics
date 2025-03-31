@@ -37,10 +37,18 @@
                     </div>
 
                     <div class="form-check col-6">
-                        <input id="is_active" class="form-check-input" type="checkbox" name="is_active"
-                            value="1" @if ($object->is_active == 1) checked @endif>
+                        <input id="is_active" class="form-check-input" type="checkbox" name="is_active" value="1"
+                            @if ($object->is_active == 1) checked @endif>
                         <label for="is_active" class="form-check-label">Is Active</label>
                     </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-6">
+                        {!! Form::label('description', 'Description') !!}<span style="color: red;"> *</span>
+                        {!! Form::textArea('description', null, ['class' => 'form-control description', 'placeholder' => 'Enter Description', 'required']) !!}
+                    </div>
+
                 </div>
 
                 <div id="durationContainer">
@@ -52,7 +60,8 @@
                         @foreach ($object->durations as $duration)
                             <div class="row duration-group">
                                 <div class="form-group col-4">
-                                    {{ Form::label("durations[$index][duration]", 'Duration (in months)') }}<span style="color: red;"> *</span>
+                                    {{ Form::label("durations[$index][duration]", 'Duration (in months)') }}<span
+                                        style="color: red;"> *</span>
                                     {{ Form::number("durations[$index][duration]", $duration->duration, ['class' => 'form-control duration', 'placeholder' => 'Enter Duration', 'required', 'min' => '1']) }}
                                 </div>
                                 <div class="form-group col-4">
@@ -60,7 +69,8 @@
                                     {{ Form::number("durations[$index][mrp]", $duration->mrp, ['class' => 'form-control mrp', 'placeholder' => 'Enter MRP', 'required', 'min' => '0']) }}
                                 </div>
                                 <div class="form-group col-3">
-                                    {{ Form::label("durations[$index][fix_price]", 'Sale Price') }}<span style="color: red;"> *</span>
+                                    {{ Form::label("durations[$index][fix_price]", 'Sale Price') }}<span
+                                        style="color: red;"> *</span>
                                     {{ Form::number("durations[$index][fix_price]", $duration->fix_price, ['class' => 'form-control fix_price', 'placeholder' => 'Enter Sale Price', 'required', 'min' => '0']) }}
                                 </div>
                                 <div class="form-group col-1">
@@ -72,16 +82,18 @@
                     @else
                         <div class="row duration-group">
                             <div class="form-group col-4">
-                                {{ Form::label("durations[0][duration]", 'Duration (in months)') }}<span style="color: red;"> *</span>
-                                {{ Form::number("durations[0][duration]", null, ['class' => 'form-control duration', 'placeholder' => 'Enter Duration', 'required', 'min' => '1']) }}
+                                {{ Form::label('durations[0][duration]', 'Duration (in months)') }}<span
+                                    style="color: red;"> *</span>
+                                {{ Form::number('durations[0][duration]', null, ['class' => 'form-control duration', 'placeholder' => 'Enter Duration', 'required', 'min' => '1']) }}
                             </div>
                             <div class="form-group col-4">
-                                {{ Form::label("durations[0][mrp]", 'MRP') }}<span style="color: red;"> *</span>
-                                {{ Form::number("durations[0][mrp]", null, ['class' => 'form-control mrp', 'placeholder' => 'Enter MRP', 'required', 'min' => '0']) }}
+                                {{ Form::label('durations[0][mrp]', 'MRP') }}<span style="color: red;"> *</span>
+                                {{ Form::number('durations[0][mrp]', null, ['class' => 'form-control mrp', 'placeholder' => 'Enter MRP', 'required', 'min' => '0']) }}
                             </div>
                             <div class="form-group col-3">
-                                {{ Form::label("durations[0][fix_price]", 'Sale Price') }}<span style="color: red;"> *</span>
-                                {{ Form::number("durations[0][fix_price]", null, ['class' => 'form-control fix_price', 'placeholder' => 'Enter Sale Price', 'required', 'min' => '0']) }}
+                                {{ Form::label('durations[0][fix_price]', 'Sale Price') }}<span style="color: red;">
+                                    *</span>
+                                {{ Form::number('durations[0][fix_price]', null, ['class' => 'form-control fix_price', 'placeholder' => 'Enter Sale Price', 'required', 'min' => '0']) }}
                             </div>
                             <div class="form-group col-1">
                                 <button type="button" class="btn btn-danger removeDuration">X</button>
