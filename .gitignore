@@ -1,0 +1,39 @@
+/vendor/
+node_modules/
+.env
+.env.*.backup
+.env.local
+.env.development
+.env.production
+/public/uploads
+/storage/*.key
+/storage/*.sqlite
+/storage/framework/*
+/storage/logs/*
+/bootstrap/cache/
+
+# Ignore compiled files and dependencies
+composer.lock
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Ignore IDE files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+*.bak
+*.swp
+*.swo
+*.swn
+
+# Ignore PHPUnit cache and coverage reports
+phpunit.xml
+phpunit.xml.dist
+/tests/_output/
+coverage/

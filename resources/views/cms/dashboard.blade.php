@@ -13,7 +13,7 @@
     </div>
     <div class="row ml-2 mr-2">
 
-        <div class="col-lg-4 col-6">
+        <div class="col-lg-3 col-6">
 
             <div class="small-box bg-warning">
                 <div class="inner">
@@ -27,7 +27,7 @@
             </div>
         </div>
 
-        <div class="col-lg-4 col-6">
+        <div class="col-lg-3 col-6">
 
             <div class="small-box bg-info">
                 <div class="inner">
@@ -41,7 +41,7 @@
             </div>
         </div>
 
-        <div class="col-lg-4 col-6">
+        <div class="col-lg-3 col-6">
 
             <div class="small-box bg-success">
                 <div class="inner">
@@ -55,19 +55,19 @@
             </div>
         </div>
 
-        {{-- <div class="col-lg-3 col-6">
+        <div class="col-lg-3 col-6">
 
-            <div class="small-box bg-danger">
+            <div class="small-box bg-primary">
                 <div class="inner">
-                    <h3>65</h3>
-                    <p>Unique Visitors</p>
+                    <h3>{{ $activeBlogCount }}</h3>
+                    <p>Publish Blogs</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-pie-graph"></i>
+                    <i class="ion ion-ios-compose"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('blog.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
-        </div> --}}
+        </div>
 
     </div>
 @endsection

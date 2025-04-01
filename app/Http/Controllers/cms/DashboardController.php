@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\cms;
 
+use App\Models\Blog;
 use App\Models\Course;
 use App\Models\Student;
 use Illuminate\Http\Request;
@@ -24,6 +25,8 @@ class DashboardController extends Controller
         $data['totalMonthlyPayment']    =       $students->sum(function ($student) {
                                                     return $student->studentCourse->monthly_payment;
                                                 });
+
+        $data['activeBlogCount']        =       Blog::where('publish_type','publish')->count();
 
         return view('cms.dashboard',$data);
     }
