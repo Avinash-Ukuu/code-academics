@@ -4,7 +4,7 @@
             <div class="row gx-4 gx-xxl-5 align-items-center">
                 <div class="col-xxl-3 col-xl-2 col-lg-2 col-6 text-start">
                     <div class="logo-area">
-                        <a href="index.html"><img src="{{ asset('assets/frontend/images/logoca.svg') }}"
+                        <a href="{{route('home')}}"><img src="{{ asset('assets/frontend/images/logoca.svg') }}"
                                 alt="Header-logo"></a>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
 
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="contact.html">contact</a>
+                                        <a class="nav-link" href="javascript:void(0)">contact</a>
                                     </li>
                                 </ul>
                             </div>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="col-xxl-3 col-xl-4 col-lg-4 col-6 text-end">
                     <ul class="right-nav mb-0 d-flex align-items-center justify-content-end">
-                        <li>
+                        {{-- <li>
                             <div class="d-none d-xxl-inline-block right-language pr-40">
                                 <div class="dropdown">
                                     <a class="language-btn dropdown-toggle" href="#" role="button"
@@ -78,7 +78,7 @@
                                 data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
                                 <i class="bi bi-search"></i>
                             </a>
-                        </li>
+                        </li> --}}
                         <li>
                             <div class="hamburger-menu">
                                 <a class="round-menu" href="javascript:void(0);">

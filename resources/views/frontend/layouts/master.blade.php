@@ -26,7 +26,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#0D86D6">
 
     <!-- <link rel="manifest" href="site.webmanifest" /> -->
-    <link rel="shortcut icon" type="image/x-icon" href="images/logoog.svg">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/frontend/images/logoog.svg') }}">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -39,6 +39,8 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/spacing.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/main.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     @yield('headerLinks')
 </head>
 
@@ -73,15 +75,49 @@
         <!-- offcanvas end  -->
 
         <!-- header-area start -->
-            @include('frontend.layouts.navbar')
+        @include('frontend.layouts.navbar')
         <!-- header-area end -->
 
         <!-- slide-bar start -->
-            @include('frontend.layouts.sidebar')
+        @include('frontend.layouts.sidebar')
         <div class="body-overlay"></div>
         <!-- slide-bar end -->
 
         @yield('content')
+
+        <!--Pop up form-->
+        <div class="modal fade" id="enquiryModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Student Enquiry</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="enquiryForm">
+                            @csrf
+                            <div class="mb-3">
+                                <label class="form-label">Name</label>
+                                <input type="text" name="name" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Phone</label>
+                                <input type="text" name="phone" class="form-control" maxlength="10" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Message</label>
+                                <textarea name="message" class="form-control" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!--footer-area start-->
         <footer class="footer-area pt-140 pt-lg-95">
@@ -122,7 +158,7 @@
                     </div>
                     <div class="col-lg-4" data-aos="fade-left" data-aos-delay="200">
                         <div class="footer__widget mb-30 ps-xl-5">
-                            <h4 class="text-white mb-40">gocodeacademics@gmail.com</h4>
+                            <h4 class="text-white mb-40">codeacademicss@gmail.com</h4>
                             <address>SCO - 207 First Floor Badwal Complex near Narinder Cenama Jalandhar</address>
                         </div>
                     </div>
@@ -186,6 +222,85 @@
 
     <!--Custom JS here -->
     <script src="{{ asset('assets/frontend/js/main.js') }}"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("#enquiryForm input, #enquiryForm textarea").on("input", function() {
+                $(this).next(".error").remove(); // Remove existing error messages
+            });
+
+            $("#enquiryForm").submit(function(event) {
+                event.preventDefault();
+
+                let name = $("input[name='name']").val().trim();
+                let email = $("input[name='email']").val().trim();
+                let phone = $("input[name='phone']").val().trim();
+                let message = $("textarea[name='message']").val().trim();
+
+                let nameRegex = /^[A-Za-z\s]+$/;
+                let phoneRegex = /^[0-9]{10}$/;
+                let emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+
+                $(".error").remove(); // Remove previous errors
+
+                let isValid = true;
+
+                // Validate Name
+                if (!name.match(nameRegex)) {
+                    $("input[name='name']").after(
+                        "<span class='error text-danger'>Only letters allowed</span>");
+                    isValid = false;
+                }
+
+                // Validate Email
+                if (!email.match(emailRegex)) {
+                    $("input[name='email']").after(
+                        "<span class='error text-danger'>Must be a Gmail address</span>");
+                    isValid = false;
+                }
+
+                // Validate Phone
+                if (!phone.match(phoneRegex)) {
+                    $("input[name='phone']").after(
+                        "<span class='error text-danger'>Enter a valid 10-digit phone number</span>");
+                    isValid = false;
+                }
+
+                // Validate Message
+                if (message === "") {
+                    $("textarea[name='message']").after(
+                        "<span class='error text-danger'>This field is required</span>");
+                    isValid = false;
+                }
+
+                $('#preloader').show();
+
+
+                // Submit if valid
+                if (isValid) {
+                    let formData = new FormData(this);
+
+                    $.ajax({
+                        url: "/store-enquiry",
+                        type: "POST",
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        headers: {
+                            "X-CSRF-TOKEN": $("meta[name='csrf-token']").attr("content")
+                        },
+                        success: function(response) {
+                            window.location.href = "/thankyou";
+                        },
+                        error: function(xhr) {
+                            console.error("Error:", xhr.responseText);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
     @yield('script')
 
 

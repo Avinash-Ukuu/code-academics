@@ -36,12 +36,14 @@
                 </p>
                 <p>
                     <i class="fal fa-envelope-open"></i>
-                    gocodeacademics@gmail.com
+                    codeacademicss@gmail.com
                 </p>
             </div>
         </div>
         <div class="login-btn text-center">
-            <a class="theme_btn w-100" href="login.html">Call us Now</a>
+            <button class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#enquiryModal">
+                Enquire Now
+            </button>
         </div>
     </div>
     <!-- offset-sidebar end -->

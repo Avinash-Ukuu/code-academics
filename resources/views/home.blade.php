@@ -20,7 +20,9 @@
                                 <span>innovative IT</span>
                                 <span>Solutions</span>
                             </h1>
-                            <a class="theme_btn" href="contact.html">Get a Call</a>
+                            <button class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#enquiryModal">
+                                Enquire Now
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -134,7 +136,9 @@
                                     </a>
                                 </li>
                             </ul>
-                            <a class="theme_btn mt-60" href="about.html">Enqure Now</a>
+                            <button class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#enquiryModal">
+                                Enquire Now
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -169,7 +173,9 @@
                                     <a href="services-details.html">{{$course->name}}</a>
                                 </h2>
                                 <p>"{{ $course->description }}"</p>
-                                <a href="javascript:void(0)">Connect Now</a>
+                                <button class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#enquiryModal">
+                                    Enquire Now
+                                </button>
                             </div>
                         </div>
                     @endforeach
@@ -207,131 +213,60 @@
                     <div class="row feature-slider-active" data-aos="fade-up" data-aos-delay="200">
                         <div class="col-lg-4">
                             <div class="feature-item">
-                                <a class="back-bg" href="project-details.html"><img class="w-100"
+                                <a class="back-bg" href="javascript:void(0)"><img class="w-100"
                                         src="{{ asset('assets/frontend/images/projectone.png') }}" alt="img"></a>
                                 <h5>
-                                    <a href="project-details.html">The Visa Engineers</a>
+                                    <a href="javascript:void(0)">The Visa Engineers</a>
                                 </h5>
-                                <h3><a href="project-details.html">Dashboard Design and Development</a></h3>
+                                <h3><a href="javascript:void(0)">Dashboard Design and Development</a></h3>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="feature-item">
-                                <a class="back-bg" href="project-details.html"><img class="w-100"
+                                <a class="back-bg" href="javascript:void(0)"><img class="w-100"
                                         src="{{ asset('assets/frontend/images/projecttwo.png') }}" alt="img"></a>
                                 <h5>
-                                    <a href="project-details.html">Exponent Institute</a>
+                                    <a href="javascript:void(0)">Exponent Institute</a>
                                 </h5>
-                                <h3><a href="project-details.html">Website Designing with CRM Potal</a></h3>
+                                <h3><a href="javascript:void(0)">Website Designing with CRM Potal</a></h3>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="feature-item">
-                                <a class="back-bg" href="project-details.html"><img class="w-100"
+                                <a class="back-bg" href="javascript:void(0)"><img class="w-100"
                                         src="{{ asset('assets/frontend/images/projectthree.png') }}" alt="img"></a>
                                 <h5>
-                                    <a href="project-details.html">LearnTribe</a>
+                                    <a href="javascript:void(0)">LearnTribe</a>
                                 </h5>
-                                <h3><a href="project-details.html">E-commerce Website</a></h3>
+                                <h3><a href="javascript:void(0)">E-commerce Website</a></h3>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="feature-item">
-                                <a class="back-bg" href="project-details.html"><img class="w-100"
+                                <a class="back-bg" href="javascript:void(0)"><img class="w-100"
                                         src="{{ asset('assets/frontend/images/projectfour.png') }}" alt="img"></a>
                                 <h5>
-                                    <a href="project-details.html">Voltcart canada</a>
+                                    <a href="javascript:void(0)">Voltcart canada</a>
                                 </h5>
-                                <h3><a href="project-details.html">Battry E-commerce Website</a></h3>
+                                <h3><a href="javascript:void(0)">Battry E-commerce Website</a></h3>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="feature-item">
-                                <a class="back-bg" href="project-details.html"><img class="w-100"
+                                <a class="back-bg" href="javascript:void(0)"><img class="w-100"
                                         src="{{ asset('assets/frontend/images/projectseventh.png') }}"
                                         alt="img"></a>
                                 <h5>
-                                    <a href="project-details.html">Manohar Backrey Canada</a>
+                                    <a href="javascript:void(0)">Manohar Backrey Canada</a>
                                 </h5>
-                                <h3><a href="project-details.html">Mobile App Development</a></h3>
+                                <h3><a href="javascript:void(0)">Mobile App Development</a></h3>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!--feature-work end-->
-        <!--feature-work start-->
-        {{-- <section class="feature-two pt-135 pb-30 pt-lg-60 pb-lg-15">
-            <div class="container">
-                <div class="row gx-4 gx-xxl-5 justify-content-lg-start justify-content-center">
-                    <div class="col-xl-5 col-lg-6 col-md-8">
-                        <div class="section-title text-lg-start text-center mb-60">
-                            <h3 class="sect-title mb-25" data-aos="fade-up">How It Works</h3>
-                            <p data-aos="fade-up" data-aos-delay="100">Dramatically supply transparent
-                                backward deliverables before caward comp internal or "organic" sources.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row gx-4 gx-xxl-5">
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up">
-                        <div class="feature-style-two mb-45">
-                            <div class="icon"><img src="{{ asset('assets/frontend/images/icon-9a.png') }}"
-                                    alt="icon"></div>
-                            <h3>
-                                <a href="signup.html">Contact Us</a>
-                            </h3>
-                            <p>Reach out to us via our contact form, email, or phone to discuss your requirements.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                        <div class="feature-style-two mb-45">
-                            <div class="icon"><img src="{{ asset('assets/frontend/images/icon-10a.png') }}"
-                                    alt="icon"></div>
-                            <h3>
-                                <a href="faq.html">Understand Requirements</a>
-                            </h3>
-                            <p>Share your business goals and ideas, and let us analyze your specific needs.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                        <div class="feature-style-two mb-45">
-                            <div class="icon"><img src="{{ asset('assets/frontend/images/icon-11a.png') }}"
-                                    alt="icon"></div>
-                            <h3>
-                                <a href="faq.html">Collaborate & Plan</a>
-                            </h3>
-                            <p>Work closely with our team to develop a strategic roadmap tailored to your project.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="feature-style-two mb-45">
-                            <div class="icon"><img src="{{ asset('assets/frontend/images/icon-12a.png') }}"
-                                    alt="icon"></div>
-                            <h3>
-                                <a href="faq.html">Development & Execution</a>
-                            </h3>
-                            <p>"Our experts build and implement solutions with precision and creativity.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                        <div class="feature-style-two mb-45">
-                            <div class="icon"><img src="{{ asset('assets/frontend/images/icon-10a.png') }}"
-                                    alt="icon"></div>
-                            <h3>
-                                <a href="faq.html">Deliver & Support</a>
-                            </h3>
-                            <p>Receive high-quality results backed by ongoing support to ensure your success.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <img class="shape-one" src="{{ asset('assets/frontend/images/line-round-1.svg') }}" alt="">
-        </section> --}}
-        <!--feature-work end-->
-        <!--counter-area end-->
+
         <section class="counter-area pt-75 pt-lg-30 pt-lg-35 pb-lg-10">
             <div class="container custom-contianer-one theme-bg">
                 <div class="row gx-4 gx-xxl-5">
@@ -516,14 +451,14 @@
                                 </div>
                                 <div class="blog-content">
                                     <h4>
-                                        <a class="blog-title" href="blog-details.html">{{ $blog->title }}</a>
+                                        <a class="blog-title" href="#">{{ $blog->title }}</a>
                                     </h4>
                                     <p>{{ Str::words($blog->description, 20, '...') }}</p>
                                     <div class="blog-meta">
-                                        <a href="#">
+                                        <a href="javascript:void(0)">
                                             <i class="bi bi-person-plus"></i>
                                             Code Academics</a>
-                                        <a href="#">
+                                        <a href="javascript:void(0)">
                                             <i class="bi bi-clock"></i>
                                             {{ $blog->blog_created_at }}</a>
                                     </div>
@@ -531,140 +466,7 @@
                             </div>
                         </div>
                     @endforeach
-                    {{-- <div class="col-lg-4">
-                        <div class="blog-style-one">
-                            <div class="blog-thumb">
-                                <img class="w-100" src="{{ asset('assets/frontend/images/blog-02.jpg') }}"
-                                    alt="img">
-                                <a href="#" class="tag tag-02">Cyber Security</a>
-                            </div>
-                            <div class="blog-content">
 
-                                <h4>
-                                    <a class="blog-title" href="blog-details.html">Google is removing the Movies
-                                        &amp;
-                                        TV section from the Play Store</a>
-                                </h4>
-                                <p>Dramatically supply transparent backward deliverables before caward comp
-                                    internal or "organic" sources.</p>
-                                <div class="blog-meta">
-                                    <a href="#">
-                                        <i class="bi bi-person-plus"></i>
-                                        Samir Jam</a>
-                                    <a href="#">
-                                        <i class="bi bi-clock"></i>
-                                        21 Jan 2022</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="blog-style-one">
-                            <div class="blog-thumb">
-                                <img class="w-100" src="{{ asset('assets/frontend/images/blog-01.jpg') }}"
-                                    alt="img">
-                                <a href="#" class="tag tag-03">Cyber Security</a>
-                            </div>
-                            <div class="blog-content">
-
-                                <h4>
-                                    <a class="blog-title" href="blog-details.html">Google Photos makes it easier
-                                        to
-                                        import and organize your pics</a>
-                                </h4>
-                                <p>Dramatically supply transparent backward deliverables before caward comp
-                                    internal or "organic" sources.</p>
-                                <div class="blog-meta">
-                                    <a href="#">
-                                        <i class="bi bi-person-plus"></i>
-                                        Hamina Hasan</a>
-                                    <a href="#">
-                                        <i class="bi bi-clock"></i>
-                                        21 Jan 2022</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="blog-style-one">
-                            <div class="blog-thumb">
-                                <img class="w-100" src="{{ asset('assets/frontend/images/blog-02.jpg') }}"
-                                    alt="img">
-                                <a href="#" class="tag">Cyber Security</a>
-                            </div>
-                            <div class="blog-content">
-
-                                <h4>
-                                    <a class="blog-title" href="blog-details.html">Cybersecurity researchers trace
-                                        Lapsus$ attacks to a teenager from England</a>
-                                </h4>
-                                <p>Dramatically supply transparent backward deliverables before caward comp
-                                    internal or "organic" sources.</p>
-                                <div class="blog-meta">
-                                    <a href="#">
-                                        <i class="bi bi-person-plus"></i>
-                                        Paul Teru</a>
-                                    <a href="#">
-                                        <i class="bi bi-clock"></i>
-                                        21 Jan 2022</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="blog-style-one">
-                            <div class="blog-thumb">
-                                <img class="w-100" src="{{ asset('assets/frontend/images/blog-01.jpg') }}"
-                                    alt="img">
-                                <a href="#" class="tag tag-02">Cyber Security</a>
-                            </div>
-                            <div class="blog-content">
-
-                                <h4>
-                                    <a class="blog-title" href="blog-details.html">Google is removing the Movies
-                                        &amp;
-                                        TV section from the Play Store</a>
-                                </h4>
-                                <p>Dramatically supply transparent backward deliverables before caward comp
-                                    internal or "organic" sources.</p>
-                                <div class="blog-meta">
-                                    <a href="#">
-                                        <i class="bi bi-person-plus"></i>
-                                        Samir Jam</a>
-                                    <a href="#">
-                                        <i class="bi bi-clock"></i>
-                                        21 Jan 2022</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="blog-style-one">
-                            <div class="blog-thumb">
-                                <img class="w-100" src="{{ asset('assets/frontend/images/blog-02.jpg') }}"
-                                    alt="img">
-                                <a href="#" class="tag tag-03">Cyber Security</a>
-                            </div>
-                            <div class="blog-content">
-
-                                <h4>
-                                    <a class="blog-title" href="blog-details.html">Google Photos makes it easier
-                                        to
-                                        import and organize your pics</a>
-                                </h4>
-                                <p>Dramatically supply transparent backward deliverables before caward comp
-                                    internal or "organic" sources.</p>
-                                <div class="blog-meta">
-                                    <a href="#">
-                                        <i class="bi bi-person-plus"></i>
-                                        Hamina Hasan</a>
-                                    <a href="#">
-                                        <i class="bi bi-clock"></i>
-                                        21 Jan 2022</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
                 </div>
             </div>
         </section>
@@ -678,7 +480,9 @@
                             <img class="news-shape-one d-none d-xl-block"
                                 src="{{ asset('assets/frontend/images/line-round-3a.svg') }}" alt="shape">
                             <h3>Have a project in mind? Let’s get to work.</h3>
-                            <a href="contact.html" class="theme_btn">Contact us</a>
+                            <button class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#enquiryModal">
+                                Enquire Now
+                            </button>
                         </div>
                     </div>
                 </div>

@@ -5,8 +5,10 @@ namespace App\Http\Controllers\cms;
 use Carbon\Carbon;
 use App\Models\Course;
 use App\Models\Enquiry;
+use App\Mail\EnquiryMail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -140,5 +142,20 @@ class EnquiryController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function storeEnquiry(Request $request)
+    {
+        $validated  =    $request->validate([
+                                'name'      => 'required|string|max:255',
+                                'email'     => 'required|email',
+                                'phone'     => 'required|string|max:15',
+                                'message'   => 'required|string',
+                            ]);
+
+        Mail::to('admin@example.com')->send(new EnquiryMail($validated));
+        // Mail::to('codeacademicss@gmail.com')->send(new EnquiryMail($validated));
+
+        return response()->json(['success' => 'Enquiry submitted successfully!']);
     }
 }

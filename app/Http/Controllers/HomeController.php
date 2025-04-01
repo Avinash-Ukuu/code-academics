@@ -15,4 +15,9 @@ class HomeController extends Controller
 
         return view('home',$data);
     }
+
+    public function thankyou()
+    {
+        dd('hi');
+    }
 }
