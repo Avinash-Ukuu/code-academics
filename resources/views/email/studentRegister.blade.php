@@ -11,7 +11,7 @@
     <p>Hi {{$student->first_name}} {{$student->last_name}},</p>
     <p>ID :- <b>{{$student->unique_id}}</b></p>
     <p>Course Name :- <b>{{$student->studentCourse->course->name}}</b></p>
-    <p>Course Duration :- <b>{{$student->studentCourse->course->duration}}</b></p>
+    <p>Course Duration :- <b>{{$student->studentCourse->course_duration}}</b></p>
     <p>Course Price :- <b>{{$student->studentCourse->course_fixed_price}}</b></p>
     <p>Payment Mode :- <b>@if($student->studentCourse->payment_mode == 'full_pay') Full Payment @else Installment @endif</b></p>
     @if($student->studentCourse->payment_mode == 'installment')

@@ -35,8 +35,8 @@
                         {{ Form::text('first_name', null, ['class' => 'form-control name', 'placeholder' => 'Enter First Name', 'required']) }}
                     </div>
                     <div class="form-group col-4">
-                        {{ Form::label('last_name', 'Last Name', []) }}<span style="color: red;"> *</span>
-                        {{ Form::text('last_name', null, ['class' => 'form-control name', 'placeholder' => 'Enter Last Name', 'required']) }}
+                        {{ Form::label('last_name', 'Last Name', []) }}
+                        {{ Form::text('last_name', null, ['class' => 'form-control name', 'placeholder' => 'Enter Last Name']) }}
                     </div>
                     <div class="form-group col-4">
                         {{ Form::label('father_name', 'Father Name', []) }}<span style="color: red;"> *</span>

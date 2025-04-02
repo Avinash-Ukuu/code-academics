@@ -55,7 +55,7 @@ class Student extends Model
     {
         $latestStudent  = self::latest('id')->first();
         $latestId       = $latestStudent ? intval(substr($latestStudent->unique_id, 2)) : 1000;
-        return 'J-' . ($latestId + 1);
+        return 'CA-' . ($latestId + 1);
     }
 
     public function course():HasOne

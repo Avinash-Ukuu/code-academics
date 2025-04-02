@@ -104,7 +104,7 @@ class StudentController extends Controller
     {
         $request->validate([
             'first_name'            => 'required|string|max:255',
-            'last_name'             => 'required|string|max:255',
+            // 'last_name'             => 'required|string|max:255',
             'father_name'           => 'required|string|max:255',
             'location'              => 'required|string|max:255',
             'email'                 => 'required|email',
@@ -229,6 +229,15 @@ class StudentController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $request->validate([
+            'first_name'            => 'required|string|max:255',
+            // 'last_name'             => 'required|string|max:255',
+            'father_name'           => 'required|string|max:255',
+            'location'              => 'required|string|max:255',
+            'email'                 => 'required|email',
+            'mobile'                => 'required|string|max:15',
+        ]);
+
         $student                  =   Student::find($id);
         if(empty($student))
         {
