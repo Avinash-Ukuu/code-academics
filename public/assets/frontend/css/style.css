@@ -198,7 +198,7 @@ p.section-title-white{color:#fff;}
     margin: -75px 0 0 -75px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color: #fb8e49;
+    /* border-top-color: #fb8e49; */
     -webkit-animation: spin 1.7s linear infinite;
     animation: spin 1.7s linear infinite;
     z-index: 11;
@@ -552,7 +552,7 @@ color:#fff;
 * ----------------------------------------------------------------------------------------
 */
 .site-logo img {
-	width: 150px;
+	width: 200px;
 	height: auto;
 	margin-top: 10px;
 }
@@ -1207,7 +1207,9 @@ margin-top: 5px;
 	transition: 0.3s;
 }
 .single_feature_one:hover h2 a{}
-.single_feature_one p{}
+.single_feature_one p{
+    min-height: 104px;
+}
 .single_feature_one:hover{
 	-webkit-box-shadow: 0px 0px 150px 0px rgba(78, 67, 250, 0.06);
 	        box-shadow: 0px 0px 150px 0px rgba(78, 67, 250, 0.06);

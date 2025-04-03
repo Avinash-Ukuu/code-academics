@@ -20,7 +20,7 @@ class HomeController extends Controller
 
     public function thankyou()
     {
-        dd('hi');
+        return view('thankyou');
     }
 
     public function coursePage()

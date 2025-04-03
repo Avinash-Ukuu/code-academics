@@ -38,7 +38,7 @@
         }
 
         .modal-header {
-            background-color: #162c50;
+            background-color: #0a68a6 !important;
             /* Dark Blue from your website */
         }
 
@@ -59,6 +59,14 @@
         .form-control {
             border-radius: 5px;
         }
+
+        .buttonclose {
+            color: #ffffff;
+            border: none;
+            background: none;
+            outline: none;
+            font-size: 20px;
+        }
     </style>
     @yield('headerLinks')
 </head>
@@ -67,7 +75,7 @@
 
     <!-- START PRELOADER -->
     <div id="loader-wrapper">
-        <div id="loader"></div>
+        <img id="loader" src="{{ asset('assets/frontend/images/loaderlogo.png') }}" alt="loader">
         <div class="loader-section section-left"></div>
         <div class="loader-section section-right"></div>
     </div>
@@ -132,7 +140,7 @@
             <div class="modal-content">
                 <div class="modal-header bg-dark text-white">
                     <h5 class="modal-title">Enquiry Form</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <button type="button" data-bs-dismiss="modal" class="buttonclose">X</button>
                 </div>
                 <div class="modal-body">
                     <form id="enquiryForm">
@@ -153,7 +161,8 @@
                             <label class="form-label">Message</label>
                             <textarea name="message" class="form-control"></textarea>
                         </div>
-                        <button type="submit" id="submitButton" class="btn btn-primary w-100">Submit</button>
+                        <button type="submit" id="submitButton" class="btn btn-primary w-100"
+                            style="background: #0a68a6!important">Submit</button>
                     </form>
                 </div>
             </div>
@@ -184,7 +193,8 @@
                         <h4>Courses</h4>
                         <ul>
                             @foreach ($courses as $course)
-                                <li><a class="open-enquiry-form" href="javascript:void(0)">{{ ucfirst($course->name) }}</a></li>
+                                <li><a class="open-enquiry-form"
+                                        href="javascript:void(0)">{{ ucfirst($course->name) }}</a></li>
                             @endforeach
                         </ul>
                     </div>
@@ -223,16 +233,16 @@
             <div class="row fc">
                 <div class="col-lg-6 col-sm-6 col-xs-12">
                     <div class="footer_copyright">
-                        <p>� 2025. All Rights Reserved.</p>
+                        <p>© 2025. All Rights Reserved.</p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-sm-6 col-xs-12">
                     <div class="footer_menu">
-                        <ul>
-                            <li><a href="#">Terms of use</a></li>
+                        {{-- <ul>
+                            <li><a href="#">Terms & Conditions</a></li>
                             <li><a href="#">Privacy Policy</a></li>
                             <li><a href="#">Cookie Policy</a></li>
-                        </ul>
+                        </ul> --}}
                     </div>
                 </div><!-- END COL -->
             </div>
@@ -316,8 +326,6 @@
                         "<span class='error text-danger'>This field is required</span>");
                     isValid = false;
                 }
-
-                $('#loader-wrapper').show();
                 // Submit if valid
                 if (isValid) {
                     let formData = new FormData(this);
