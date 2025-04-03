@@ -55,7 +55,7 @@
                 <div class="form-group" id="image">
                     {{ Form::label('image', 'Image') }}
                     {{ Form::file('image', ['class' => 'file-upload-default','id'=>'blogImage', 'accept' => 'image/jpg, image/jpeg, image/png']) }}
-                    
+
                     <div class="row">
                         <div class="file-preview mb-2 mt-2 mr-2 ml-2" id="blog_preview"></div>
                         <div class="image-preview mt-2  ml-2">
@@ -105,7 +105,7 @@
     <script>
        $(document).ready(function() {
             $('#blogImage').on('change', function() {
-                validateFile(this, ['image/jpeg', 'image/jpg'], 2 * 1024 * 1024, '#blog_preview');
+                validateFile(this, ['image/jpeg', 'image/jpg','image/png'], 2 * 1024 * 1024, '#blog_preview');
             });
 
             function updateFileLabel(input, previewElement) {
