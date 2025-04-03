@@ -17,7 +17,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',                 [HomeController::class,'home'])->name('home');
+Route::get('/courses',          [HomeController::class,'coursePage'])->name('coursePage');
+Route::get('/blogs',            [HomeController::class,'blogPage'])->name('blogPage');
+Route::get('/blog/{slug}',      [HomeController::class,'blogDetail'])->name('blogDetail');
+Route::get('/about-us',         [HomeController::class,'aboutUs'])->name('aboutUs');
+Route::get('/contact',          [HomeController::class,'contact'])->name('contact');
 Route::post('store-enquiry',    [EnquiryController::class,'storeEnquiry'])->name('enquiryStore');
 Route::get('/thankyou',         [HomeController::class,'thankyou'])->name('thankyou');
+Route::get('/sitemap.xml',      [HomeController::class, 'sitemap'])->name('sitemap');
 
 require __DIR__.'/auth.php';

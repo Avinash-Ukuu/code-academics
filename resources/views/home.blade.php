@@ -1,494 +1,510 @@
 @extends('frontend.layouts.master')
 @section('content')
-    <main>
-        <!--theme-banner-one start-->
-        <div class="theme-banner-one pt-205 pb-35 pt-lg-120 pt-md-80 pt-xs-60">
-            <div class="shadow-text">Code</div>
-            <img class="banner-shape shape-one" src="{{ asset('assets/frontend/images/line-1.svg') }}" alt="shape">
-            <img class="banner-shape shape-two d-none d-lg-inline-block"
-                src="{{ asset('assets/frontend/images/star-1.svg') }}" alt="shape">
-            <img class="banner-shape shape-three d-none d-lg-inline-block"
-                src="{{ asset('assets/frontend/images/star-2.svg') }}" alt="shape">
-            <img class="banner-shape shape-four" src="{{ asset('assets/frontend/images/line-round-1.svg') }}"
-                alt="shape">
-            <div class="container">
-                <div class="row gx-4 gx-xxl-5 align-items-center justify-content-center">
-                    <div class="col-11">
-                        <div class="theme__content text-center">
-                            <h1 class="main-title-one">
-                                <span>Code Academics</span>
-                                <span>innovative IT</span>
-                                <span>Solutions</span>
-                            </h1>
-                            <button class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#enquiryModal">
-                                Enquire Now
-                            </button>
+    <!-- START HOME -->
+    <section id="home" class="home_bg"
+        style="background-image: url(assets/frontend/images/home.png);  background-size:cover; background-position: center center;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 col-xs-12">
+                    <div class="home_content">
+                        <h1><span> Future</span> Starts With <span>CODE ACADEMICS</span></h1>
+                        <p>Unlock your potential with expert-led courses designed to boost your skills.
+                        </p>
+                    </div>
+                    <div class="home_btn">
+                        <a href="{{ route('coursePage') }}" class="cta"><span>Explore Courses</span>
+                            <svg width="13px" height="10px" viewBox="0 0 13 10">
+                                <path d="M1,5 L11,5"></path>
+                                <polyline points="8 1 12 5 8 9"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div><!-- END COL-->
+                <div class="col-lg-6 col-sm-6 col-xs-12">
+                    <div class="home_me_img">
+                        <img src="{{ asset('assets/frontend/images/home-image.png') }}" class="img-fluid" alt="">
+                        <div class="home_ps">
+                            <img src="{{ asset('assets/frontend/images/user2.svg') }}" alt="">
+                            <h2>5</h2>
+                            <span>Active student</span>
+                        </div>
+                        <div class="home_ps2">
+                            <img src="{{ asset('assets/frontend/images/file2.svg') }}" alt="">
+                            <h2>20+</h2>
+                            <span>Online Course</span>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <!--theme-banner-one end-->
-        <!--marque start-->
-        <div class="marquee-line pt-75 pb-130 pb-lg-60">
-            <div class="marquee">
-                <div id="supermarquee" class="marquee-wrapper"></div>
-            </div>
-        </div>
-        <!--marque end-->
-        <!--brand-area start-->
-        <section class="brand-area pt-100 pb-125 pt-lg-60 pb-lg-90">
-            <div class="container">
-                <div class="row gx-4 gx-xxl-5">
-                    <div class="brand-slider-one">
-                        <div class="brand-logo">
-                            <a href="#"><img src="{{ asset('assets/frontend/images/brand-1.svg') }}"
-                                    alt="brand"></a>
-                        </div>
-                        <div class="brand-logo">
-                            <a href="#"><img src="{{ asset('assets/frontend/images/brand-2.svg') }}"
-                                    alt="brand"></a>
-                        </div>
-                        <div class="brand-logo">
-                            <a href="#"><img src="{{ asset('assets/frontend/images/brand-3.svg') }}"
-                                    alt="brand"></a>
-                        </div>
-                        <div class="brand-logo">
-                            <a href="#"><img src="{{ asset('assets/frontend/images/brand-4.svg') }}"
-                                    alt="brand"></a>
-                        </div>
-                        <div class="brand-logo">
-                            <a href="#"><img src="{{ asset('assets/frontend/images/brand-5.svg') }}"
-                                    alt="brand"></a>
-                        </div>
-                        <div class="brand-logo">
-                            <a href="#"><img src="{{ asset('assets/frontend/images/brand-6.svg') }}"
-                                    alt="brand"></a>
-                        </div>
-                        <div class="brand-logo">
-                            <a href="#"><img src="{{ asset('assets/frontend/images/brand-2.svg') }}"
-                                    alt="brand"></a>
-                        </div>
-                        <div class="brand-logo">
-                            <a href="#"><img src="{{ asset('assets/frontend/images/brand-4.svg') }}"
-                                    alt="brand"></a>
-                        </div>
-                        <div class="brand-logo">
-                            <a href="#"><img src="{{ asset('assets/frontend/images/brand-1.svg') }}"
-                                    alt="brand"></a>
-                        </div>
-                        <div class="brand-logo">
-                            <a href="#"><img src="{{ asset('assets/frontend/images/brand-3.svg') }}"
-                                    alt="brand"></a>
-                        </div>
-                        <div class="brand-logo">
-                            <a href="#"><img src="{{ asset('assets/frontend/images/brand-5.svg') }}"
-                                    alt="brand"></a>
-                        </div>
+                </div><!-- END COL-->
+            </div><!--- END ROW -->
+        </div><!--- END CONTAINER -->
+    </section>
+    <!-- END  HOME -->
 
+    <!-- START TOP PROMO FEATURES -->
+    <section class="tp_feature">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 col-sm-4 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s"
+                    data-wow-delay="0.2s" data-wow-offset="0">
+                    <div class="single_tp">
+                        <h3>Cutting-Edge Curriculum</h3>
+                        <p>Stay ahead with industry-relevant courses designed to equip you with in-demand tech skills.</p>
+                        <p>🔹 Frontend Development | 🔹 Backend Development | 🔹 UI & UX
+                        </p>
+                        <a href="javascript:void(0)" class="cta open-enquiry-form"><span>Enquire Now</span>
+                            <svg width="13px" height="10px" viewBox="0 0 13 10">
+                                <path d="M1,5 L11,5"></path>
+                                <polyline points="8 1 12 5 8 9"></polyline>
+                            </svg>
+                        </a>
                     </div>
-                </div>
-            </div>
-        </section>
-        <!--brand-area end-->
-        <!--about-Code Academics start-->
+                </div><!-- END COL -->
+                <div class="col-lg-4 col-sm-4 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s"
+                    data-wow-delay="0.3s" data-wow-offset="0">
+                    <div class="single_tp">
+                        <h3>Expert Instructors</h3>
+                        <p>Learn from IT professionals and experienced mentors who guide you through hands-on projects.</p>
+                        <p> 💡 Practical Learning | 📚 Live Sessions | 🎓 Career Mentorship</p>
+                        <a href="javascript:void(0)" class="cta open-enquiry-form"><span>Enquire Now</span>
+                            <svg width="13px" height="10px" viewBox="0 0 13 10">
+                                <path d="M1,5 L11,5"></path>
+                                <polyline points="8 1 12 5 8 9"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div><!-- END COL -->
+                <div class="col-lg-4 col-sm-4 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s"
+                    data-wow-delay="0.4s" data-wow-offset="0">
+                    <div class="single_tp">
+                        <h3>Advanced Learning Environment</h3>
+                        <p>Experience cutting-edge technology with world-class facilities designed for IT excellence.</p>
+                        <p>💻 High-Tech Labs | 🖥 Practical | 📜 Certification of Completion</p>
+                        <a href="javascript:void(0)" class="cta open-enquiry-form"><span>Enquire Now</span>
+                            <svg width="13px" height="10px" viewBox="0 0 13 10">
+                                <path d="M1,5 L11,5"></path>
+                                <polyline points="8 1 12 5 8 9"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div><!-- END COL -->
+            </div><!-- END ROW -->
+        </div><!-- END CONTAINER -->
+    </section>
+    <!-- END TOP PROMO FEATURES -->
 
-        <section class="about-techy position-realtive pt-115 pb-15">
-            <div class="container">
-                <div class="row gx-4 gx-xxl-5 align-items-center">
-                    <div class="col-lg-7" data-aos="fade-right" data-aos-delay="100">
-                        <div class="logo-animated-block">
-                            <img class="rotate-img" src="{{ asset('assets/frontend/images/mask-text.svg') }}"
-                                alt="Text Img">
-                            <div class="mark-icon">
-                                <img src="{{ asset('assets/frontend/images/star-11a.svg') }}" alt="Star Icon">
-                            </div>
-                        </div>
-                        <div class="about-img-wrapper position-relative mb-45">
-                            <img class="main-img" src="{{ asset('assets/frontend/images/about-1.png') }}" alt="img">
-                            <img class="shape-one" src="{{ asset('assets/frontend/images/line-round-2a.svg') }}"
-                                alt="shape">
-                        </div>
+    <!-- START ABOUT US HOME ONE -->
+    <section class="ab_one section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s"
+                    data-wow-offset="0">
+                    <div class="ab_img">
+                        <img src="{{ asset('assets/frontend/images/about1.png') }}" class="img-fluid" alt="image">
+                        <!-- <div class="wc_year">
+                                <h3><span>6k+</span> <br />Happy Clients</h3>
+                            </div> -->
                     </div>
-                    <div class="col-lg-5" data-aos="fade-left" data-aos-delay="100">
-                        <div class="block-style-one pt-10 mb-45">
-                            <h2 class="mb-15">About Our<br /> Code Academics – Empowering Future Innovators with
-                                &amp; IT Education
-                            </h2>
-                            <p>Code Academics was founded with a mission to empower individuals with top-notch IT
-                                education and skills. With a passionate team of industry experts, we specialize in
-                                providing hands-on training in coding, graphic design, web development, and other IT
-                                disciplines, ensuring our students are equipped for success in the digital world.
-                            </p>
-                            <ul class="block-box list-none">
-                                <li>
-                                    <a href="contact.html">
-                                        <span class="img-bg"><img src="{{ asset('assets/frontend/images/icon-1a.svg') }}"
-                                                alt="icon"></span>
-                                        <span>Live Projects</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="contact.html">
-                                        <span class="img-bg"><img src="{{ asset('assets/frontend/images/icon-2a.svg') }}"
-                                                alt="icon"></span>
-                                        <span>Worldwide Placemets</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <button class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#enquiryModal">
-                                Enquire Now
-                            </button>
-                        </div>
+                </div><!--- END COL -->
+                <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"
+                    data-wow-offset="0">
+                    <div class="ab_content">
+                        <h2>Master In-Demand <u><span> IT Skills </span></u> & Elevate Your Career</h2>
+                        <p>Stay ahead in the tech industry with hands-on training and expert-led courses designed for real-world applications.</p>
                     </div>
-                </div>
-            </div>
-        </section>
-        <!--about-techy end-->
-        <!--our-services start-->
-        <section class="our-services pt-80 pb-105 pt-lg-45 pb-lg-15">
-            <div class="container">
-                <div class="row gx-4 gx-xxl-5 justify-content-lg-start justify-content-center">
-                    <div class="col-xl-5 col-lg-6 col-md-8">
-                        <div class="section-title text-center text-lg-start mb-55">
-                            <h3 class="sect-title mb-20" data-aos="fade-upt">Our Courses</h3>
-                            <p data-aos="fade-right" data-aos-delay="100">Dramatically supply transparent
-                                backward deliverables before caward comp internal or "organic" sources.</p>
-                        </div>
+                    <div class="abmv">
+                        <span class="ti-medall"></span>
+                        <h4>Our Mission</h4>
+                        <p>Empowering learners with industry-relevant skills, practical knowledge, and professional certifications to build a successful IT career.</p>
                     </div>
-                </div>
-                <div class="row gx-4 gx-xxl-5">
+                    <div class="abmv">
+                        <span class="ti-wand"></span>
+                        <h4>Our Vision</h4>
+                        <p>To bridge the gap between education and industry by providing top-tier IT training, fostering innovation, and preparing students for future tech advancements.</p>
+                    </div>
+                    <a class="btn_one open-enquiry-form" href="javascript:void(0)">Enquire Now</a>
+                </div><!--- END COL -->
+            </div><!--- END ROW -->
+        </div><!--- END CONTAINER -->
+    </section>
+    <!-- END ABOUT US HOME ONE -->
 
-                    @foreach($courses as $index => $course)
-                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ $index * 50 }}">
-                            <div class="feature-style-one mb-45">
-                                <a class="top-arrow" href="#">
-                                    <i class="bi bi-arrow-up-right"></i>
-                                </a>
-                                <img class="front-icon" src="{{ asset('assets/frontend/images/icon-3a.png') }}"
-                                    alt="icon">
-                                <img class="back-icon" src="{{ asset('assets/frontend/images/icon-3w.png') }}"
-                                    alt="icon">
-                                <h2>
-                                    <a href="services-details.html">{{$course->name}}</a>
-                                </h2>
-                                <p>"{{ $course->description }}"</p>
-                                <button class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#enquiryModal">
-                                    Enquire Now
-                                </button>
-                            </div>
+    <!-- START COUNTER -->
+    {{-- <section id="counts" class="counts section-padding">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>Some Fun Fact</h2>
+                <p>Our Great <span><u>Achievement</u></span></p>
+            </div>
+            <div class="row gy-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="count-box">
+                        <i class="ti-face-smile"></i>
+                        <div>
+                            <span data-purecounter-start="0" data-purecounter-end="8232" data-purecounter-duration="1"
+                                class="purecounter"></span>
+                            <p>Enrolled Students</p>
                         </div>
-                    @endforeach
+                    </div>
+                </div><!--- END COL -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="count-box">
+                        <i class="ti-files" style="color: #ee6c20;"></i>
+                        <div>
+                            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
+                                class="purecounter"></span>
+                            <p>Academic Programs</p>
+                        </div>
+                    </div>
+                </div><!--- END COL -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="count-box">
+                        <i class="ti-headphone-alt" style="color: #15be56;"></i>
+                        <div>
+                            <span data-purecounter-start="0" data-purecounter-end="163" data-purecounter-duration="1"
+                                class="purecounter"></span>
+                            <p>Winning Award</p>
+                        </div>
+                    </div>
+                </div><!--- END COL -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="count-box">
+                        <i class="ti-user" style="color: #bb0852;"></i>
+                        <div>
+                            <span data-purecounter-start="0" data-purecounter-end="93" data-purecounter-duration="1"
+                                class="purecounter"></span>
+                            <p>Certified Students</p>
+                        </div>
+                    </div>
+                </div><!--- END COL -->
+            </div><!--- END ROW -->
+        </div><!--- END CONTAINER -->
+    </section> --}}
+    <!-- END COUNTER -->
 
-                </div>
-            </div>
-        </section>
-        <!--our-services end-->
-        <!--feature-work start-->
-        <section class="feature-work pt-90 pb-95 pt-lg-50 pb-lg-60">
-            <div class="container">
-                <div class="row gx-4 gx-xxl-5 align-items-center">
-                    <div class="col-xl-5 col-lg-6 col-md-8">
-                        <div class="section-title text-center text-md-start mb-55">
-                            <h3 class="sect-title mb-25" data-aos="fade-up">Projects Crafted by Code Academics
-                            </h3>
-                            <p data-aos="fade-up" data-aos-delay="100">Take a closer look at the exceptional
-                                projects we’ve designed and developed to empower businesses worldwide.</p>
-                        </div>
+    <!-- START COMPANY PARTNER LOGO  -->
+    {{-- <div class="partner-logo section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="partner_title">
+                        <h3>Trusted Company Arround The World! </h3>
                     </div>
-                    <div class="col-xl-7 col-lg-6 col-md-4 d-flex justify-content-md-end justify-content-center pb-40">
-                        <div class="slick-nav">
-                            <div class="prev_f1 mr-20">
-                                <i class="bi bi-chevron-left"></i>
-                            </div>
-                            <div class="next_f1">
-                                <i class="bi bi-chevron-right"></i>
-                            </div>
-                        </div>
+                    <div class="partner">
+                        <a href="#"><img src="{{ asset('assets/frontend/images/1.png') }}" alt="image"></a>
+                        <a href="#"><img src="{{ asset('assets/frontend/images/2.png') }}" alt="image"></a>
+                        <a href="#"><img src="{{ asset('assets/frontend/images/3.png') }}" alt="image"></a>
+                        <a href="#"><img src="{{ asset('assets/frontend/images/4.png') }}" alt="image"></a>
+                        <a href="#"><img src="{{ asset('assets/frontend/images/5.png') }}" alt="image"></a>
+                        <a href="#"><img src="{{ asset('assets/frontend/images/2.png') }}" alt="image"></a>
+                        <a href="#"><img src="{{ asset('assets/frontend/images/1.png') }}" alt="image"></a>
+                        <a href="#"><img src="{{ asset('assets/frontend/images/3.png') }}" alt="image"></a>
+                        <a href="#"><img src="{{ asset('assets/frontend/images/4.png') }}" alt="image"></a>
                     </div>
-                </div>
-            </div>
-            <div class="feature-slider-one slick-nav">
-                <div class="container custom-container">
-                    <div class="row feature-slider-active" data-aos="fade-up" data-aos-delay="200">
-                        <div class="col-lg-4">
-                            <div class="feature-item">
-                                <a class="back-bg" href="javascript:void(0)"><img class="w-100"
-                                        src="{{ asset('assets/frontend/images/projectone.png') }}" alt="img"></a>
-                                <h5>
-                                    <a href="javascript:void(0)">The Visa Engineers</a>
-                                </h5>
-                                <h3><a href="javascript:void(0)">Dashboard Design and Development</a></h3>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="feature-item">
-                                <a class="back-bg" href="javascript:void(0)"><img class="w-100"
-                                        src="{{ asset('assets/frontend/images/projecttwo.png') }}" alt="img"></a>
-                                <h5>
-                                    <a href="javascript:void(0)">Exponent Institute</a>
-                                </h5>
-                                <h3><a href="javascript:void(0)">Website Designing with CRM Potal</a></h3>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="feature-item">
-                                <a class="back-bg" href="javascript:void(0)"><img class="w-100"
-                                        src="{{ asset('assets/frontend/images/projectthree.png') }}" alt="img"></a>
-                                <h5>
-                                    <a href="javascript:void(0)">LearnTribe</a>
-                                </h5>
-                                <h3><a href="javascript:void(0)">E-commerce Website</a></h3>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="feature-item">
-                                <a class="back-bg" href="javascript:void(0)"><img class="w-100"
-                                        src="{{ asset('assets/frontend/images/projectfour.png') }}" alt="img"></a>
-                                <h5>
-                                    <a href="javascript:void(0)">Voltcart canada</a>
-                                </h5>
-                                <h3><a href="javascript:void(0)">Battry E-commerce Website</a></h3>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="feature-item">
-                                <a class="back-bg" href="javascript:void(0)"><img class="w-100"
-                                        src="{{ asset('assets/frontend/images/projectseventh.png') }}"
-                                        alt="img"></a>
-                                <h5>
-                                    <a href="javascript:void(0)">Manohar Backrey Canada</a>
-                                </h5>
-                                <h3><a href="javascript:void(0)">Mobile App Development</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                </div><!-- END COL  -->
+            </div><!--END  ROW  -->
+        </div><!-- END CONTAINER  -->
+    </div> --}}
+    <!-- END COMPANY PARTNER LOGO -->
 
-        <section class="counter-area pt-75 pt-lg-30 pt-lg-35 pb-lg-10">
-            <div class="container custom-contianer-one theme-bg">
-                <div class="row gx-4 gx-xxl-5">
-                    <div class="col-lg-3 col-md-6 col-sm-6" data-aos="fade-up">
-                        <div class="counter-style-one mb-30">
-                            <h3>
-                                <span class="counter">100</span>+
-                            </h3>
-                            <h4>Worldwide Clients</h4>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="counter-style-one mb-30" data-aos="fade-up" data-aos-delay="200">
-                            <h3>
-                                <span class="counter">8</span>+
-                            </h3>
-                            <h4>Years Experience</h4>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="counter-style-one mb-30" data-aos="fade-up" data-aos-delay="300">
-                            <h3>
-                                <span class="counter">180</span>+
-                            </h3>
-                            <h4>Projects Done</h4>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="counter-style-one mb-30" data-aos="fade-up" data-aos-delay="400">
-                            <h3>
-                                <span class="counter">1.2</span>K
-                            </h3>
-                            <h4>Beautiful Review</h4>
-                        </div>
-                    </div>
-                </div>
+    <!-- START WHY CHOOSE US-->
+    <section class="marketing_content_area section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Code Academics</h2>
+                <p>Find the <span><u>best features</u></span> of Code Academics.</p>
             </div>
-        </section>
-        <!--counter-area start-->
-        <!--client-feedback start-->
-        <section class="client-feedback pt-140 pb-150 pt-lg-55 pb-lg-60">
-            <div class="container">
-                <div class="row gx-4 gx-xxl-5 justify-content-center" data-aos="fade-up">
-                    <div class="col-xl-5 col-lg-6 col-md-8">
-                        <div class="section-title text-center mb-55">
-                            <h3 class="sect-title mb-25">Testimonials</h3>
-                            <p>Dramatically supply transparent backward deliverables before caward comp
-                                internal or "organic" sources.</p>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"
+                    data-wow-offset="0">
+                    <div class="single_feature_one">
+                        <div class="sf_top">
+                            <span class="ti-book ss_one"></span>
+                            <h2><a href="javascript:void(0)">Structured Offline Learning</a></h2>
                         </div>
+                        <p>Join our high-quality, in-person classes from 9 AM to 6 PM and experience focused, interactive learning in an offline environment.</p>
                     </div>
-                </div>
-                <div class="row feedback-active-one" data-aos="fade-up" data-aos-delay="200">
-                    <div class="col-lg-11">
-                        <div class="feedback-style-one text-center">
-                            <div class="rating mb-40">
-                                <a href="#">
-                                    <i class="bi bi-star-fill"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="bi bi-star-fill"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="bi bi-star-fill"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="bi bi-star-fill"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="bi bi-star-half"></i>
-                                </a>
-                                <span class="fs-18 text-white">4.5</span>
+                </div><!-- END COL -->
+                <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s"
+                    data-wow-offset="0">
+                    <div class="single_feature_one">
+                        <div class="sf_top">
+                            <span class="ti-heart ss_two"></span>
+                            <h2><a href="javascript:void(0)">Expert <br>Instructor</a></h2>
+                        </div>
+                        <p>Learn from industry professionals with real-world experience and deep subject knowledge.</p>
+                    </div>
+                </div><!-- END COL -->
+                <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s"
+                    data-wow-offset="0">
+                    <div class="single_feature_one">
+                        <div class="sf_top">
+                            <span class="ti-user ss_three"></span>
+                            <h2><a href="javascript:void(0)">Efficient Team<br> Management</a></h2>
+                        </div>
+                        <p>Our dedicated team ensures a smooth learning experience with top-notch organization and support.</p>
+                    </div>
+                </div><!-- END COL -->
+                <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s"
+                    data-wow-offset="0">
+                    <div class="single_feature_one">
+                        <div class="sf_top">
+                            <span class="ti-eye ss_four"></span>
+                            <h2><a href="javascript:void(0)">Strategic Course <br> Planning</a></h2>
+                        </div>
+                        <p>Structured learning paths designed to help you master skills step by step.</p>
+                    </div>
+                </div><!-- END COL -->
+                <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s"
+                    data-wow-offset="0">
+                    <div class="single_feature_one">
+                        <div class="sf_top">
+                            <span class="ti-light-bulb ss_five"></span>
+                            <h2><a href="javascript:void(0)">Teacher Guidance & Support</a></h2>
+                        </div>
+                        <p>Get personalized mentorship and performance monitoring to maximize your learning potential.</p>
+                    </div>
+                </div><!-- END COL -->
+                <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s"
+                    data-wow-offset="0">
+                    <div class="single_feature_one">
+                        <div class="sf_top">
+                            <span class="ti-email ss_six"></span>
+                            <h2><a href="javascript:void(0)">Dedicated Support During Class Hours</a></h2>
+                        </div>
+                        <p>Get assistance and guidance from our instructors during 9 AM to 6 PM to ensure a smooth learning experience.</p>
+                    </div>
+                </div><!-- END COL -->
+            </div><!-- END ROW -->
+        </div><!-- END CONTAINER -->
+    </section>
+    <!-- END WHY CHOOSE US -->
+
+    <!--START COURSE -->
+    <div class="best-cpurse section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Popular Courses</h2>
+                <p>Choose Our <span><u>Top Courses</u></span></p>
+            </div>
+            <div class="row">
+                @foreach($courses as $course)
+                    @if($loop->iteration == 7) @break @endif
+                    <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"
+                        data-wow-offset="0">
+                        <div class="course-slide">
+                            <div class="course-img">
+                                <img src="{{ asset('assets/frontend/images/c1.png') }}" alt="course">
+
                             </div>
-                            <p>"Code Academics truly understands the value of client satisfaction. Their seamless
-                                communication and cutting-edge solutions helped us scale our operations and achieve
-                                incredible results."</p>
-                            <div class="author d-flex align-items-center justify-content-center mt-45">
-                                <!-- <img src="images/author-1.jpg" alt="author"> -->
-                                <div class="author-info">
-                                    <h3>Rajesh Kumar</h3>
-                                    <h5>Managing Director, Global Connect Services</h5>
+                            <div class="course-content">
+                                <h3><a href="single_course.html">{{$course->name}}</a></h3>
+                            </div>
+                        </div><!--END COURSE SLIDE -->
+                    </div><!--END COL -->
+                @endforeach
+                <div class="col-lg-12 text-center">
+                    <div class="cc_btn">
+                        <a class="btn_one" href="{{ route('coursePage') }}">View All Course</a>
+                    </div>
+                </div><!--END COL -->
+            </div><!--END ROW -->
+        </div><!--END CONTAINER -->
+    </div>
+    <!--END COURSE -->
+
+    <!-- START COURSE PROMOTION -->
+    <section class="course_promo section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"
+                    data-wow-offset="0">
+                    <div class="cp_content">
+                        <h4>Best Offline Learning Platform</h4>
+                        <h2>One Platfrom & Many <span><u>Courses</u></span> For You</h2>
+                        <p>Enhance your skills with our expert-led offline courses, designed for both professionals and school students in a structured classroom environment.</p>
+                        <ul>
+                            <li><span class="ti-check"></span>9/10 Average Satisfaction Rate</li>
+                            <li><span class="ti-check"></span>96% Completitation Rate</li>
+                            <li><span class="ti-check"></span>Supportive Learning Environment & Expert Instructors</li>
+                        </ul>
+                    </div>
+                    <div class="cp_btn">
+                        <a href="{{ route('coursePage') }}" class="cta"><span>Explore Our Courses</span>
+                            <svg width="13px" height="10px" viewBox="0 0 13 10">
+                                <path d="M1,5 L11,5"></path>
+                                <polyline points="8 1 12 5 8 9"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div><!--- END COL -->
+                <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s"
+                    data-wow-offset="0">
+                    <div class="cp_img">
+                        <img src="{{ asset('assets/frontend/images/promo.png') }}" class="img-fluid" alt="image">
+                        <!-- <div class="wc_year">
+                                <h3>20 Years of Experience <br />from 2002</h3>
+                            </div> -->
+                    </div>
+                </div><!--- END COL -->
+            </div><!--- END ROW -->
+        </div><!--- END CONTAINER -->
+    </section>
+    <!-- END COURSE PROMOTION -->
+
+
+    <!-- START TESTIMONIALS-->
+    <section class="testi_home_area section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Testimonial</h2>
+                <p>What Says <span><u>Our Students</u></span></p>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="testimonial-slider" class="owl-carousel">
+                        <div class="testimonial">
+                            <div class="testimonial_content">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <p>This platform has transformed the way I learn. The instructors are amazing, and the content is very engaging!</p>
+                            </div>
+                            <div class="testi_pic_title tpt_one">
+                                <div class="pic">
+                                    <img src="{{ asset('assets/frontend/images/t1.png') }}" alt="">
                                 </div>
+                                <h4>James Clayton</h4>
+                                <small class="post">- Student</small>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-11">
-                        <div class="feedback-style-one text-center">
-                            <div class="rating mb-40">
-                                <a href="#">
-                                    <i class="bi bi-star-fill"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="bi bi-star-fill"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="bi bi-star-fill"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="bi bi-star-fill"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="bi bi-star-fill"></i>
-                                </a>
-                                <span class="fs-18 text-white">5</span>
+                        </div><!-- END TESTIMONIAL -->
+                        <div class="testimonial">
+                            <div class="testimonial_content">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <p>I highly recommend Web Development course! The lessons are well-structured, and the support from the team is fantastic.</p>
                             </div>
-                            <p>"The team at Code Academics transformed our vision into a stunning reality. From web
-                                development to digital marketing, they handled every aspect of our project with
-                                professionalism and expertise."</p>
-                            <div class="author d-flex align-items-center justify-content-center mt-45">
-                                <!-- <img src="images/author-2.jpg" alt="author"> -->
-                                <div class="author-info">
-                                    <h3>Sarah Mitchell</h3>
-                                    <h5>CEO, Evolve Brands</h5>
+                            <div class="testi_pic_title tpt_two">
+                                <div class="pic">
+                                    <img src="{{ asset('assets/frontend/images/t2.png') }}" alt="">
                                 </div>
+                                <h4>James Simmons</h4>
+                                <small class="post">- Student</small>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-11">
-                        <div class="feedback-style-one text-center">
-                            <div class="rating mb-40">
-                                <a href="#">
-                                    <i class="bi bi-star-fill"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="bi bi-star-fill"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="bi bi-star-fill"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="bi bi-star-fill"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="bi bi-star-fill"></i>
-                                </a>
-                                <span class="fs-18 text-white">5</span>
+                        </div><!-- END TESTIMONIAL -->
+                        <div class="testimonial">
+                            <div class="testimonial_content">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <p>A great experience! The practical exercises helped me a lot in understanding real-world applications.</p>
                             </div>
-                            <p>"Code Academics brought our e-commerce dream to life! Their team not only delivered a
-                                user-friendly platform but also guided us in scaling our business online. Truly a
-                                reliable partner for IT solutions."</p>
-                            <div class="author d-flex align-items-center justify-content-center mt-45">
-                                <!-- <img src="images/author-3.jpg" alt="author"> -->
-                                <div class="author-info">
-                                    <h3>Priya Sharma </h3>
-                                    <h5>Owner, Elegant Crafts</h5>
+                            <div class="testi_pic_title tpt_three">
+                                <div class="pic">
+                                    <img src="{{ asset('assets/frontend/images/t3.png') }}" alt="">
                                 </div>
+                                <h4>Alex feroundo</h4>
+                                <small class="post">- Student</small>
                             </div>
-                        </div>
-                    </div>
-                </div>
+                        </div><!-- END TESTIMONIAL -->
+                        <div class="testimonial">
+                            <div class="testimonial_content">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <p>The course exceeded my expectations! The explanations were clear, and I felt supported throughout the learning process.</p>
+                            </div>
+                            <div class="testi_pic_title tpt_one">
+                                <div class="pic">
+                                    <img src="{{ asset('assets/frontend/images/t4.png') }}" alt="">
+                                </div>
+                                <h4>Kallu Mastan</h4>
+                                <small class="post">- Student</small>
+                            </div>
+                        </div><!-- END TESTIMONIAL -->
+                        <div class="testimonial">
+                            <div class="testimonial_content">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <p>Absolutely worth it! The hands-on projects made learning so much more effective and enjoyable.</p>
+                            </div>
+                            <div class="testi_pic_title tpt_two">
+                                <div class="pic">
+                                    <img src="{{ asset('assets/frontend/images/t1.png') }}" alt="">
+                                </div>
+                                <h4>Devid max</h4>
+                                <small class="post">- Student</small>
+                            </div>
+                        </div><!-- END TESTIMONIAL -->
+                    </div><!-- END TESTIMONIAL SLIDER -->
+                </div><!-- END COL  -->
+            </div><!-- END ROW -->
+        </div><!-- END CONTAINER -->
+    </section>
+    <!-- END TESTIMONIALS -->
+
+    <!-- START BLOG -->
+    <section id="blog" class="blog_area section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>News</h2>
+                <p>Our Latest <span><u>Blogs</u></span></p>
             </div>
-        </section>
-        <!--client-feedback end-->
-        <!--blog-area start-->
-        <section class="blog-area slick-nav pt-100 pb-100 pt-lg-55 pb-lg-60">
-            <div class="container">
-                <div class="row gx-4 gx-xxl-5 align-items-center">
-                    <div class="col-xl-5 col-lg-6 col-md-8" data-aos="fade-up">
-                        <div class="section-title text-center text-md-start mb-60">
-                            <h3 class="sect-title mb-25">Latest Blogs</h3>
-                            <p>Dramatically supply transparent backward deliverables before caward comp
-                                internal or "organic" sources.</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-7 col-lg-6 col-md-4 d-flex justify-content-md-end justify-content-center pb-40">
-                        <div class="slick-nav">
-                            <div class="prev_b1 mr-20">
-                                <i class="bi bi-chevron-left"></i>
-                            </div>
-                            <div class="next_b1">
-                                <i class="bi bi-chevron-right"></i>
+            <div class="row">
+                @foreach($blogs as $blog)
+                    @if($loop->iteration == 3) @break @endif
+                    <div class="col-lg-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"
+                        data-wow-offset="0">
+                        <div class="single_blog">
+                            <img src="{{ asset('uploads/blogs/'.$blog->image) }}" class="img-fluid" alt="image">
+                            <div class="content_box">
+                                <span>{{$blog->blog_created_at}}</span>
+                                <h2><a href="{{ route('blogDetail',['slug'=>$blog->slug]) }}">{{$blog->title}}</a></h2>
+                                <a href="{{ route('blogDetail',['slug'=>$blog->slug]) }}" class="cta"><span>READ MORE</span>
+                                    <svg width="13px" height="10px" viewBox="0 0 13 10">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </a>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row blog-active-one" data-aos="fade-up" data-aos-delay="100">
+                    </div><!-- END COL-->
+
+                @endforeach
+                <div class="col-lg-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"
+                    data-wow-offset="0">
                     @foreach($blogs as $blog)
-                        <div class="col-lg-4">
-                            <div class="blog-style-one">
-                                <div class="blog-thumb">
-                                    <img class="w-100" src="{{ asset('uploads/blogs/'.$blog->image) }}"
-                                        alt="img">
-                                </div>
-                                <div class="blog-content">
-                                    <h4>
-                                        <a class="blog-title" href="#">{{ $blog->title }}</a>
-                                    </h4>
-                                    <p>{{ Str::words($blog->description, 20, '...') }}</p>
-                                    <div class="blog-meta">
-                                        <a href="javascript:void(0)">
-                                            <i class="bi bi-person-plus"></i>
-                                            Code Academics</a>
-                                        <a href="javascript:void(0)">
-                                            <i class="bi bi-clock"></i>
-                                            {{ $blog->blog_created_at }}</a>
-                                    </div>
-                                </div>
+                        @if($loop->iteration <= 2) @continue @endif
+                        @if($loop->iteration == 5) @break @endif
+                        <div class="single_blog">
+                            <div class="content_box">
+                                <span>{{$blog->blog_created_at}}</span>
+                                <h2><a href="{{ route('blogDetail',['slug'=>$blog->slug]) }}">{{$blog->title}}</a></h2>
+                                <a href="{{ route('blogDetail',['slug'=>$blog->slug]) }}" class="cta"><span>READ MORE</span>
+                                    <svg width="13px" height="10px" viewBox="0 0 13 10">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </a>
                             </div>
                         </div>
                     @endforeach
+                </div><!-- END COL-->
+            </div><!-- / END ROW -->
+        </div><!-- END CONTAINER  -->
+    </section>
+    <!-- END BLOG -->
 
-                </div>
-            </div>
-        </section>
-        <!--blog-area end-->
-        <!--techy-newsletter start-->
-        <section class="techy-newsletter pt-120 pt-lg-60">
-            <div class="container">
-                <div class="row gx-4 gx-xxl-5 align-items-center justify-content-center borders">
-                    <div class="col-lg-8">
-                        <div class="block-style-two text-center pb-90">
-                            <img class="news-shape-one d-none d-xl-block"
-                                src="{{ asset('assets/frontend/images/line-round-3a.svg') }}" alt="shape">
-                            <h3>Have a project in mind? Let’s get to work.</h3>
-                            <button class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#enquiryModal">
-                                Enquire Now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--techy-newsletter end-->
-
-    </main>
+    <!-- START FOOTER -->
 @endsection
