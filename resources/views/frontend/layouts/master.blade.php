@@ -11,7 +11,12 @@
     <meta name="description" content="@yield('meta_description', 'Join Code Academics in Jalandhar City to master web development, programming, and software skills. Learn from expert instructors with hands-on training in Laravel, PHP, Python, React, and more. Start your coding journey today!')">
     <meta name="keywords" content="@yield('meta_keywords', 'Code Academics Jalandhar, coding institute Jalandhar, programming courses Jalandhar, web development training, Laravel course Jalandhar, PHP training, Python classes, React JS course, best IT institute in Jalandhar, software development training')">
     <meta name="author" content="code academics">
-
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/frontend/favicon/favicon-16x16.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/frontend/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('assets/frontend/favicon/android-chrome-192x192.png') }}">
+    <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('assets/frontend/favicon/android-chrome-512x512.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('assets/frontend/favicon/apple-touch-icon.png') }}">
+    <link rel="manifest" href="{{ asset('assets/frontend/favicon/site.webmanifest') }}">
     <!-- Latest Bootstrap min CSS -->
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/bootstrap.min.css') }}">
     <!-- Google Font -->
