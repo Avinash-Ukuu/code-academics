@@ -153,8 +153,7 @@ class EnquiryController extends Controller
                                 'message'   => 'required|string',
                             ]);
 
-        Mail::to('admin@example.com')->send(new EnquiryMail($validated));
-        // Mail::to('codeacademicss@gmail.com')->send(new EnquiryMail($validated));
+        Mail::to('codeacademicss@gmail.com')->send(new EnquiryMail($validated));
 
         return response()->json(['success' => 'Enquiry submitted successfully!']);
     }

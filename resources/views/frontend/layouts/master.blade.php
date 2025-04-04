@@ -174,7 +174,7 @@
             <div class="row">
                 <div class="col-lg-3 col-sm-6 col-xs-12">
                     <div class="single_footer">
-                        <a href="index.html"><img src="{{ asset('assets/frontend/images/footerlogo.png') }}"
+                        <a href="{{ route('home') }}"><img src="{{ asset('assets/frontend/images/footerlogo.png') }}"
                                 alt=""></a>
                         <p>📚 Unlocking Knowledge, Empowering. <br>
                             "Shaping the future of education through innovation and expertise."</p>

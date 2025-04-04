@@ -23,7 +23,7 @@
                 <div class="col-lg-6 col-sm-6 col-xs-12">
                     <div class="home_me_img">
                         <img src="{{ asset('assets/frontend/images/home-image.png') }}" class="img-fluid" alt="">
-                        <div class="home_ps">
+                        {{-- <div class="home_ps">
                             <img src="{{ asset('assets/frontend/images/user2.svg') }}" alt="">
                             <h2>5</h2>
                             <span>Active student</span>
@@ -32,7 +32,7 @@
                             <img src="{{ asset('assets/frontend/images/file2.svg') }}" alt="">
                             <h2>20+</h2>
                             <span>Online Course</span>
-                        </div>
+                        </div> --}}
                     </div>
                 </div><!-- END COL-->
             </div><!--- END ROW -->
@@ -297,7 +297,7 @@
 
                             </div>
                             <div class="course-content">
-                                <h3><a href="single_course.html">{{$course->name}}</a></h3>
+                                <h3><a class="open-enquiry-form" href="javascript:void(0)">{{$course->name}}</a></h3>
                             </div>
                         </div><!--END COURSE SLIDE -->
                     </div><!--END COL -->
