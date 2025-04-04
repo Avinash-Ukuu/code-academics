@@ -1,4 +1,6 @@
 @extends('frontend.layouts.master')
+@section('meta_title', 'Thank You - Code Academics')
+@section('meta_description', 'Thank you for submitting the form.')
 @section('content')
 	<!-- START SECTION TOP -->
 	<section class="section-top">

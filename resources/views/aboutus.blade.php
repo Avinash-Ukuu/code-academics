@@ -1,4 +1,6 @@
 @extends('frontend.layouts.master')
+@section('meta_title', 'About Us - Code Academics')
+@section('meta_description', 'Learn more about Code Academics and our mission dedicated to knowledge sharing.')
 @section('content')
     <!-- START SECTION TOP -->
     <section class="section-top">
