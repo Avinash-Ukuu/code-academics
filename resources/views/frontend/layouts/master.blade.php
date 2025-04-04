@@ -124,7 +124,7 @@
 					</div> --}}
                     <div class="call_to_action">
                         <a class="btn_one open-enquiry-form" href="javascript:void(0)">Enquire Now</a>
-                        <a class="btn_two" href="tel:+919592258369">+91 9592258369</a>
+                        <a class="btn_two" href="tel:+919592 258 369">+91 9592 258 369</a>
                     </div><!--- END SOCIAL PROFILE -->
                 </div>
             </div><!--- END ROW -->
@@ -188,7 +188,7 @@
                         <ul>
                             <li><a href="#">TW</a></li>
                             <li><a href="#">FB</a></li>
-                            <li><a href="#">INS</a></li>
+                            <li><a target="_blank" href="https://www.instagram.com/codeacademics/">INS</a></li>
                             <li><a href="#">YT</a></li>
                         </ul>
                     </div>
@@ -220,7 +220,7 @@
                         <div class="sf_contact">
                             <span class="ti-mobile"></span>
                             <h3>Phone number</h3>
-                            <p>+91 9592258369</p>
+                            <p>+91 9592 258 369</p>
                         </div>
                         <div class="sf_contact">
                             <span class="ti-email"></span>
