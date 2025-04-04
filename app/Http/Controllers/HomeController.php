@@ -46,7 +46,17 @@ class HomeController extends Controller
             return response()->view('errors.404', [], 404);
         }
 
+        $postUrl                =       url("/blog/{$slug}");
+        $postTitle              =       urlencode($data['blog']->title);
+
+        $data['socialLinks']    =       [
+                                            'facebook' => "https://www.facebook.com/sharer/sharer.php?u={$postUrl}",
+                                            'twitter'  => "https://twitter.com/intent/tweet?url={$postUrl}&text={$postTitle}",
+                                            'linkedin' => "https://www.linkedin.com/sharing/share-offsite/?url={$postUrl}"
+                                        ];
+
         $data['otherBlogs']     =       Blog::where('slug','<>',$slug)->where('publish_type','publish')->take(10)->get();
+        $data['courses']        =       Course::where('is_active',1)->get();
 
         return view('blogDeatil',$data);
     }

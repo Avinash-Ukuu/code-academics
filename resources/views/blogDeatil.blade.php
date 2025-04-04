@@ -37,10 +37,10 @@
                         <div class="share_sp">
                             <h4>Share</h4>
                             <ul>
-                                <li><a href="#"><span class="ti-facebook"></span> Facebook</a></li>
-                                <li><a href="#"><span class="ti-twitter"></span> Twitter</a></li>
-                                <li><a href="#"><span class="ti-instagram"></span> Instagram</a></li>
-                                <li><a href="#"><span class="ti-linkedin"></span> Linkedin</a></li>
+                                <li><a href="{{ $socialLinks['facebook'] }}" target="_blank"><span class="ti-facebook"></span> Facebook</a></li>
+                                <li><a href="{{ $socialLinks['twitter'] }}" target="_blank"><span class="ti-twitter"></span> Twitter</a></li>
+                                {{-- <li><a href="#"><span class="ti-instagram" target="_blank"></span> Instagram</a></li> --}}
+                                <li><a href="{{ $socialLinks['linkedin'] }}" target="_blank"><span class="ti-linkedin"></span> Linkedin</a></li>
                             </ul>
                         </div>
                     </div><!-- END ARTI SINGLE  -->
@@ -53,12 +53,24 @@
                         </div>
                         @foreach($otherBlogs as $otherBlog)
                             <div class="single_popular">
-                                <a href="{{ route('blogDetail',['slug'=>$otherBlog->slug]) }}"><img src="{{ asset('uploads/blogs/' . $otherBlog->image) }}" alt=""></a>
+                                <a href="{{ route('blogDetail',['slug'=>$otherBlog->slug]) }}"><img src="{{ asset('uploads/blogs/' . $otherBlog->image) }}" alt="blogImage"></a>
                                 <h5><a href="{{ route('blogDetail',['slug'=>$otherBlog->slug]) }}">{{ $otherBlog->title }}</a></h5>
                             </div><!-- END SINGLE POPULAR POST -->
                         @endforeach
                     </div><!-- END SIDEBAR POST -->
+
                     <div class="sidebar-post">
+                        <div class="sidebar_title">
+                            <h4>Popular Courses</h4>
+                        </div>
+                        @foreach($courses as $course)
+                            <div class="single_popular">
+                                <a href="{{ route('coursePage') }}"><img src="{{ asset('assets/frontend/images/c1.png') }}" alt="courseImage"></a>
+                                <h5><a href="{{ route('coursePage') }}">{{ $course->name }}</a></h5>
+                            </div><!-- END SINGLE POPULAR POST -->
+                        @endforeach
+                    </div><!-- END SIDEBAR POST -->
+                    {{-- <div class="sidebar-post">
                         <div class="sidebar_title">
                             <h4>Follow us</h4>
                         </div>
@@ -101,7 +113,7 @@
                                 </li>
                             </ul>
                         </div><!-- END SOCIAL MEDIA POST -->
-                    </div><!-- END SIDEBAR POST -->
+                    </div><!-- END SIDEBAR POST --> --}}
 
 
                 </div><!--- END COL -->

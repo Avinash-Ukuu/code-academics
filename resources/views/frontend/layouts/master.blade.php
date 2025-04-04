@@ -186,10 +186,9 @@
                     </div>
                     <div class="foot_social">
                         <ul>
-                            <li><a href="#">TW</a></li>
-                            <li><a href="#">FB</a></li>
-                            <li><a target="_blank" href="https://www.instagram.com/codeacademics/">INS</a></li>
-                            <li><a href="#">YT</a></li>
+                            <li><a target="_blank" style="text-decoration: none;" href="#"><span class="ti-twitter"></span></a></li>
+                            <li><a target="_blank" style="text-decoration: none;" href="#"><span class="ti-facebook"></span></a></li>
+                            <li><a target="_blank" style="text-decoration: none;" href="https://www.instagram.com/codeacademics/"><span class="ti-instagram"></span></a></li>
                         </ul>
                     </div>
                 </div><!--- END COL -->
