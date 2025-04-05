@@ -22,7 +22,7 @@
                 </div><!-- END COL-->
                 <div class="col-lg-6 col-sm-6 col-xs-12">
                     <div class="home_me_img">
-                        <img src="{{ asset('assets/frontend/images/home-image.png') }}" class="img-fluid" alt="">
+                        <img src="{{ asset('assets/frontend/images/home-image.png') }}" class="img-fluid" alt="image">
                         {{-- <div class="home_ps">
                             <img src="{{ asset('assets/frontend/images/user2.svg') }}" alt="">
                             <h2>5</h2>
@@ -373,7 +373,7 @@
                             </div>
                             <div class="testi_pic_title tpt_one">
                                 <div class="pic">
-                                    <img src="{{ asset('assets/frontend/images/t1.png') }}" alt="">
+                                    <img src="{{ asset('assets/frontend/images/t1.png') }}" alt="image">
                                 </div>
                                 <h4>James Clayton</h4>
                                 <small class="post">- Student</small>
@@ -390,7 +390,7 @@
                             </div>
                             <div class="testi_pic_title tpt_two">
                                 <div class="pic">
-                                    <img src="{{ asset('assets/frontend/images/t2.png') }}" alt="">
+                                    <img src="{{ asset('assets/frontend/images/t2.png') }}" alt="image">
                                 </div>
                                 <h4>James Simmons</h4>
                                 <small class="post">- Student</small>
@@ -407,7 +407,7 @@
                             </div>
                             <div class="testi_pic_title tpt_three">
                                 <div class="pic">
-                                    <img src="{{ asset('assets/frontend/images/t3.png') }}" alt="">
+                                    <img src="{{ asset('assets/frontend/images/t3.png') }}" alt="image">
                                 </div>
                                 <h4>Alex feroundo</h4>
                                 <small class="post">- Student</small>
@@ -424,7 +424,7 @@
                             </div>
                             <div class="testi_pic_title tpt_one">
                                 <div class="pic">
-                                    <img src="{{ asset('assets/frontend/images/t4.png') }}" alt="">
+                                    <img src="{{ asset('assets/frontend/images/t4.png') }}" alt="image">
                                 </div>
                                 <h4>Kallu Mastan</h4>
                                 <small class="post">- Student</small>
@@ -441,7 +441,7 @@
                             </div>
                             <div class="testi_pic_title tpt_two">
                                 <div class="pic">
-                                    <img src="{{ asset('assets/frontend/images/t1.png') }}" alt="">
+                                    <img src="{{ asset('assets/frontend/images/t1.png') }}" alt="image">
                                 </div>
                                 <h4>Devid max</h4>
                                 <small class="post">- Student</small>
