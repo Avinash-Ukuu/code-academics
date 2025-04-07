@@ -2,6 +2,20 @@
 @section('meta_title', $blog->title)
 @section('meta_description', $blog->description)
 @section('meta_keywords', $blog->meta_keywords)
+@section('headerLinks')
+    <style>
+        .blog-content a {
+            color: #007bff; /* Normal link color */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .blog-content a:hover {
+            color: #0056b3; /* Darker blue or any color visible on your background */
+            text-decoration: underline;
+        }
+    </style>
+@endsection
 @section('content')
     <!-- START SECTION TOP -->
     <section class="section-top">
@@ -31,7 +45,7 @@
                         <div class="arti_content ">
                             <p>{{ $blog->description }}</p>
                         </div>
-                        <div class="arti_sp">
+                        <div class="arti_sp blog-content">
                             {!! $blog->content !!}
                         </div>
                         <div class="share_sp">
