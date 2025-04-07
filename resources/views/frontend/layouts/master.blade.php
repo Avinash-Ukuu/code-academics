@@ -11,6 +11,7 @@
     <meta name="description" content="@yield('meta_description', 'Join Code Academics in Jalandhar City to master web development, programming, and software skills. Learn from expert instructors with hands-on training in Laravel, PHP, Python, React, and more. Start your coding journey today!')">
     <meta name="keywords" content="@yield('meta_keywords', 'Code Academics Jalandhar, coding institute Jalandhar, programming courses Jalandhar, web development training, Laravel course Jalandhar, PHP training, Python classes, React JS course, best IT institute in Jalandhar, software development training')">
     <meta name="author" content="code academics">
+    <meta name="robots" content="noindex, nofollow">
     <meta name="google-site-verification" content="sJl9KNsLmOUjr8KhFBNifQSa6tXtJi30PUJOtv8e1vM" />
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/frontend/favicon/favicon-16x16.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/frontend/favicon/favicon-32x32.png') }}">
