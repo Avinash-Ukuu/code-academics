@@ -76,7 +76,7 @@ class HomeController extends Controller
         $urls = [
             ['loc' => url('/'), 'lastmod' => Carbon::now()->toAtomString(), 'priority' => '1.0'],
             ['loc' => url('/courses'), 'lastmod' => Carbon::now()->toAtomString(), 'priority' => '0.9'],
-            ['loc' => url('/blog'), 'lastmod' => Carbon::now()->toAtomString(), 'priority' => '0.8'],
+            ['loc' => url('/blogs'), 'lastmod' => Carbon::now()->toAtomString(), 'priority' => '0.8'],
             ['loc' => url('/contact'), 'lastmod' => Carbon::now()->toAtomString(), 'priority' => '0.7'],
         ];
 
