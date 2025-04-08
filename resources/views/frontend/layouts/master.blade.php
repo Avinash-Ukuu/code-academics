@@ -189,7 +189,7 @@
                     <div class="foot_social">
                         <ul>
                             <li><a target="_blank" style="text-decoration: none;" href="#"><span class="ti-twitter"></span></a></li>
-                            <li><a target="_blank" style="text-decoration: none;" href="#"><span class="ti-facebook"></span></a></li>
+                            <li><a target="_blank" style="text-decoration: none;" href="https://www.facebook.com/profile.php?id=61571073072179"><span class="ti-facebook"></span></a></li>
                             <li><a target="_blank" style="text-decoration: none;" href="https://www.instagram.com/codeacademics/"><span class="ti-instagram"></span></a></li>
                         </ul>
                     </div>
