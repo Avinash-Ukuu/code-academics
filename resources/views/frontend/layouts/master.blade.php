@@ -9,7 +9,7 @@
     <!-- SITE TITLE -->
     <title>@yield('meta_title', 'Code Academics')</title>
     <meta name="description" content="@yield('meta_description', 'Join Code Academics in Jalandhar City to master web development, programming, and software skills. Learn from expert instructors with hands-on training in Laravel, PHP, Python, React, and more. Start your coding journey today!')">
-    <meta name="keywords" content="@yield('meta_keywords', 'Code Academics Jalandhar, coding institute Jalandhar, programming courses Jalandhar, web development training, Laravel course Jalandhar, PHP training, Python classes, React JS course, best IT institute in Jalandhar, software development training')">
+    <meta name="keywords" content="@yield('meta_keywords', 'Code Academics,Code Academics Jalandhar, coding institute Jalandhar, programming courses Jalandhar, web development training, Laravel course Jalandhar, PHP training, Python classes, React JS course, best IT institute in Jalandhar, software development training')">
     <meta name="author" content="code academics">
     <meta name="robots" content="noindex, nofollow">
     <meta name="google-site-verification" content="sJl9KNsLmOUjr8KhFBNifQSa6tXtJi30PUJOtv8e1vM" />
