@@ -470,7 +470,7 @@
                             <img src="{{ asset('uploads/blogs/'.$blog->image) }}" class="img-fluid" alt="image">
                             <div class="content_box">
                                 <span>{{$blog->blog_created_at}}</span>
-                                <h2><a href="{{ route('blogDetail',['slug'=>$blog->slug]) }}">{{$blog->title}}</a></h2>
+                                <h2><a href="{{ route('blogDetail',['slug'=>$blog->slug]) }}">{{\Illuminate\Support\Str::words($blog->title, 10, '...') }}</a></h2>
                                 <a href="{{ route('blogDetail',['slug'=>$blog->slug]) }}" class="cta"><span>READ MORE</span>
                                     <svg width="13px" height="10px" viewBox="0 0 13 10">
                                         <path d="M1,5 L11,5"></path>
@@ -490,7 +490,7 @@
                         <div class="single_blog">
                             <div class="content_box">
                                 <span>{{$blog->blog_created_at}}</span>
-                                <h2><a href="{{ route('blogDetail',['slug'=>$blog->slug]) }}">{{$blog->title}}</a></h2>
+                                <h2><a href="{{ route('blogDetail',['slug'=>$blog->slug]) }}">{{\Illuminate\Support\Str::words($blog->title, 10, '...') }}</a></h2>
                                 <a href="{{ route('blogDetail',['slug'=>$blog->slug]) }}" class="cta"><span>READ MORE</span>
                                     <svg width="13px" height="10px" viewBox="0 0 13 10">
                                         <path d="M1,5 L11,5"></path>
