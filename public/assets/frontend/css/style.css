@@ -891,7 +891,7 @@ position:relative;
 	margin-bottom: 20px;
 }
  @media only screen and (max-width:960px){
-.home_content h1 {font-size: 60px;line-height:70px;}
+.home_content h1 {font-size: 40px;}
  }
 .home_content h1 span{color:rgb(10, 104, 166);}
 .home_content p {
@@ -2689,6 +2689,7 @@ margin-right: 5px;
 }
 .single_blog img {
 	width: 100%;
+    aspect-ratio: 16 / 12;
 }
 .content_box{padding: 35px;}
 .single_blog h2 {
