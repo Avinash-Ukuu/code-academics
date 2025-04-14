@@ -37,7 +37,7 @@
     <!-- animate CSS -->
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/animate.css') }}">
     <!-- Style CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/newStyle.css') }}">
     <style>
         .modal-content {
             border-radius: 10px;
