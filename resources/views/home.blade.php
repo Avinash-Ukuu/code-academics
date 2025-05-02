@@ -22,7 +22,7 @@
                 </div><!-- END COL-->
                 <div class="col-lg-6 col-sm-6 col-xs-12">
                     <div class="home_me_img">
-                        <img src="{{ asset('assets/frontend/images/home-image.png') }}" class="img-fluid" alt="image">
+                        <img src="{{ asset('assets/frontend/images/home-image.png') }}" style="aspect-ratio: unset !important;" class="img-fluid" alt="image">
                         {{-- <div class="home_ps">
                             <img src="{{ asset('assets/frontend/images/user2.svg') }}" alt="">
                             <h2>5</h2>
