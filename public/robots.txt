@@ -1,2 +1,2 @@
 User-agent: *
-Disallow: /store-enquiry
+Allow: /store-enquiry
