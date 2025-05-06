@@ -77,7 +77,7 @@
                 <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s"
                     data-wow-offset="0">
                     <div class="ab_img">
-                        <img src="{{ asset('assets/frontend/images/about2.png') }}" class="img-fluid" alt="image">
+                        <img src="{{ asset('assets/frontend/images/about2.png') }}" style="aspect-ratio: unset !important;" class="img-fluid" alt="image">
                     </div>
                 </div><!--- END COL -->
                 <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"
@@ -400,7 +400,7 @@
                 </div><!-- END COL  -->
                 <div class="col-lg-6 col-sm-6 col-xs-12">
                     <div class="pt_faq">
-                        <img src="{{ asset('assets/frontend/images/faq.png')}}" class="img-fluid" alt="image">
+                        <img src="{{ asset('assets/frontend/images/faq.png')}}" style="aspect-ratio: unset !important;" class="img-fluid" alt="image">
                     </div>
                 </div><!-- END COL  -->
             </div><!--END  ROW  -->

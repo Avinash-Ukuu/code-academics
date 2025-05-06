@@ -99,7 +99,7 @@
                 <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s"
                     data-wow-offset="0">
                     <div class="ab_img">
-                        <img src="{{ asset('assets/frontend/images/about1.png') }}" class="img-fluid" alt="image">
+                        <img src="{{ asset('assets/frontend/images/about1.png') }}" style="aspect-ratio: unset !important;" class="img-fluid" alt="image">
                         <!-- <div class="wc_year">
                                 <h3><span>6k+</span> <br />Happy Clients</h3>
                             </div> -->
@@ -340,7 +340,7 @@
                 <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s"
                     data-wow-offset="0">
                     <div class="cp_img">
-                        <img src="{{ asset('assets/frontend/images/promo.png') }}" class="img-fluid" alt="image">
+                        <img src="{{ asset('assets/frontend/images/promo.png') }}" style="aspect-ratio: unset !important;" class="img-fluid" alt="image">
                         <!-- <div class="wc_year">
                                 <h3>20 Years of Experience <br />from 2002</h3>
                             </div> -->
