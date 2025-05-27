@@ -10,8 +10,8 @@ class Blog extends Model
 {
     use HasFactory;
 
-    public function getBlogCreatedAtAttribute()
+    public function getBlogCreatedAtAttribute($value)
     {
-        return Carbon::parse($this->created_at)->format('d-m-Y');
+        return Carbon::parse($value)->format('d-m-Y');
     }
 }
