@@ -13,6 +13,7 @@
     <meta name="author" content="code academics">
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="sJl9KNsLmOUjr8KhFBNifQSa6tXtJi30PUJOtv8e1vM" />
+    <link rel="canonical" href="@yield('canonical', url()->current())">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/frontend/favicon/favicon-16x16.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/frontend/favicon/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('assets/frontend/favicon/android-chrome-192x192.png') }}">
