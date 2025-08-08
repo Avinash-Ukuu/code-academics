@@ -109,6 +109,7 @@
                                 <li><a class="nav-link" href="{{ route('blogPage') }}">Blog</a></li>
                                 <li><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
                                 <li><a class="nav-link" href="{{ route('aboutUs') }}">About Us</a></li>
+                                <li><a class="nav-link" href="{{ route('verification') }}">Verification</a></li>
                             </ul>
                         </nav>
                         <div id="mobile_menu"></div>
@@ -212,6 +213,7 @@
                         <ul>
                             <li><a href="{{ route('aboutUs') }}">About us</a></li>
                             <li><a href="{{ route('contact') }}">Contact</a></li>
+                            <li><a href="{{ route('verification') }}">Verification</a></li>
                             <li><a href="{{ route('sitemap') }}">Sitemap</a></li>
                         </ul>
                     </div>

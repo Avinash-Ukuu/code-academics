@@ -39,11 +39,10 @@ class CourseController extends Controller
                     $sql = "users.name LIKE ?";
                     $query->whereRaw($sql, ["%{$keyword}%"]);
                 })
-                ->editColumn('is_active', function($data){
-                    if($data->is_active == 1)
-                    {
+                ->editColumn('is_active', function ($data) {
+                    if ($data->is_active == 1) {
                         return '<span class="badge badge-success"> Active </span>';
-                    }else{
+                    } else {
                         return '<span class="badge badge-danger"> In Active </span>';
                     }
                 })
@@ -63,7 +62,7 @@ class CourseController extends Controller
 
                     return $btn;
                 })
-                ->rawColumns(['added_by', 'is_active' ,'action'])
+                ->rawColumns(['added_by', 'is_active', 'action'])
                 ->make(true);
         }
 
@@ -93,6 +92,13 @@ class CourseController extends Controller
         $course->slug           =       Str::slug($request->name, '-');
         $course->added_by       =       auth()->user()->id;
         $course->is_active      =       isset($request->is_active) ? 1 : 0;
+
+        if ($request->has("image")) {
+            $imageName  = "course_" . Carbon::now()->timestamp . '.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path('uploads/courses/'), $imageName);
+            $course->image      =  $imageName;
+        }
+
         $course->save();
 
         foreach ($request->durations as $durationData) {
@@ -127,9 +133,8 @@ class CourseController extends Controller
     public function edit(string $id)
     {
         $data['object']         =       Course::with('durations')->find($id);
-        if(empty($data['object']))
-        {
-            Session::flash('error','Data not found');
+        if (empty($data['object'])) {
+            Session::flash('error', 'Data not found');
 
             return back();
         }
@@ -149,6 +154,18 @@ class CourseController extends Controller
         $course->slug           =       Str::slug($request->name, '-');
         $course->description    =       $request->description;
         $course->is_active      =       isset($request->is_active) ? 1 : 0;
+
+        if ($request->has("image")) {
+            if (file_exists("uploads/courses/" . $course->image)) {
+                File::delete("uploads/courses/" . $course->image);
+            }
+            // image upload code
+            $imageName  = "course_" . Carbon::now()->timestamp . '.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path('uploads/courses/'), $imageName);
+            $course->image   =  $imageName;
+        }
+
+
         $course->update();
 
         $existingDurationIds = $course->durations()->pluck('id')->toArray();
@@ -204,6 +221,10 @@ class CourseController extends Controller
             return back();
         }
         $course->durations()->delete();
+
+        if (file_exists("uploads/courses/" . $course->image)) {
+            File::delete("uploads/courses/" . $course->image);
+        }
         $data['message']        =   auth()->user()->name . " has deleted $course->name";
         $data['action']         =   "deleted";
         $data['module']         =   "course";

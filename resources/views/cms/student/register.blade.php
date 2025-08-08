@@ -287,7 +287,7 @@
                 $('#mrp').val(mrp);
                 $('#fix_price').val(fixPrice);
                 $('#fix_price').prop('disabled', false);
-                $('#fix_price').prop('readonly', true);
+                //$('#fix_price').prop('readonly', true);
             });
 
             $('input[name="payment_mode"]').change(function() {

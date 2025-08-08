@@ -1,6 +1,7 @@
 @extends('frontend.layouts.master')
 @section('meta_title', 'Explore Our Courses - Code Academics')
-@section('meta_description', 'Explore a variety of professional courses in web development, design, and more. Start learning today!')
+@section('meta_description', 'Explore a variety of professional courses in web development, design, and more. Start
+    learning today!')
 @section('content')
     <!-- START SECTION TOP -->
     <section class="section-top">
@@ -27,16 +28,19 @@
             </div>
             <div class="row">
 
-                @foreach($courses as $course)
+                @foreach ($courses as $course)
                     <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"
                         data-wow-offset="0">
                         <div class="course-slide">
                             <div class="course-img">
-                                <img src="{{ asset('assets/frontend/images/c1.png') }}" alt="course">
-
+                                @if ($course->image && file_exists('uploads/courses/' . $course->image))
+                                    <img src="{{ asset('uploads/courses/' . $course->image) }}" alt="course">
+                                @else
+                                    <img src="{{ asset('assets/frontend/images/c1.png') }}" alt="course">
+                                @endif
                             </div>
                             <div class="course-content">
-                                <h3><a class="open-enquiry-form" href="javascript:void(0)">{{$course->name}}</a></h3>
+                                <h3><a class="open-enquiry-form" href="javascript:void(0)">{{ $course->name }}</a></h3>
                             </div>
                         </div><!--END COURSE SLIDE -->
                     </div><!--END COL -->

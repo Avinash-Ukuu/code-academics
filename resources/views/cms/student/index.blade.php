@@ -33,6 +33,7 @@
                                 <th>Mobile</th>
                                 <th>Location</th>
                                 <th>Added By</th>
+                                <th>Certification Completed</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -87,6 +88,10 @@
                     {
                         data: 'added_by',
                         name: 'added_by'
+                    },
+                    {
+                        data: 'certification_completed',
+                        name: 'certification_completed'
                     },
                     {
                         data: 'action',

@@ -46,7 +46,22 @@
                 <div class="row">
                     <div class="form-group col-6">
                         {!! Form::label('description', 'Description') !!}<span style="color: red;"> *</span>
-                        {!! Form::textArea('description', null, ['class' => 'form-control description', 'placeholder' => 'Enter Description', 'required']) !!}
+                        {!! Form::textArea('description', null, [
+                            'class' => 'form-control description',
+                            'placeholder' => 'Enter Description',
+                            'required',
+                        ]) !!}
+                    </div>
+
+                    <div class="form-group" id="image">
+                        {{ Form::label('image', 'Image') }}
+                        {{ Form::file('image', ['class' => 'file', 'accept' => 'image/*']) }}
+                        <div class="image-preview">
+                            @if (!empty($object->image))
+                                <img style="background:thistle;max-height: 150px;"
+                                    src={{ asset('uploads/courses/' . $object->image) }} />
+                            @endif
+                        </div>
                     </div>
 
                 </div>

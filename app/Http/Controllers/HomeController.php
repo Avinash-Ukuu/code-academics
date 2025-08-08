@@ -71,6 +71,11 @@ class HomeController extends Controller
         return view('contact');
     }
 
+    public function verification()
+    {
+        return view('verification');
+    }
+
     public function sitemap()
     {
         $urls = [

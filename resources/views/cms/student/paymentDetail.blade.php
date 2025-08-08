@@ -131,6 +131,27 @@
                             </div>
                             {{ Form::close() }}
                         </div>
+
+                    @else
+                        {{ Form::open(['url' => route('updateStudentCertificateStatus'), 'method' => 'POST', 'onSubmit' => "document.getElementById('submit').disabled=true;",'id'=>'checkForm']) }}
+                            <input type="hidden" name="student_id" value="{{ $student->id }}">
+                            <div class="card-body">
+                                <div class="row" >
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="is_completed" name="is_completed" {{ $student->is_completed == 1 ? 'checked' : '' }}>
+                                        <label class="form-check-label" for="is_completed">Course Completed</label>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" id="checkSubmit" class="btn btn-success float-right"><i
+                                        class="far fa-credit-card"></i> Submit
+
+                                </button>
+                            </div>
+                        {{ Form::close() }}
                     @endif
 
                 </div>
@@ -179,6 +200,10 @@
         $(document).ready(function() {
             $('#form').on('submit', function() {
                 $('#submit').attr('disabled', 'disabled');
+            });
+
+            $('#checkForm').on('submit', function() {
+                $('#checkSubmit').attr('disabled', 'disabled');
             });
 
             const maxInstallment = parseInt($('#installment').data('max'));

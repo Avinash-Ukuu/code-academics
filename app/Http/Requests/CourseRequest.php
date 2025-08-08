@@ -25,6 +25,7 @@ class CourseRequest extends FormRequest
         if(request()->has('id')){$id=request()->id;}
         return [
             'name'                  => "required|string|max:255|unique:courses,name,$id,id|regex:/^[\p{L}\p{M}\p{N}\p{Pd}\p{Pc}\p{Zs}]+$/u",
+            'image'                 =>          $this->isMethod('post') ? 'required|mimes:jpeg,jpg,png' : 'nullable|mimes:jpeg,jpg,png',
             'description'           => "required|string",
             'durations'             => ['required', 'array', 'min:1'],
             'durations.*.duration'  => ['required', 'integer', 'min:1'],

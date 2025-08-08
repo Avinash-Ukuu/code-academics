@@ -293,7 +293,11 @@
                         data-wow-offset="0">
                         <div class="course-slide">
                             <div class="course-img">
-                                <img src="{{ asset('assets/frontend/images/c1.png') }}" alt="course">
+                                @if ($course->image && file_exists("uploads/courses/" . $course->image))
+                                    <img src="{{ asset('uploads/courses/'.$course->image) }}" alt="course">
+                                @else
+                                    <img src="{{ asset('assets/frontend/images/c1.png') }}" alt="course">
+                                @endif
 
                             </div>
                             <div class="course-content">

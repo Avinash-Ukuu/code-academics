@@ -56,6 +56,8 @@ Route::get('manage-student-installment',    [StudentController::class,'manageStu
 Route::get('monthly-collection',            [StudentController::class,'monthlyCollection'])->name('monthlyCollection');
 Route::get('export-monthly-collection',     [StudentController::class, 'exportMonthlyCollection'])->name('exportMonthlyCollection');
 Route::get('export-students-data',          [StudentController::class, 'exportStudentsData'])->name('exportStudentsData');
+Route::post('update-student-certificate-status', [StudentController::class, 'updateStudentCertificateStatus'])->name('updateStudentCertificateStatus');
+
 
 //Courses
 Route::resource('course',                   CourseController::class);

@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\cms\EnquiryController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\cms\EnquiryController;
+use App\Http\Controllers\cms\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,5 +26,7 @@ Route::get('/contact',          [HomeController::class,'contact'])->name('contac
 Route::post('store-enquiry',    [EnquiryController::class,'storeEnquiry'])->name('enquiryStore');
 Route::get('/thankyou',         [HomeController::class,'thankyou'])->name('thankyou');
 Route::get('/sitemap.xml',      [HomeController::class, 'sitemap'])->name('sitemap');
+Route::get('/verification',     [HomeController::class, 'verification'])->name('verification');
+Route::post('verify-student-certificate',[StudentController::class, 'verifyStudentCertificate'])->name('verifyStudentCertificate');
 
 require __DIR__.'/auth.php';

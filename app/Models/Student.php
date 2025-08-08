@@ -30,47 +30,60 @@ class Student extends Model
     protected function firstName(): Attribute
     {
         return Attribute::make(
-            get: fn ($value) => ucwords($value),
-            set: fn ($value) => strtolower($value),
+            get: fn($value) => ucwords($value),
+            set: fn($value) => strtolower($value),
         );
     }
 
     protected function lastName(): Attribute
     {
         return Attribute::make(
-            get: fn ($value) => ucwords($value),
-            set: fn ($value) => strtolower($value),
+            get: fn($value) => ucwords($value),
+            set: fn($value) => strtolower($value),
         );
     }
 
     protected function fatherName(): Attribute
     {
         return Attribute::make(
-            get: fn ($value) => ucwords($value),
-            set: fn ($value) => strtolower($value),
+            get: fn($value) => ucwords($value),
+            set: fn($value) => strtolower($value),
         );
     }
 
     public static function generateUniqueId()
     {
-        $latestStudent  = self::latest('id')->first();
-        $latestId       = $latestStudent ? intval(substr($latestStudent->unique_id, 2)) : 1000;
-        return 'CA-' . ($latestId + 1);
+        $yearSuffix = date('y');
+        $prefix = 'SBCA-' . $yearSuffix;
+
+        $latestStudent = self::where('unique_id', 'like', $prefix . '%')
+            ->latest('id')
+            ->first();
+
+        if ($latestStudent && preg_match('/^SBCA-' . $yearSuffix . '(\d{4})$/', $latestStudent->unique_id, $matches)) {
+            $latestNumber = (int) $matches[1];
+        } else {
+            $latestNumber = 0;
+        }
+
+        $newNumber = str_pad($latestNumber + 1, 4, '0', STR_PAD_LEFT);
+
+        return $prefix . $newNumber;
     }
 
-    public function course():HasOne
+    public function course(): HasOne
     {
         return $this->hasOne(Course::class);
     }
 
-    public function studentCourse():HasOne
+    public function studentCourse(): HasOne
     {
         return $this->hasOne(StudentCourse::class);
     }
 
-    public function addedBy():BelongsTo
+    public function addedBy(): BelongsTo
     {
-        return $this->belongsTo(User::class,'user_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function hasPendingInstallment(): bool
