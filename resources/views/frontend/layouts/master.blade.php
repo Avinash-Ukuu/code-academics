@@ -229,7 +229,7 @@
                         <div class="sf_contact">
                             <span class="ti-email"></span>
                             <h3>Email Address</h3>
-                            <p>codeacademicss@gmail.com</p>
+                            <p>support@codeacademics.in</p>
                         </div>
                         <div class="sf_contact">
                             <span class="ti-map"></span>

@@ -51,7 +51,7 @@
                     <div class="single_address">
                         <i class="ti-email"></i>
                         <h4>Send email</h4>
-                        <p><a href="mailto:codeacademicss@gmail.com" id="codeEmail">codeacademicss@gmail.com</a></p>
+                        <p><a href="mailto:support@codeacademics.in" id="codeEmail">support@codeacademics.in</a></p>
                     </div>
                 </div><!-- END COL -->
             </div><!--- END ROW -->

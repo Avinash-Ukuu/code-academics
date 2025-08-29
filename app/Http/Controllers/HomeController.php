@@ -83,6 +83,7 @@ class HomeController extends Controller
             ['loc' => url('/courses'), 'lastmod' => Carbon::now()->toAtomString(), 'priority' => '0.9'],
             ['loc' => url('/blogs'), 'lastmod' => Carbon::now()->toAtomString(), 'priority' => '0.8'],
             ['loc' => url('/contact'), 'lastmod' => Carbon::now()->toAtomString(), 'priority' => '0.7'],
+            ['loc' => url('/verification'), 'lastmod' => Carbon::now()->toAtomString(), 'priority' => '0.6'],
         ];
 
         // Get all blogs

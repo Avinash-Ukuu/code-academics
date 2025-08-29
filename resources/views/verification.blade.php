@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
-@section('meta_title', 'Get in Touch - Code Academics')
-@section('meta_description', 'Get in touch with us for inquiries, support, and collaboration. We’re here to help!')
+@section('meta_title', 'Verify Details - Code Academics')
+@section('meta_description', 'Verify the students details!')
 @section('headerLinks')
     <style>
         #codeEmail {
