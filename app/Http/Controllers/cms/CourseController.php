@@ -86,12 +86,14 @@ class CourseController extends Controller
      */
     public function store(CourseRequest $request)
     {
-        $course                 =       new Course();
-        $course->name           =       $request->name;
-        $course->description    =       $request->description;
-        $course->slug           =       Str::slug($request->name, '-');
-        $course->added_by       =       auth()->user()->id;
-        $course->is_active      =       isset($request->is_active) ? 1 : 0;
+        $course                     =       new Course();
+        $course->name               =       $request->name;
+        $course->description        =       $request->description;
+        $course->meta_description   =       $request->meta_description;
+        $course->meta_keywords      =       $request->meta_keywords;
+        $course->slug               =       Str::slug($request->name, '-');
+        $course->added_by           =       auth()->user()->id;
+        $course->is_active          =       isset($request->is_active) ? 1 : 0;
 
         if ($request->has("image")) {
             $imageName  = "course_" . Carbon::now()->timestamp . '.' . $request->file('image')->getClientOriginalExtension();
@@ -149,11 +151,13 @@ class CourseController extends Controller
      */
     public function update(CourseRequest $request, string $id)
     {
-        $course                 =       Course::find($id);
-        $course->name           =       $request->name;
-        $course->slug           =       Str::slug($request->name, '-');
-        $course->description    =       $request->description;
-        $course->is_active      =       isset($request->is_active) ? 1 : 0;
+        $course                     =       Course::find($id);
+        $course->name               =       $request->name;
+        $course->slug               =       Str::slug($request->name, '-');
+        $course->description        =       $request->description;
+        $course->meta_description   =       $request->meta_description;
+        $course->meta_keywords      =       $request->meta_keywords;
+        $course->is_active          =       isset($request->is_active) ? 1 : 0;
 
         if ($request->has("image")) {
             if (file_exists("uploads/courses/" . $course->image)) {

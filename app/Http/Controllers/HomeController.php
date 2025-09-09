@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\Blog;
 use App\Models\Course;
 use Illuminate\Http\Request;
+use App\Models\GalleryCategory;
 use Illuminate\Support\Facades\Response;
 
 class HomeController extends Controller
@@ -76,14 +77,31 @@ class HomeController extends Controller
         return view('verification');
     }
 
+    public function gallery()
+    {
+        $categories     =   GalleryCategory::with('galleries')->get();
+        $allGalleries   =   $categories->flatMap->galleries;
+
+        return view('gallery', compact('categories', 'allGalleries'));
+    }
+
+    public function courseDetail($slug)
+    {
+        $data['course']         =   Course::where('slug',$slug)->first();
+        abort_if(empty($data['course']), 404);
+        $data['otherCourses']   =   Course::where('is_active',1)->where('slug','<>',$slug)->get();
+        return view('courseDetail',$data);
+    }
+
     public function sitemap()
     {
         $urls = [
             ['loc' => url('/'), 'lastmod' => Carbon::now()->toAtomString(), 'priority' => '1.0'],
             ['loc' => url('/courses'), 'lastmod' => Carbon::now()->toAtomString(), 'priority' => '0.9'],
             ['loc' => url('/blogs'), 'lastmod' => Carbon::now()->toAtomString(), 'priority' => '0.8'],
-            ['loc' => url('/contact'), 'lastmod' => Carbon::now()->toAtomString(), 'priority' => '0.7'],
-            ['loc' => url('/verification'), 'lastmod' => Carbon::now()->toAtomString(), 'priority' => '0.6'],
+            ['loc' => url('/contact'), 'lastmod' => Carbon::now()->toAtomString(), 'priority' => '0.6'],
+            ['loc' => url('/gallery'), 'lastmod' => Carbon::now()->toAtomString(), 'priority' => '0.5'],
+            ['loc' => url('/verification'), 'lastmod' => Carbon::now()->toAtomString(), 'priority' => '0.4'],
         ];
 
         // Get all blogs
@@ -93,6 +111,15 @@ class HomeController extends Controller
                 'loc' => url('/blog/' . $blog->slug),
                 'lastmod' => $blog->updated_at->toAtomString(),
                 'priority' => '0.6'
+            ];
+        }
+
+        $courses = Course::where('is_active', 1)->latest()->get();
+        foreach ($courses as $course) {
+            $urls[] = [
+                'loc' => url('/course/in/jalandhar/' . $course->slug),
+                'lastmod' => $course->updated_at->toAtomString(),
+                'priority' => '0.7' 
             ];
         }
 

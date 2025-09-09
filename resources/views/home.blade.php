@@ -22,7 +22,8 @@
                 </div><!-- END COL-->
                 <div class="col-lg-6 col-sm-6 col-xs-12">
                     <div class="home_me_img">
-                        <img src="{{ asset('assets/frontend/images/home-image.png') }}" style="aspect-ratio: unset !important;" class="img-fluid" alt="image">
+                        <img src="{{ asset('assets/frontend/images/home-image.png') }}"
+                            style="aspect-ratio: unset !important;" class="img-fluid" alt="image">
                         {{-- <div class="home_ps">
                             <img src="{{ asset('assets/frontend/images/user2.svg') }}" alt="">
                             <h2>5</h2>
@@ -99,27 +100,35 @@
                 <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s"
                     data-wow-offset="0">
                     <div class="ab_img">
-                        <img src="{{ asset('assets/frontend/images/about1.png') }}" style="aspect-ratio: unset !important;" class="img-fluid" alt="image">
+                        {{-- <img src="{{ asset('assets/frontend/images/about.jpg') }}" style="aspect-ratio: unset !important;"
+                            class="img-fluid" alt="image"> --}}
+                        <img src="{{ asset('assets/frontend/images/avi-about.jpeg') }}"
+                            style="aspect-ratio: unset !important;" class="img-fluid" alt="image">
+                        {{-- <img src="{{ asset('assets/frontend/images/about1.png') }}" style="aspect-ratio: unset !important;"
+                            class="img-fluid" alt="image"> --}}
                         <!-- <div class="wc_year">
-                                <h3><span>6k+</span> <br />Happy Clients</h3>
-                            </div> -->
+                                                    <h3><span>6k+</span> <br />Happy Clients</h3>
+                                                </div> -->
                     </div>
                 </div><!--- END COL -->
                 <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"
                     data-wow-offset="0">
                     <div class="ab_content">
                         <h2>Master In-Demand <u><span> IT Skills </span></u> & Elevate Your Career</h2>
-                        <p>Stay ahead in the tech industry with hands-on training and expert-led courses designed for real-world applications.</p>
+                        <p>Stay ahead in the tech industry with hands-on training and expert-led courses designed for
+                            real-world applications.</p>
                     </div>
                     <div class="abmv">
                         <span class="ti-medall"></span>
                         <h4>Our Mission</h4>
-                        <p>Empowering learners with industry-relevant skills, practical knowledge, and professional certifications to build a successful IT career.</p>
+                        <p>Empowering learners with industry-relevant skills, practical knowledge, and professional
+                            certifications to build a successful IT career.</p>
                     </div>
                     <div class="abmv">
                         <span class="ti-wand"></span>
                         <h4>Our Vision</h4>
-                        <p>To bridge the gap between education and industry by providing top-tier IT training, fostering innovation, and preparing students for future tech advancements.</p>
+                        <p>To bridge the gap between education and industry by providing top-tier IT training, fostering
+                            innovation, and preparing students for future tech advancements.</p>
                     </div>
                     <a class="btn_one open-enquiry-form" href="javascript:void(0)">Enquire Now</a>
                 </div><!--- END COL -->
@@ -221,7 +230,8 @@
                             <span class="ti-book ss_one"></span>
                             <h2><a href="javascript:void(0)">Structured Offline Learning</a></h2>
                         </div>
-                        <p>Join our high-quality, in-person classes from 9 AM to 6 PM and experience focused, interactive learning in an offline environment.</p>
+                        <p>Join our high-quality, in-person classes from 9 AM to 6 PM and experience focused, interactive
+                            learning in an offline environment.</p>
                     </div>
                 </div><!-- END COL -->
                 <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s"
@@ -241,7 +251,8 @@
                             <span class="ti-user ss_three"></span>
                             <h2><a href="javascript:void(0)">Efficient Team<br> Management</a></h2>
                         </div>
-                        <p>Our dedicated team ensures a smooth learning experience with top-notch organization and support.</p>
+                        <p>Our dedicated team ensures a smooth learning experience with top-notch organization and support.
+                        </p>
                     </div>
                 </div><!-- END COL -->
                 <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s"
@@ -271,7 +282,8 @@
                             <span class="ti-email ss_six"></span>
                             <h2><a href="javascript:void(0)">Dedicated Support During Class Hours</a></h2>
                         </div>
-                        <p>Get assistance and guidance from our instructors during 9 AM to 6 PM to ensure a smooth learning experience.</p>
+                        <p>Get assistance and guidance from our instructors during 9 AM to 6 PM to ensure a smooth learning
+                            experience.</p>
                     </div>
                 </div><!-- END COL -->
             </div><!-- END ROW -->
@@ -287,21 +299,23 @@
                 <p>Choose Our <span><u>Top Courses</u></span></p>
             </div>
             <div class="row">
-                @foreach($courses as $course)
-                    @if($loop->iteration == 7) @break @endif
+                @foreach ($courses as $course)
+                    @if ($loop->iteration == 7)
+                        @break
+                    @endif
                     <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"
                         data-wow-offset="0">
                         <div class="course-slide">
                             <div class="course-img">
-                                @if ($course->image && file_exists("uploads/courses/" . $course->image))
-                                    <img src="{{ asset('uploads/courses/'.$course->image) }}" alt="course">
+                                @if ($course->image && file_exists('uploads/courses/' . $course->image))
+                                    <img src="{{ asset('uploads/courses/' . $course->image) }}" alt="course">
                                 @else
                                     <img src="{{ asset('assets/frontend/images/c1.png') }}" alt="course">
                                 @endif
 
                             </div>
                             <div class="course-content">
-                                <h3><a class="open-enquiry-form" href="javascript:void(0)">{{$course->name}}</a></h3>
+                                <h3><a href="{{ route('courseDetail',['slug'=>$course->slug]) }}">{{ $course->name }}</a></h3>
                             </div>
                         </div><!--END COURSE SLIDE -->
                     </div><!--END COL -->
@@ -325,7 +339,8 @@
                     <div class="cp_content">
                         <h4>Best Offline Learning Platform</h4>
                         <h2>One Platfrom & Many <span><u>Courses</u></span> For You</h2>
-                        <p>Enhance your skills with our expert-led offline courses, designed for both professionals and school students in a structured classroom environment.</p>
+                        <p>Enhance your skills with our expert-led offline courses, designed for both professionals and
+                            school students in a structured classroom environment.</p>
                         <ul>
                             <li><span class="ti-check"></span>9/10 Average Satisfaction Rate</li>
                             <li><span class="ti-check"></span>96% Completitation Rate</li>
@@ -344,10 +359,11 @@
                 <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s"
                     data-wow-offset="0">
                     <div class="cp_img">
-                        <img src="{{ asset('assets/frontend/images/promo.png') }}" style="aspect-ratio: unset !important;" class="img-fluid" alt="image">
+                        <img src="{{ asset('assets/frontend/images/promo.png') }}" style="aspect-ratio: unset !important;"
+                            class="img-fluid" alt="image">
                         <!-- <div class="wc_year">
-                                <h3>20 Years of Experience <br />from 2002</h3>
-                            </div> -->
+                                                    <h3>20 Years of Experience <br />from 2002</h3>
+                                                </div> -->
                     </div>
                 </div><!--- END COL -->
             </div><!--- END ROW -->
@@ -373,13 +389,15 @@
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
-                                <p>This platform has transformed the way I learn. The instructors are amazing, and the content is very engaging!</p>
+                                <p>I started with zero knowledge of design, but now I can create wireframes, prototypes, and
+                                    full UI systems — all thanks to Code Academics. Loved the mentorship and community here.
+                                    You don’t just learn design, you think like a designer</p>
                             </div>
                             <div class="testi_pic_title tpt_one">
                                 <div class="pic">
-                                    <img src="{{ asset('assets/frontend/images/t1.png') }}" alt="image">
+                                    <img src="{{ asset('assets/frontend/images/swati.jpeg') }}" alt="image">
                                 </div>
-                                <h4>James Clayton</h4>
+                                <h4>Swati Singh</h4>
                                 <small class="post">- Student</small>
                             </div>
                         </div><!-- END TESTIMONIAL -->
@@ -390,13 +408,16 @@
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
-                                <p>I highly recommend Web Development course! The lessons are well-structured, and the support from the team is fantastic.</p>
+                                <p>All Instructors are industry experienced , really the top top top and the best one I
+                                    would say in our city jalandhar.I learned front end development and ui/ux design and
+                                    recently I am placed in gurgaon and working there. Thank you to both Avinash sir and
+                                    Shobit sir for making me capable to earn the good amount</p>
                             </div>
                             <div class="testi_pic_title tpt_two">
                                 <div class="pic">
-                                    <img src="{{ asset('assets/frontend/images/t2.png') }}" alt="image">
+                                    <img src="{{ asset('assets/frontend/images/default.jpg') }}" alt="image">
                                 </div>
-                                <h4>James Simmons</h4>
+                                <h4>Sunil Aggarwal</h4>
                                 <small class="post">- Student</small>
                             </div>
                         </div><!-- END TESTIMONIAL -->
@@ -407,47 +428,55 @@
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
-                                <p>A great experience! The practical exercises helped me a lot in understanding real-world applications.</p>
+                                <p>I give 10/10 rating to this company because its work excellent. My experience with this
+                                    company is great , the work environment, infrastructure and staff members are very
+                                    cooperative . The program they teach in very manner way or skilled way even normal
+                                    person can easily understood. So please i personally recommend to join this company and
+                                    take admission and be a part of this company.</p>
+                            </div>
+                            <div class="testi_pic_title tpt_one">
+                                <div class="pic">
+                                    <img src="{{ asset('assets/frontend/images/default.jpg') }}" alt="image">
+                                </div>
+                                <h4>Ujjwal Jha</h4>
+                                <small class="post">- Student</small>
+                            </div>
+                        </div><!-- END TESTIMONIAL -->
+                        <div class="testimonial">
+                            <div class="testimonial_content">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <p>This is the best platform for learning all about coding for beginners and advanced
+                                    programmers. I found an interactive and user friendly environment.
+                                    On top of that you can find anything you want, from basic to advance. Also this the
+                                    recommended coding academy in Jalandar and experinced programmers are out there.</p>
+                            </div>
+                            <div class="testi_pic_title tpt_two">
+                                <div class="pic">
+                                    <img src="{{ asset('assets/frontend/images/default.jpg') }}" alt="image">
+                                </div>
+                                <h4>Srishti</h4>
+                                <small class="post">- Student</small>
+                            </div>
+                        </div><!-- END TESTIMONIAL -->
+                        <div class="testimonial">
+                            <div class="testimonial_content">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <p>If you want to learn laravel. Then code academics is the best place for you. Where you
+                                    can get the 100% placement after the completion of your course</p>
                             </div>
                             <div class="testi_pic_title tpt_three">
                                 <div class="pic">
-                                    <img src="{{ asset('assets/frontend/images/t3.png') }}" alt="image">
+                                    <img src="{{ asset('assets/frontend/images/default.jpg') }}" alt="image">
                                 </div>
-                                <h4>Alex feroundo</h4>
-                                <small class="post">- Student</small>
-                            </div>
-                        </div><!-- END TESTIMONIAL -->
-                        <div class="testimonial">
-                            <div class="testimonial_content">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <p>The course exceeded my expectations! The explanations were clear, and I felt supported throughout the learning process.</p>
-                            </div>
-                            <div class="testi_pic_title tpt_one">
-                                <div class="pic">
-                                    <img src="{{ asset('assets/frontend/images/t4.png') }}" alt="image">
-                                </div>
-                                <h4>Kallu Mastan</h4>
-                                <small class="post">- Student</small>
-                            </div>
-                        </div><!-- END TESTIMONIAL -->
-                        <div class="testimonial">
-                            <div class="testimonial_content">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <p>Absolutely worth it! The hands-on projects made learning so much more effective and enjoyable.</p>
-                            </div>
-                            <div class="testi_pic_title tpt_two">
-                                <div class="pic">
-                                    <img src="{{ asset('assets/frontend/images/t1.png') }}" alt="image">
-                                </div>
-                                <h4>Devid max</h4>
+                                <h4>Suman Sharma</h4>
                                 <small class="post">- Student</small>
                             </div>
                         </div><!-- END TESTIMONIAL -->
@@ -466,16 +495,21 @@
                 <p>Our Latest <span><u>Blogs</u></span></p>
             </div>
             <div class="row">
-                @foreach($blogs as $blog)
-                    @if($loop->iteration == 3) @break @endif
+                @foreach ($blogs as $blog)
+                    @if ($loop->iteration == 3)
+                        @break
+                    @endif
                     <div class="col-lg-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"
                         data-wow-offset="0">
                         <div class="single_blog">
-                            <img src="{{ asset('uploads/blogs/'.$blog->image) }}" class="img-fluid" alt="image">
+                            <img src="{{ asset('uploads/blogs/' . $blog->image) }}" class="img-fluid" alt="image">
                             <div class="content_box">
-                                <span>{{$blog->blog_created_at}}</span>
-                                <h2><a href="{{ route('blogDetail',['slug'=>$blog->slug]) }}">{{\Illuminate\Support\Str::words($blog->title, 10, '...') }}</a></h2>
-                                <a href="{{ route('blogDetail',['slug'=>$blog->slug]) }}" class="cta"><span>READ MORE</span>
+                                <span>{{ $blog->blog_created_at }}</span>
+                                <h2><a
+                                        href="{{ route('blogDetail', ['slug' => $blog->slug]) }}">{{ \Illuminate\Support\Str::words($blog->title, 10, '...') }}</a>
+                                </h2>
+                                <a href="{{ route('blogDetail', ['slug' => $blog->slug]) }}" class="cta"><span>READ
+                                        MORE</span>
                                     <svg width="13px" height="10px" viewBox="0 0 13 10">
                                         <path d="M1,5 L11,5"></path>
                                         <polyline points="8 1 12 5 8 9"></polyline>
@@ -484,18 +518,24 @@
                             </div>
                         </div>
                     </div><!-- END COL-->
-
                 @endforeach
                 <div class="col-lg-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"
                     data-wow-offset="0">
-                    @foreach($blogs as $blog)
-                        @if($loop->iteration <= 2) @continue @endif
-                        @if($loop->iteration == 5) @break @endif
+                    @foreach ($blogs as $blog)
+                        @if ($loop->iteration <= 2)
+                            @continue
+                        @endif
+                        @if ($loop->iteration == 5)
+                            @break
+                        @endif
                         <div class="single_blog">
                             <div class="content_box">
-                                <span>{{$blog->blog_created_at}}</span>
-                                <h2><a href="{{ route('blogDetail',['slug'=>$blog->slug]) }}">{{\Illuminate\Support\Str::words($blog->title, 10, '...') }}</a></h2>
-                                <a href="{{ route('blogDetail',['slug'=>$blog->slug]) }}" class="cta"><span>READ MORE</span>
+                                <span>{{ $blog->blog_created_at }}</span>
+                                <h2><a
+                                        href="{{ route('blogDetail', ['slug' => $blog->slug]) }}">{{ \Illuminate\Support\Str::words($blog->title, 10, '...') }}</a>
+                                </h2>
+                                <a href="{{ route('blogDetail', ['slug' => $blog->slug]) }}" class="cta"><span>READ
+                                        MORE</span>
                                     <svg width="13px" height="10px" viewBox="0 0 13 10">
                                         <path d="M1,5 L11,5"></path>
                                         <polyline points="8 1 12 5 8 9"></polyline>
@@ -509,6 +549,14 @@
         </div><!-- END CONTAINER  -->
     </section>
     <!-- END BLOG -->
+    <!-- Start Map -->
+    <div style="width: 100%; max-width: 100%; overflow: hidden; position: relative; padding-top: 43.25%;">
+        <iframe  title="Map of reaching Code Academics"
+            src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d109076.43892059589!2d75.50858480128626!3d31.313729190279737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x391a5b95f7ff43df%3A0x189190600fd09f58!2sFirst%20Floor%2C%20Badwal%20complex%2C%20SCO%20-%20207%2C%20Near%20Narinder%20Cinema%2C%20Jawahar%20Nagar%2C%20Jalandhar%2C%20Punjab%20144001!3m2!1d31.3137555!2d75.5909861!5e0!3m2!1sen!2sin!4v1757049818988!5m2!1sen!2sin"
+            width="600" height="450" style="border:0; position: absolute; top:0; left:0; width:100%; height:100%;"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <!-- End map -->
 
     <!-- START FOOTER -->
 @endsection

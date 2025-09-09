@@ -34,13 +34,13 @@
                         <div class="course-slide">
                             <div class="course-img">
                                 @if ($course->image && file_exists('uploads/courses/' . $course->image))
-                                    <img src="{{ asset('uploads/courses/' . $course->image) }}" alt="course">
+                                    <img src="{{ asset('uploads/courses/' . $course->image) }}" alt="{{$course->name}}">
                                 @else
                                     <img src="{{ asset('assets/frontend/images/c1.png') }}" alt="course">
                                 @endif
                             </div>
                             <div class="course-content">
-                                <h3><a class="open-enquiry-form" href="javascript:void(0)">{{ $course->name }}</a></h3>
+                                <h3><a  href="{{ route('courseDetail',['slug'=>$course->slug]) }}">{{ $course->name }}</a></h3>
                             </div>
                         </div><!--END COURSE SLIDE -->
                     </div><!--END COL -->

@@ -149,6 +149,29 @@
                     </ul>
                 </li>
 
+                <li class="nav-item @if (in_array(Route::currentRouteName(), ['gallery-category.index','gallery.index'])) menu-open @endif">
+                    <a href="#" class="nav-link  @if (in_array(Route::currentRouteName(), ['gallery-category.index','gallery.index'])) active @endif">
+                        <i class="nav-icon fas fa-images"></i>
+                        <p> Gallery Management <i class="right fas fa-angle-left"></i></p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('gallery-category.index') }}"
+                                class="nav-link @if (Route::currentRouteName() == 'gallery-category.index') active @endif">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Gallery Category</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('gallery.index') }}"
+                                class="nav-link @if (Route::currentRouteName() == 'gallery.index') active @endif">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Gallery</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li class="nav-item">
                     <a href="{{ route('monthlyCollection') }}"
                         class="nav-link @if (Route::currentRouteName() == 'monthlyCollection') active @endif">

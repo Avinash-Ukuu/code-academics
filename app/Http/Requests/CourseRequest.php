@@ -27,6 +27,8 @@ class CourseRequest extends FormRequest
             'name'                  => "required|string|max:255|unique:courses,name,$id,id|regex:/^[\p{L}\p{M}\p{N}\p{Pd}\p{Pc}\p{Zs}]+$/u",
             'image'                 =>          $this->isMethod('post') ? 'required|mimes:jpeg,jpg,png' : 'nullable|mimes:jpeg,jpg,png',
             'description'           => "required|string",
+            'meta_keywords'         => "required|string",
+            'meta_description'      => "required|string",
             'durations'             => ['required', 'array', 'min:1'],
             'durations.*.duration'  => ['required', 'integer', 'min:1'],
             'durations.*.mrp'       => ['required', 'numeric', 'min:0'],

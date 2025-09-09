@@ -9,15 +9,19 @@
     <!-- SITE TITLE -->
     <title>@yield('meta_title', 'Code Academics')</title>
     <meta name="description" content="@yield('meta_description', 'Join Code Academics in Jalandhar City to master web development, programming, and software skills. Learn from expert instructors with hands-on training in Laravel, PHP, Python, React, and more. Start your coding journey today!')">
-    <meta name="keywords" content="@yield('meta_keywords', 'Code Academics,Code Academics Jalandhar, coding institute Jalandhar, programming courses Jalandhar, web development training, Laravel course Jalandhar, PHP training, Python classes, React JS course, best IT institute in Jalandhar, software development training')">
+    <meta name="keywords" content="@yield('meta_keywords', 'Code Academics,Code Academics Jalandhar, Best coding institute in Jalandhar, Programming courses in Jalandhar, Software training institute Jalandhar, IT training institute in Jalandhar, Computer classes in Jalandhar Punjab, Web development institute in Jalandhar, Video editing training in Jalandhar, Python classes in Jalandhar, best programming courses in Jalandhar, Full stack development course Jalandhar, Digital marketing institute in Jalandhar, Best IT coaching center Jalandhar, Advanced programming courses in Jalandhar, Professional coding academy Jalandhar,coding institute Jalandhar, programming courses Jalandhar, web development training, Laravel course Jalandhar, PHP training, Python classes, React JS course, best IT institute in Jalandhar, software development training')">
     <meta name="author" content="code academics">
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="sJl9KNsLmOUjr8KhFBNifQSa6tXtJi30PUJOtv8e1vM" />
     <link rel="canonical" href="@yield('canonical', url()->current())">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/frontend/favicon/favicon-16x16.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/frontend/favicon/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('assets/frontend/favicon/android-chrome-192x192.png') }}">
-    <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('assets/frontend/favicon/android-chrome-512x512.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="{{ asset('assets/frontend/favicon/favicon-16x16.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="{{ asset('assets/frontend/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="{{ asset('assets/frontend/favicon/android-chrome-192x192.png') }}">
+    <link rel="icon" type="image/png" sizes="512x512"
+        href="{{ asset('assets/frontend/favicon/android-chrome-512x512.png') }}">
     <link rel="apple-touch-icon" href="{{ asset('assets/frontend/favicon/apple-touch-icon.png') }}">
     <link rel="manifest" href="{{ asset('assets/frontend/favicon/site.webmanifest') }}">
     <!-- Latest Bootstrap min CSS -->
@@ -47,7 +51,6 @@
 
         .modal-header {
             background-color: #0a68a6 !important;
-            /* Dark Blue from your website */
         }
 
         .modal-header h5 {
@@ -108,6 +111,7 @@
                                 <li><a class="nav-link" href="{{ route('coursePage') }}">Courses</a></li>
                                 <li><a class="nav-link" href="{{ route('blogPage') }}">Blog</a></li>
                                 <li><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
+                                <li><a class="nav-link" href="{{ route('gallery') }}">Gallery</a></li>
                                 <li><a class="nav-link" href="{{ route('aboutUs') }}">About Us</a></li>
                                 <li><a class="nav-link" href="{{ route('verification') }}">Verification</a></li>
                             </ul>
@@ -183,16 +187,21 @@
             <div class="row">
                 <div class="col-lg-3 col-sm-6 col-xs-12">
                     <div class="single_footer">
-                        <a href="{{ route('home') }}"><img src="{{ asset('assets/frontend/images/footerlogo.png') }}"
-                                alt=""></a>
-                        <p>📚 Unlocking Knowledge, Empowering. <br>
+                        <a href="{{ route('home') }}"><img
+                                src="{{ asset('assets/frontend/images/footerlogo.png') }}" alt=""></a>
+                        <p>Unlocking Knowledge, Empowering. <br>
                             "Shaping the future of education through innovation and expertise."</p>
                     </div>
                     <div class="foot_social">
                         <ul>
-                            <li><a target="_blank" style="text-decoration: none;" href="#"><span class="ti-twitter"></span></a></li>
-                            <li><a target="_blank" style="text-decoration: none;" href="https://www.facebook.com/people/Code-Academics/61574966825969/"><span class="ti-facebook"></span></a></li>
-                            <li><a target="_blank" style="text-decoration: none;" href="https://www.instagram.com/codeacademics/"><span class="ti-instagram"></span></a></li>
+                            <li><a target="_blank" style="text-decoration: none;" href="#"><span
+                                        class="ti-twitter"></span></a></li>
+                            <li><a target="_blank" style="text-decoration: none;"
+                                    href="https://www.facebook.com/people/Code-Academics/61574966825969/"><span
+                                        class="ti-facebook"></span></a></li>
+                            <li><a target="_blank" style="text-decoration: none;"
+                                    href="https://www.instagram.com/codeacademics/"><span
+                                        class="ti-instagram"></span></a></li>
                         </ul>
                     </div>
                 </div><!--- END COL -->
@@ -201,8 +210,8 @@
                         <h4>Courses</h4>
                         <ul>
                             @foreach ($courses as $course)
-                                <li><a class="open-enquiry-form"
-                                        href="javascript:void(0)">{{ ucfirst($course->name) }}</a></li>
+                                <li><a
+                                        href="{{ route('courseDetail',['slug'=>$course->slug]) }}">{{ ucfirst($course->name) }}</a></li>
                             @endforeach
                         </ul>
                     </div>
@@ -213,6 +222,7 @@
                         <ul>
                             <li><a href="{{ route('aboutUs') }}">About us</a></li>
                             <li><a href="{{ route('contact') }}">Contact</a></li>
+                            <li><a href="{{ route('gallery') }}">Gallery</a></li>
                             <li><a href="{{ route('verification') }}">Verification</a></li>
                             <li><a href="{{ route('sitemap') }}">Sitemap</a></li>
                         </ul>
@@ -232,7 +242,7 @@
                             <p>support@codeacademics.in</p>
                         </div>
                         <div class="sf_contact">
-                            <span class="ti-map"></span>
+                            <span class="ti-map-alt"></span>
                             <h3>Office Address</h3>
                             <p> SCO - 207, First Floor Badwal Complex, Near Narinder Cinema, Jalandhar City.</p>
                         </div>

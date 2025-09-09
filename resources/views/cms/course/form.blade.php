@@ -31,16 +31,29 @@
                 </div>
 
                 <div class="row">
-                    <div class="form-group col-6">
+                    <div class="form-group col-4">
                         {{ Form::label('name', 'Name', []) }}<span style="color: red;"> *</span>
                         {{ Form::text('name', null, ['class' => 'form-control name', 'placeholder' => 'Enter Name', 'required']) }}
                     </div>
 
-                    <div class="form-check col-6">
-                        <input id="is_active" class="form-check-input" type="checkbox" name="is_active" value="1"
-                            @if ($object->is_active == 1) checked @endif>
-                        <label for="is_active" class="form-check-label">Is Active</label>
+                    <div class="form-group col-4">
+                        {!! Form::label('meta_keywords', 'Meta Keywords') !!}<span style="color: red;"> *</span>
+                        {!! Form::textArea('meta_keywords', null, [
+                            'class' => 'form-control',
+                            'placeholder' => 'Enter Meta Keywords',
+                            'required'
+                        ]) !!}
                     </div>
+
+                    <div class="form-group col-4">
+                        {!! Form::label('meta_description', 'Description') !!}<span style="color: red;"> *</span>
+                        {!! Form::textArea('meta_description', null, [
+                            'class' => 'form-control',
+                            'placeholder' => 'Enter Meta Description',
+                            'required'
+                        ]) !!}
+                    </div>
+
                 </div>
 
                 <div class="row">
@@ -49,11 +62,11 @@
                         {!! Form::textArea('description', null, [
                             'class' => 'form-control description',
                             'placeholder' => 'Enter Description',
-                            'required',
+                            'required',"id"=>"summernote"
                         ]) !!}
                     </div>
 
-                    <div class="form-group" id="image">
+                    <div class="form-group col-3" id="image">
                         {{ Form::label('image', 'Image') }}
                         {{ Form::file('image', ['class' => 'file', 'accept' => 'image/*']) }}
                         <div class="image-preview">
@@ -62,6 +75,12 @@
                                     src={{ asset('uploads/courses/' . $object->image) }} />
                             @endif
                         </div>
+                    </div>
+
+                    <div class="form-check col-3">
+                        <input id="is_active" class="form-check-input" type="checkbox" name="is_active" value="1"
+                            @if ($object->is_active == 1) checked @endif>
+                        <label for="is_active" class="form-check-label">Is Active</label>
                     </div>
 
                 </div>

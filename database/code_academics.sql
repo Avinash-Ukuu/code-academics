@@ -82,7 +82,7 @@ CREATE TABLE `course_durations` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `course_durations` */
 
@@ -98,7 +98,7 @@ insert  into `course_durations`(`id`,`course_id`,`duration`,`mrp`,`fix_price`,`c
 (45,7,'3',45000.00,40000.00,'2025-03-31 06:39:28','2025-03-31 06:39:28'),
 (47,11,'45',5000.00,4999.00,'2025-08-07 07:23:26','2025-08-07 07:23:26'),
 (51,6,'3',45000.00,40000.00,'2025-08-08 06:11:41','2025-08-08 06:11:41'),
-(52,10,'3',35000.00,30000.00,'2025-08-08 06:12:45','2025-08-08 06:12:45');
+(53,10,'3',35000.00,30000.00,'2025-09-09 03:47:28','2025-09-09 03:47:28');
 
 /*Table structure for table `courses` */
 
@@ -109,9 +109,11 @@ CREATE TABLE `courses` (
   `name` varchar(255) DEFAULT NULL,
   `slug` varchar(255) DEFAULT NULL,
   `added_by` int(11) DEFAULT NULL,
-  `description` text DEFAULT NULL,
+  `description` longtext DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
   `is_active` tinyint(1) DEFAULT NULL,
+  `meta_keywords` text DEFAULT NULL,
+  `meta_description` text DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -119,16 +121,16 @@ CREATE TABLE `courses` (
 
 /*Data for the table `courses` */
 
-insert  into `courses`(`id`,`name`,`slug`,`added_by`,`description`,`image`,`is_active`,`created_at`,`updated_at`) values 
-(3,'web development','web-development',1,'Building robust and scalable websites tailored to your needs using the latest technologies to ensure seamless performance and functionality.',NULL,1,'2025-03-31 12:08:40','2025-03-31 06:38:40'),
-(4,'web design','web-design',1,'Crafting visually stunning and user-friendly designs that captivate and engage your audience. We transform ideas into impactful web experiences.',NULL,1,'2025-03-31 12:08:52','2025-03-31 06:38:52'),
-(5,'ui and ux design','ui-and-ux-design',1,'Designing intuitive and innovative user experiences that enhance customer satisfaction and drive engagement across all digital platforms.',NULL,1,'2025-03-31 12:08:32','2025-03-31 06:38:32'),
-(6,'video editing','video-editing',1,'Ensuring your digital presence is safe with advanced web security solutions that protect your data and maintain trust.','course_1754633501.png',1,'2025-08-08 11:41:41','2025-08-08 06:11:41'),
-(7,'digital marketing','digital-marketing',1,'Boosting your online visibility and helping you reach your target audience with tailored strategies in SEO, social media, and more.',NULL,1,'2025-03-31 12:09:28','2025-03-31 06:39:28'),
-(8,'graphic designing','graphic-designing',1,'Developing efficient and scalable software solutions with expert coding practices to meet your unique business requirements.',NULL,1,'2025-03-31 12:09:12','2025-03-31 06:39:12'),
-(9,'mobile app development','mobile-app-development',1,'Empowering your business with intuitive and high-performing mobile applications for Android and iOS.',NULL,1,'2025-03-31 06:37:00','2025-03-31 06:37:00'),
-(10,'basic computer','basic-computer',1,'Empowering businesses to sell online with customized, scalable, and user-friendly e-commerce platforms. From design to deployment, we deliver seamless shopping experiences that drive conversions.','course_1754633565.png',1,'2025-08-08 11:42:45','2025-08-08 06:12:45'),
-(11,'45 days training','45-days-training',1,'45 days training','course_1754551406.png',1,'2025-08-07 07:23:26','2025-08-07 07:23:26');
+insert  into `courses`(`id`,`name`,`slug`,`added_by`,`description`,`image`,`is_active`,`meta_keywords`,`meta_description`,`created_at`,`updated_at`) values 
+(3,'web development','web-development',1,'Building robust and scalable websites tailored to your needs using the latest technologies to ensure seamless performance and functionality.',NULL,1,NULL,NULL,'2025-03-31 12:08:40','2025-03-31 06:38:40'),
+(4,'web design','web-design',1,'Crafting visually stunning and user-friendly designs that captivate and engage your audience. We transform ideas into impactful web experiences.',NULL,1,NULL,NULL,'2025-03-31 12:08:52','2025-03-31 06:38:52'),
+(5,'ui and ux design','ui-and-ux-design',1,'Designing intuitive and innovative user experiences that enhance customer satisfaction and drive engagement across all digital platforms.',NULL,1,NULL,NULL,'2025-03-31 12:08:32','2025-03-31 06:38:32'),
+(6,'video editing','video-editing',1,'Ensuring your digital presence is safe with advanced web security solutions that protect your data and maintain trust.','course_1754633501.png',1,NULL,NULL,'2025-08-08 11:41:41','2025-08-08 06:11:41'),
+(7,'digital marketing','digital-marketing',1,'Boosting your online visibility and helping you reach your target audience with tailored strategies in SEO, social media, and more.',NULL,1,NULL,NULL,'2025-03-31 12:09:28','2025-03-31 06:39:28'),
+(8,'graphic designing','graphic-designing',1,'Developing efficient and scalable software solutions with expert coding practices to meet your unique business requirements.',NULL,1,NULL,NULL,'2025-03-31 12:09:12','2025-03-31 06:39:12'),
+(9,'mobile app development','mobile-app-development',1,'Empowering your business with intuitive and high-performing mobile applications for Android and iOS.',NULL,1,NULL,NULL,'2025-03-31 06:37:00','2025-03-31 06:37:00'),
+(10,'basic computer','basic-computer',1,'Empowering businesses to sell online with customized, scalable, and user-friendly e-commerce platforms. From design to deployment, we deliver seamless shopping experiences that drive conversions.','course_1754633565.png',1,'basic computer in jalandhar, best IT institute in jalandhar','we provide basic to advance computer','2025-09-09 09:17:28','2025-09-09 03:47:28'),
+(11,'45 days training','45-days-training',1,'45 days training','course_1754551406.png',1,NULL,NULL,'2025-08-07 07:23:26','2025-08-07 07:23:26');
 
 /*Table structure for table `enquiries` */
 
@@ -172,6 +174,49 @@ CREATE TABLE `failed_jobs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `failed_jobs` */
+
+/*Table structure for table `galleries` */
+
+DROP TABLE IF EXISTS `galleries`;
+
+CREATE TABLE `galleries` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `gallery_category_id` int(11) NOT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `url` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `galleries` */
+
+insert  into `galleries`(`id`,`gallery_category_id`,`title`,`url`,`created_at`,`updated_at`) values 
+(17,5,'certificate','gallery_1757321085-1.png','2025-09-08 08:44:45','2025-09-08 08:44:45'),
+(18,5,'certificate','gallery_1757321085-2.png','2025-09-08 08:44:45','2025-09-08 08:44:45'),
+(19,5,'certificate','gallery_1757325732.png','2025-09-08 15:32:12','2025-09-08 10:02:12'),
+(20,5,'certificate','gallery_1757321085-4.png','2025-09-08 08:44:45','2025-09-08 08:44:45'),
+(21,6,'piyush review','gallery_1757321107-1.mp4','2025-09-08 08:45:07','2025-09-08 08:45:07');
+
+/*Table structure for table `gallery_categories` */
+
+DROP TABLE IF EXISTS `gallery_categories`;
+
+CREATE TABLE `gallery_categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `gallery_categories` */
+
+insert  into `gallery_categories`(`id`,`name`,`slug`,`description`,`created_at`,`updated_at`) values 
+(5,'certificate','certificate',NULL,'2025-09-08 07:02:39','2025-09-08 07:02:39'),
+(6,'students review','students-review',NULL,'2025-09-08 14:14:23','2025-09-08 08:44:23');
 
 /*Table structure for table `migrations` */
 

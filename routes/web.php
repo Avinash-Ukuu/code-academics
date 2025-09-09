@@ -28,5 +28,7 @@ Route::get('/thankyou',         [HomeController::class,'thankyou'])->name('thank
 Route::get('/sitemap.xml',      [HomeController::class, 'sitemap'])->name('sitemap');
 Route::get('/verification',     [HomeController::class, 'verification'])->name('verification');
 Route::post('verify-student-certificate',[StudentController::class, 'verifyStudentCertificate'])->name('verifyStudentCertificate');
+Route::get('/gallery',          [HomeController::class,'gallery'])->name('gallery');
+Route::get('/course/in/jalandhar/{slug}',   [HomeController::class,'courseDetail'])->name('courseDetail');
 
 require __DIR__.'/auth.php';

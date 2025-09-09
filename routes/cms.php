@@ -13,6 +13,8 @@ use App\Http\Controllers\cms\DashboardController;
 use App\Http\Controllers\cms\ActivityLogsController;
 use App\Http\Controllers\cms\BlogController;
 use App\Http\Controllers\cms\EnquiryController;
+use App\Http\Controllers\cms\GalleryCategoryController;
+use App\Http\Controllers\cms\GalleryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,6 +69,12 @@ Route::resource('enquiry',                  EnquiryController::class);
 
 //Blog
 Route::resource('blog',                     BlogController::class);
+
+//Gallery Category
+Route::resource('gallery-category',         GalleryCategoryController::class);
+
+//Gallery
+Route::resource('gallery',                  GalleryController::class);
 
 //Ajax Routes
 Route::get('get-course-details/{id}',       [CommonController::class, 'getCourse'])->name('getCourse');
