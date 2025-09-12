@@ -78,10 +78,20 @@
                     <div class="form-group" id="preview"></div>
 
                     @if (!empty($object->url) && file_exists("uploads/gallery/" . $object->url))
+                        @php
+                            $extension = pathinfo($object->url, PATHINFO_EXTENSION);
+                        @endphp
                         <div class="image-preview mt-2  ml-2">
-                            {{ Form::label('image', 'Uploaded Image',['class'=>'mr-2']) }}
+                            {{ Form::label('image', 'Uploaded Media',['class'=>'mr-2']) }}
+                            @if (in_array(strtolower($extension), ['jpg', 'jpeg', 'png', 'gif']))
                                 <img style="background:thistle;max-height: 150px;"
-                                    src={{ asset('uploads/gallery/' . $object->url) }} />
+                                        src={{ asset('uploads/gallery/' . $object->url) }} />
+                            @else
+                                <video style="background:thistle;max-height: 150px;" class="card-img-top img-fluid" controls>
+                                    <source src="{{ asset('uploads/gallery/' . $object->url) }}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            @endif
                         </div>
                     @endif
 

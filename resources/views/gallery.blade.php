@@ -53,13 +53,6 @@
                                     <source src="{{ asset('uploads/gallery/' . $gallery->url) }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
-
-                                <!-- OR If you store YouTube/Vimeo links -->
-                                {{--
-                    <div class="ratio ratio-16x9">
-                        <iframe src="{{ $gallery->video_url }}" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    --}}
                             @endif
                         </div>
                     </div>

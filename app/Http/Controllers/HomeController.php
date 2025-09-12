@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\Blog;
 use App\Models\Course;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 use App\Models\GalleryCategory;
 use Illuminate\Support\Facades\Response;
@@ -15,6 +16,7 @@ class HomeController extends Controller
     {
         $data['courses']        =       Course::where('is_active',1)->get();
         $data['blogs']          =       Blog::where('publish_type','publish')->take(5)->orderBy('blog_created_at','desc')->get();
+        $data['gallery']        =       Gallery::take(5)->get();
 
         return view('home',$data);
     }
@@ -119,7 +121,7 @@ class HomeController extends Controller
             $urls[] = [
                 'loc' => url('/course/in/jalandhar/' . $course->slug),
                 'lastmod' => $course->updated_at->toAtomString(),
-                'priority' => '0.7' 
+                'priority' => '0.7'
             ];
         }
 

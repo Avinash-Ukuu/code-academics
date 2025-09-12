@@ -120,16 +120,6 @@
                     </div>
                 </div><!--- END Col -->
                 <div class="col-lg-4 col-md-3 col-sm-8">
-                    {{-- <div class="home_lc">
-						<a href="#" class="hlc">
-						  <i class="ti-heart"></i>
-						  <span class="gactive">0</span>
-					   </a>
-						<a href="#" class="hlc">
-						  <i class="ti-shopping-cart-full"></i>
-						  <span class="gactive">2</span>
-					   </a>
-					</div> --}}
                     <div class="call_to_action">
                         <a class="btn_one open-enquiry-form" href="javascript:void(0)">Enquire Now</a>
                         <a class="btn_two" href="tel:+919592 258 369">+91 9592 258 369</a>
