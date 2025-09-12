@@ -40,7 +40,7 @@
                 <div class="col-lg-7 col-sm-12 col-xs-12">
                     <div class="arti_single">
                         <div class="arti_img_two">
-                            <img src="{{ asset('uploads/blogs/' . $blog->image) }}" class="img-fluid" alt="Blog image">
+                            <img src="{{ asset('uploads/blogs/' . $blog->image) }}" class="img-fluid" alt="{{ Str::limit($blog->title, 60) }}">
                         </div>
                         <div class="arti_content ">
                             <p>{{ $blog->description }}</p>
@@ -67,7 +67,7 @@
                         </div>
                         @foreach($otherBlogs as $otherBlog)
                             <div class="single_popular">
-                                <a href="{{ route('blogDetail',['slug'=>$otherBlog->slug]) }}"><img src="{{ asset('uploads/blogs/' . $otherBlog->image) }}" alt="blogImage"></a>
+                                <a href="{{ route('blogDetail',['slug'=>$otherBlog->slug]) }}"><img src="{{ asset('uploads/blogs/' . $otherBlog->image) }}" alt="{{ Str::limit($otherBlog->title, 60) }}"></a>
                                 <h5><a href="{{ route('blogDetail',['slug'=>$otherBlog->slug]) }}">{{ $otherBlog->title }}</a></h5>
                             </div><!-- END SINGLE POPULAR POST -->
                         @endforeach
@@ -79,7 +79,13 @@
                         </div>
                         @foreach($courses as $course)
                             <div class="single_popular">
-                                <a href="{{ route('coursePage') }}"><img src="{{ asset('assets/frontend/images/c1.png') }}" alt="courseImage"></a>
+                                <a href="{{ route('coursePage') }}">
+                                    @if ($course->image && file_exists('uploads/courses/' . $course->image))
+                                        <img src="{{ asset('uploads/courses/' . $course->image) }}" class="img-fluid" alt="{{ $course->name }} course in Jalandhar">
+                                    @else
+                                        <img src="{{ asset('assets/frontend/images/c1.png') }}" alt="{{ $course->name }} course in Jalandhar">
+                                    @endif
+                                </a>
                                 <h5><a href="{{ route('coursePage') }}">{{ $course->name }}</a></h5>
                             </div><!-- END SINGLE POPULAR POST -->
                         @endforeach

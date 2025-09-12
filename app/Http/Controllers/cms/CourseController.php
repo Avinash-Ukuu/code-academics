@@ -96,7 +96,7 @@ class CourseController extends Controller
         $course->is_active          =       isset($request->is_active) ? 1 : 0;
 
         if ($request->has("image")) {
-            $imageName  = "course_" . Carbon::now()->timestamp . '.' . $request->file('image')->getClientOriginalExtension();
+            $imageName  = $course->slug . '-course-in-jalandhar.' . $request->file('image')->getClientOriginalExtension();
             $request->file('image')->move(public_path('uploads/courses/'), $imageName);
             $course->image      =  $imageName;
         }
@@ -164,7 +164,7 @@ class CourseController extends Controller
                 File::delete("uploads/courses/" . $course->image);
             }
             // image upload code
-            $imageName  = "course_" . Carbon::now()->timestamp . '.' . $request->file('image')->getClientOriginalExtension();
+            $imageName  = $course->slug . '-course-in-jalandhar.' . $request->file('image')->getClientOriginalExtension();
             $request->file('image')->move(public_path('uploads/courses/'), $imageName);
             $course->image   =  $imageName;
         }

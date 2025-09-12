@@ -308,9 +308,9 @@
                         <div class="course-slide">
                             <div class="course-img">
                                 @if ($course->image && file_exists('uploads/courses/' . $course->image))
-                                    <img src="{{ asset('uploads/courses/' . $course->image) }}" alt="course">
+                                    <img src="{{ asset('uploads/courses/' . $course->image) }}" alt="{{ $course->name }} course in Jalandhar">
                                 @else
-                                    <img src="{{ asset('assets/frontend/images/c1.png') }}" alt="course">
+                                    <img src="{{ asset('assets/frontend/images/c1.png') }}" alt="{{ $course->name }} course in Jalandhar">
                                 @endif
 
                             </div>
@@ -502,7 +502,7 @@
                     <div class="col-lg-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"
                         data-wow-offset="0">
                         <div class="single_blog">
-                            <img src="{{ asset('uploads/blogs/' . $blog->image) }}" class="img-fluid" alt="image">
+                            <img src="{{ asset('uploads/blogs/' . $blog->image) }}" class="img-fluid" alt="{{ Str::limit($blog->title, 60) }}">
                             <div class="content_box">
                                 <span>{{ $blog->blog_created_at }}</span>
                                 <h2><a

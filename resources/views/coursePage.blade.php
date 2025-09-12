@@ -34,9 +34,9 @@
                         <div class="course-slide">
                             <div class="course-img">
                                 @if ($course->image && file_exists('uploads/courses/' . $course->image))
-                                    <img src="{{ asset('uploads/courses/' . $course->image) }}" alt="{{$course->name}}">
+                                    <img src="{{ asset('uploads/courses/' . $course->image) }}" alt="{{ $course->name }} course in Jalandhar">
                                 @else
-                                    <img src="{{ asset('assets/frontend/images/c1.png') }}" alt="course">
+                                    <img src="{{ asset('assets/frontend/images/c1.png') }}" alt="{{ $course->name }} course in Jalandhar">
                                 @endif
                             </div>
                             <div class="course-content">

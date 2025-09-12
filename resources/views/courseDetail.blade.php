@@ -28,9 +28,9 @@
                     <div class="arti_single">
                         <div class="arti_img_two">
                             @if ($course->image && file_exists('uploads/courses/' . $course->image))
-                                <img src="{{ asset('uploads/courses/' . $course->image) }}" class="img-fluid" alt="{{ $course->name }}">
+                                <img src="{{ asset('uploads/courses/' . $course->image) }}" class="img-fluid" alt="{{ $course->name }} course in Jalandhar">
                             @else
-                                <img src="{{ asset('assets/frontend/images/c1.png') }}" alt="courseImage">
+                                <img src="{{ asset('assets/frontend/images/c1.png') }}" alt="{{ $course->name }} course in Jalandhar">
                             @endif
                         </div>
                         {{-- <div class="arti_content ">
@@ -51,9 +51,9 @@
                             <div class="single_popular">
                                 <a href="{{ route('courseDetail',['slug'=>$otherCourse->slug]) }}">
                                     @if ($otherCourse->image && file_exists('uploads/courses/' . $otherCourse->image))
-                                        <img src="{{ asset('uploads/courses/' . $course->image) }}" alt="{{$otherCourse->name}}">
+                                        <img src="{{ asset('uploads/courses/' . $course->image) }}" alt="{{ $otherCourse->name }} course in Jalandhar">
                                     @else
-                                        <img src="{{ asset('assets/frontend/images/c1.png') }}" alt="courseImage">
+                                        <img src="{{ asset('assets/frontend/images/c1.png') }}" alt="{{ $otherCourse->name }} course in Jalandhar">
                                     @endif
                                 </a>
                                 <h5><a href="{{ route('courseDetail',['slug'=>$otherCourse->slug]) }}">{{ $otherCourse->name }}</a></h5>
