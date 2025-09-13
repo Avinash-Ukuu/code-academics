@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('meta_title', $course->name . '- Code Academics')
+@section('meta_title', $course->name . ' - Code Academics')
 @section('meta_description', $course->meta_description)
 @section('meta_keywords', $course->meta_keywords)
 

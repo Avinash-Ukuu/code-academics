@@ -24,16 +24,6 @@
                     <div class="home_me_img">
                         <img src="{{ asset('assets/frontend/images/home-image.png') }}"
                             style="aspect-ratio: unset !important;" class="img-fluid" alt="image">
-                        {{-- <div class="home_ps">
-                            <img src="{{ asset('assets/frontend/images/user2.svg') }}" alt="">
-                            <h2>5</h2>
-                            <span>Active student</span>
-                        </div>
-                        <div class="home_ps2">
-                            <img src="{{ asset('assets/frontend/images/file2.svg') }}" alt="">
-                            <h2>20+</h2>
-                            <span>Online Course</span>
-                        </div> --}}
                     </div>
                 </div><!-- END COL-->
             </div><!--- END ROW -->
@@ -100,15 +90,13 @@
                 <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s"
                     data-wow-offset="0">
                     <div class="ab_img">
-                        {{-- <img src="{{ asset('assets/frontend/images/about.jpg') }}" style="aspect-ratio: unset !important;"
-                            class="img-fluid" alt="image"> --}}
-                        <img src="{{ asset('assets/frontend/images/avi-about.jpeg') }}"
-                            style="aspect-ratio: unset !important;" class="img-fluid" alt="image">
+                        <img src="{{ asset('assets/frontend/images/about.jpg') }}" style="aspect-ratio: unset !important;"
+                            class="img-fluid" alt="career guidance">
+                        {{-- <img src="{{ asset('assets/frontend/images/avi-about.jpeg') }}"
+                            style="aspect-ratio: unset !important;" class="img-fluid" alt="career guidance"> --}}
                         {{-- <img src="{{ asset('assets/frontend/images/about1.png') }}" style="aspect-ratio: unset !important;"
-                            class="img-fluid" alt="image"> --}}
-                        <!-- <div class="wc_year">
-                                                    <h3><span>6k+</span> <br />Happy Clients</h3>
-                                                </div> -->
+                            class="img-fluid" alt="career guidance"> --}}
+
                     </div>
                 </div><!--- END COL -->
                 <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"

@@ -81,7 +81,7 @@ class HomeController extends Controller
 
     public function gallery()
     {
-        $categories     =   GalleryCategory::with('galleries')->get();
+        $categories     =   GalleryCategory::whereHas('galleries')->with('galleries')->get();
         $allGalleries   =   $categories->flatMap->galleries;
 
         return view('gallery', compact('categories', 'allGalleries'));
