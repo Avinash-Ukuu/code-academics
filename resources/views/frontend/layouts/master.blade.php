@@ -99,7 +99,7 @@
                 <div class="col-lg-2 col-md-3 col-sm-4">
                     <div class="site-logo">
                         <a href="{{ route('home') }}"><img src="{{ asset('assets/frontend/images/logo.png') }}"
-                                alt=""></a>
+                                alt="Code Academics logo"></a>
                     </div>
                 </div><!--- END Col -->
 
