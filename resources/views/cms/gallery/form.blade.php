@@ -64,7 +64,6 @@
                             {!! Form::label('media', 'Upload Image/Video') !!}
                             {!! Form::file('media', [
                                 'class' => 'form-control-file',
-                                'id' => 'media',
                                 'accept' => '.jpg,.jpeg,.png,.mp4,.mov',
                             ]) !!}
                             <small class="form-text text-muted">
