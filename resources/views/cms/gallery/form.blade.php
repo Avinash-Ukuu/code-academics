@@ -23,7 +23,7 @@
                 'url' => $url,
                 'onSubmit' => "document.getElementById('submit').disabled=true;",
                 'files' => true,
-                'id'=>'galleryForm'
+                'id' => 'galleryForm',
             ]) !!}
             <input type="hidden" name="id" value="{{ $object->id ?? '' }}">
             <div class="card-body">
@@ -64,6 +64,7 @@
                             {!! Form::label('media', 'Upload Image/Video') !!}
                             {!! Form::file('media', [
                                 'class' => 'form-control-file',
+                                'id' => 'media',
                                 'accept' => '.jpg,.jpeg,.png,.mp4,.mov',
                             ]) !!}
                             <small class="form-text text-muted">
@@ -76,17 +77,18 @@
 
                     <div class="form-group" id="preview"></div>
 
-                    @if (!empty($object->url) && file_exists("uploads/gallery/" . $object->url))
+                    @if (!empty($object->url) && file_exists('uploads/gallery/' . $object->url))
                         @php
                             $extension = pathinfo($object->url, PATHINFO_EXTENSION);
                         @endphp
                         <div class="image-preview mt-2  ml-2">
-                            {{ Form::label('image', 'Uploaded Media',['class'=>'mr-2']) }}
+                            {{ Form::label('image', 'Uploaded Media', ['class' => 'mr-2']) }}
                             @if (in_array(strtolower($extension), ['jpg', 'jpeg', 'png', 'gif']))
                                 <img style="background:thistle;max-height: 150px;"
-                                        src={{ asset('uploads/gallery/' . $object->url) }} />
+                                    src={{ asset('uploads/gallery/' . $object->url) }} />
                             @else
-                                <video style="background:thistle;max-height: 150px;" class="card-img-top img-fluid" controls>
+                                <video style="background:thistle;max-height: 150px;" class="card-img-top img-fluid"
+                                    controls>
                                     <source src="{{ asset('uploads/gallery/' . $object->url) }}" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
@@ -156,7 +158,10 @@
 
             // Form validation before submit
             $("#galleryForm").on("submit", function() {
-                if ($("#media")[0].files.length === 0) {
+                let objectId = $("input[name='id']").val(); // get hidden id
+                let fileCount = $("#media")[0].files.length;
+
+                if ((objectId === "" || objectId === "0") && fileCount === 0) {
                     alert("Please select at least one file (image/video).");
                     return false;
                 }

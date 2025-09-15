@@ -150,7 +150,7 @@ class GalleryController extends Controller
         $request->validate([
             'gallery_category_id'   => 'required|exists:gallery_categories,id',
             'title'                 => 'nullable|string|max:255',
-            'media'                 => 'required|file|mimes:jpg,jpeg,png,mp4,mov|max:20480',
+            'media'                 => 'nullable|file|mimes:jpg,jpeg,png,mp4,mov|max:20480',
         ]);
 
         $gallery            =   Gallery::find($id);
