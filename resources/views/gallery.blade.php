@@ -49,7 +49,7 @@
                                 @endphp
                                 @if (in_array(strtolower($extension), ['jpg', 'jpeg', 'png', 'gif']))
                                     <img src="{{ asset('uploads/gallery/' . $gallery->url) }}"
-                                        class="card-img-top img-fluid" alt="{{ $gallery->title }}">
+                                        class="card-img-top img-fluid" style="height: 304px" alt="{{ $gallery->title }}">
                                 @else
                                     <!-- If you store uploaded video -->
                                     <video class="card-img-top img-fluid" controls>
