@@ -1,6 +1,30 @@
 @extends('frontend.layouts.master')
 @section('meta_title', 'Latest Tech & Coding Blogs - Code Academics')
 @section('meta_description', 'Read the latest tech blogs on web development, programming, and AI trends. Stay updated!')
+@section('schema')
+    <script type="application/ld+json">
+            {
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "name": "Code Academics Blogs",
+            "url": "{{route('blogPage')}}",
+            "blogPost": [
+                @foreach($blogs as $blog)
+                    {
+                        "@type": "BlogPosting",
+                        "headline": "{{$blog->title}}",
+                        "url": "{{ route('blogDetail',['slug'=>$blog->slug]) }}",
+                        "author": {
+                            "@type": "Person",
+                            "name": "Code Academics"
+                        },
+                        "datePublished": "{{$blog->blog_created_at}}"
+                    }@if(!$loop->last),@endif
+                @endforeach
+            ]
+        }
+    </script>
+@endsection
 @section('content')
     <!-- START SECTION TOP -->
     <section class="section-top">

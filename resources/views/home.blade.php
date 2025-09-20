@@ -1,4 +1,33 @@
 @extends('frontend.layouts.master')
+@section('schema')
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "EducationalOrganization",
+            "name": "Code Academics",
+            "url": "{{route('home')}}",
+            "logo": "{{ url(asset('assets/frontend/images/logo.png')) }}",
+            "description": "Code Academics is a Jalandhar city institute that offers courses in MEAN / MERN, Web Development, Video Editing, Web Designing, UI & UX, Digital Marketing, Mobile Application, Basic Computer and 12th-grade coaching.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+91-9592258369",
+                "contactType": "customer service",
+                "areaServed": "IN",
+                "availableLanguage": ["en", "hi"]
+            },
+            "sameAs": [
+                "https://www.facebook.com/people/Code-Academics/61574966825969/",
+                "https://www.instagram.com/codeacademics/",
+                "https://in.linkedin.com/company/code-academics"
+            ],
+            "knowsAbout": [
+                @foreach ($courses as $course)
+                    "{{$course->name}}"@if(!$loop->last),@endif
+                @endforeach
+            ]
+        }
+    </script>
+@endsection
 @section('content')
     <!-- START HOME -->
     <section id="home" class="home_bg"

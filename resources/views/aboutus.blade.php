@@ -1,6 +1,17 @@
 @extends('frontend.layouts.master')
 @section('meta_title', 'About Us - Code Academics')
 @section('meta_description', 'Learn more about Code Academics and our mission dedicated to knowledge sharing.')
+@section('schema')
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About Code Academics",
+        "url": "{{route('aboutUs')}}",
+        "description": "Code Academics is one of the best institutions in Jalandhar city that provides Web Development, Video Editing, MEAN/MERN, Web Designing, UI/UX, Digital Marketing, Mobile App Development, Basic Computer, and 12th-grade classes."
+    }
+    </script>
+@endsection
 @section('content')
     <!-- START SECTION TOP -->
     <section class="section-top">

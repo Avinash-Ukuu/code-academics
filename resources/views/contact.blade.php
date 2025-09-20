@@ -1,6 +1,23 @@
 @extends('frontend.layouts.master')
 @section('meta_title', 'Get in Touch - Code Academics')
 @section('meta_description', 'Get in touch with us for inquiries, support, and collaboration. We’re here to help!')
+@section('schema')
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "url": "{{route('contact')}}",
+        "name": "Contact Code Academics",
+        "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+91-9592258369",
+                "contactType": "customer service",
+                "areaServed": "IN",
+                "availableLanguage": ["en","hi"]
+            }
+        }
+    </script>
+@endsection
 @section('headerLinks')
 <style>
   #codeEmail {

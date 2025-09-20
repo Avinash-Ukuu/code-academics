@@ -13,6 +13,7 @@
     <meta name="author" content="code academics">
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="sJl9KNsLmOUjr8KhFBNifQSa6tXtJi30PUJOtv8e1vM" />
+    @yield('schema')
     <link rel="canonical" href="@yield('canonical', url()->current())">
     <link rel="icon" type="image/png" sizes="16x16"
         href="{{ asset('assets/frontend/favicon/favicon-16x16.png') }}">
@@ -184,14 +185,17 @@
                     </div>
                     <div class="foot_social">
                         <ul>
-                            <li><a target="_blank" style="text-decoration: none;" href="#"><span
-                                        class="ti-twitter"></span></a></li>
+                            {{-- <li><a target="_blank" style="text-decoration: none;" href="#"><span
+                                        class="ti-twitter"></span></a></li> --}}
                             <li><a target="_blank" style="text-decoration: none;"
                                     href="https://www.facebook.com/people/Code-Academics/61574966825969/"><span
                                         class="ti-facebook"></span></a></li>
                             <li><a target="_blank" style="text-decoration: none;"
                                     href="https://www.instagram.com/codeacademics/"><span
                                         class="ti-instagram"></span></a></li>
+                            <li><a target="_blank" style="text-decoration: none;"
+                                    href="https://in.linkedin.com/company/code-academics"><span
+                                        class="ti-linkedin"></span></a></li>
                         </ul>
                     </div>
                 </div><!--- END COL -->

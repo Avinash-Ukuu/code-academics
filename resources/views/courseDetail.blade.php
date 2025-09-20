@@ -1,15 +1,31 @@
 @extends('frontend.layouts.master')
-@section('meta_title', $course->name . ' - Code Academics')
+@section('meta_title','Best ' . $course->name . ' Course in Jalandhar | Code Academics')
 @section('meta_description', $course->meta_description)
 @section('meta_keywords', $course->meta_keywords)
 
+@section('schema')
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "name": "{{$course->name}} Course",
+            "description": "{{$course->meta_description}}",
+            "provider": {
+                "@type": "EducationalOrganization",
+                "name": "Code Academics",
+                "sameAs": "{{route('home')}}"
+            },
+            "url": "{{ route('courseDetail',['slug'=>$course->slug]) }}"
+        }
+    </script>
+@endsection
 @section('content')
     <!-- START SECTION TOP -->
     <section class="section-top">
         <div class="container">
             <div class="col-lg-10 offset-lg-1 text-center">
                 <div class="section-top-title wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
-                    <h1>{{ $course->name }}</h1>
+                    <h1>{{ $course->name }} Course in Jalandhar – Code Academics</h1>
                     <ul>
                         <li><a href="{{ route('home') }}">Home</a></li>
                         <li> / Course Detail</li>

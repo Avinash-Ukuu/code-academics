@@ -1,6 +1,21 @@
 @extends('frontend.layouts.master')
 @section('meta_title', 'Gallery - Code Academics')
 @section('meta_description', 'Photos and Videos of students work, review and infrastructure!')
+@section('schema')
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ImageGallery",
+            "name": "Code Academics Gallery",
+            "url": "{{route('gallery')}}",
+            "image": [
+                @foreach ($allGalleries as $gallery)
+                    {{ url(asset('uploads/gallery/' . $gallery->url)) }}@if(!$loop->last),@endif
+                @endforeach
+            ]
+        }
+    </script>
+@endsection
 @section('content')
     <!-- START SECTION TOP -->
     <section class="section-top">

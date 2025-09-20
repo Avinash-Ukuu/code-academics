@@ -2,6 +2,32 @@
 @section('meta_title', $blog->title)
 @section('meta_description', $blog->description)
 @section('meta_keywords', $blog->meta_keywords)
+@section('schema')
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{$blog->title}}",
+    "image": "{{ url(asset('uploads/blogs/' . $blog->image)) }}",
+    "author": {
+        "@type": "Person",
+        "name": "Code Academics"
+    },
+    "publisher": {
+        "@type": "EducationalOrganization",
+        "name": "Code Academics",
+        "logo": {
+        "@type": "ImageObject",
+        "url": "{{ url(asset('assets/frontend/images/logo.png')) }}"
+        }
+    },
+    "url": "{{ route('blogDetail',['slug'=>$blog->slug]) }}",
+    "datePublished": "{{$blog->blog_created_at}}",
+    "dateModified": "{{$blog->blog_created_at}}",
+    "description": "{{$blog->description}}"
+    }
+    </script>
+@endsection
 @section('headerLinks')
     <style>
         .blog-content a {

@@ -2,6 +2,26 @@
 @section('meta_title', 'Explore Our Courses - Code Academics')
 @section('meta_description', 'Explore a variety of professional courses in web development, design, and more. Start
     learning today!')
+@section('schema')
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Code Academics Courses",
+            "url": "{{route('coursePage')}}",
+            "numberOfItems": {{$courses->count()}},
+            "itemListElement": [
+                @foreach($courses as $course)
+                    {
+                        "@type": "ListItem",
+                        "position": {{$loop->iteration}},
+                        "url": "{{ route('courseDetail',['slug'=>$course->slug]) }}"
+                    }@if(!$loop->last),@endif
+                @endforeach
+            ]
+        }
+    </script>
+@endsection
 @section('content')
     <!-- START SECTION TOP -->
     <section class="section-top">
