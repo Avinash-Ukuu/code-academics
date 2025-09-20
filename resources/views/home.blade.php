@@ -5,15 +5,52 @@
             "@context": "https://schema.org",
             "@type": "EducationalOrganization",
             "name": "Code Academics",
-            "url": "{{route('home')}}",
+            "url": "{{ route('home') }}",
             "logo": "{{ url(asset('assets/frontend/images/logo.png')) }}",
             "description": "Code Academics is a Jalandhar city institute that offers courses in MEAN / MERN, Web Development, Video Editing, Web Designing, UI & UX, Digital Marketing, Mobile Application, Basic Computer and 12th-grade coaching.",
+            "foundingDate": "2025",
+            "founder": [
+                {
+                    "@type": "Person",
+                    "name": "LAKHVINDER SINGH"
+                },
+                {
+                    "@type": "Person",
+                    "name": "SHOBIT THAKUR"
+                },
+                {
+                    "@type": "Person",
+                    "name": "AVINASH"
+                },
+                {
+                    "@type": "Person",
+                    "name": "HARNOOR KAUR"
+                }
+            ],
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "SCO - 207, First Floor Badwal Complex, Near Narinder Cinema",
+                "addressLocality": "Jalandhar",
+                "addressRegion": "Punjab",
+                "postalCode": "144001",
+                "addressCountry": "IN"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "31.3137601",
+                "longitude": "75.5884112"
+            },
             "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+91-9592258369",
                 "contactType": "customer service",
                 "areaServed": "IN",
                 "availableLanguage": ["en", "hi"]
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "17"
             },
             "sameAs": [
                 "https://www.facebook.com/people/Code-Academics/61574966825969/",
@@ -22,7 +59,21 @@
             ],
             "knowsAbout": [
                 @foreach ($courses as $course)
-                    "{{$course->name}}"@if(!$loop->last),@endif
+                    {!! json_encode($course->name) !!}@if(!$loop->last),@endif
+                @endforeach
+            ],
+            "hasCourse": [
+                @foreach ($courses as $course)
+                    {
+                        "@type": "Course",
+                        "name": {!! json_encode($course->name) !!},
+                        "description": {!! json_encode($course->meta_description ?? $course->name) !!},
+                        "provider": {
+                            "@type": "EducationalOrganization",
+                            "name": "Code Academics",
+                            "sameAs": "{{ route('home') }}"
+                        }
+                    }@if(!$loop->last),@endif
                 @endforeach
             ]
         }
