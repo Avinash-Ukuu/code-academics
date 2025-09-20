@@ -12,19 +12,11 @@
             "founder": [
                 {
                     "@type": "Person",
-                    "name": "LAKHVINDER SINGH"
-                },
-                {
-                    "@type": "Person",
                     "name": "SHOBIT THAKUR"
                 },
                 {
                     "@type": "Person",
                     "name": "AVINASH"
-                },
-                {
-                    "@type": "Person",
-                    "name": "HARNOOR KAUR"
                 }
             ],
             "address": {
