@@ -164,9 +164,9 @@ span {
 }
 
 .bannerVideo{
-       /* height: 555px; */
+        /* height: 555px; */
     width: auto;
-    aspect-ratio: 13 / 13;
+    aspect-ratio: 4 / 4;
     /* border-radius: 50%; */
     /* transform: scale(1.8); */
     object-fit: cover;
@@ -233,6 +233,7 @@ p.section-title-white {
     .topcontrol {
         display: none;
     }
+
 }
 
 .topcontrol:hover {
@@ -465,12 +466,53 @@ p.section-title-white {
     .btn_one {
         padding: 10px 20px;
     }
+
+
 }
 
 @media only screen and (max-width:480px) {
     .btn_one {
-        padding: 10px 30px;
+        padding: 10px 20px;
     }
+     .btn_two {
+        padding: 10px 9px!important;
+    }
+    .call_to_action{
+        display: flex!important;
+        align-items: center!important;
+        justify-content: center!important;
+        margin-top: 20px!important;
+                float: initial !important;
+    }
+     .home_content h1{
+            line-height: 60px!important;
+    }
+    .home_me_img{
+        left: 0!important;
+        top: 70px!important;
+            border-radius: 0!important;
+            width: 100%!important;
+    }
+
+    .home_bg{
+            padding-bottom: 1040px!important;
+    }
+    .slider-image{
+        width: 100%!important;
+
+    }
+
+    .swiper-container{
+        left: 0!important;
+    }
+
+    .home_content{
+        padding-top: 195px!important;
+    }
+
+        .bannerVideoParent{
+            display: flex!important;
+        }
 }
 
 /*BTN END*/
@@ -820,6 +862,10 @@ p.section-title-white {
     #main-menu ul li {
         margin-left: 30px;
     }
+
+     .bannerVideoParent{
+        display: none;
+    }
 }
 
 /*END 1024px*/
@@ -1109,10 +1155,10 @@ p.section-title-white {
 }
 
 .home_me_img {
-position: absolute;
+position: relative;
     z-index: 9;
-    top: 215px;
-    left: 133px;
+    top: 170px;
+    left: 107px;
     overflow: hidden;
     border-radius: 50%;
 
@@ -3154,6 +3200,15 @@ blockquote::before,
 @media only screen and (max-width: 990px) {
     .our-team {
         margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 1500px) {
+
+    .home_me_img{
+        width: 76%;
+          top: 233px;
+
     }
 }
 

@@ -121,7 +121,7 @@
                     <div class="single_tp">
                         <h3>Cutting-Edge Curriculum</h3>
                         <p>Stay ahead with industry-relevant courses designed to equip you with in-demand tech skills.</p>
-                        <p>🔹 Frontend Development | 🔹 Backend Development | 🔹 UI & UX
+                        <p> Frontend Development | Backend Development | UI & UX
                         </p>
                         <a href="javascript:void(0)" class="cta open-enquiry-form"><span>Enquire Now</span>
                             <svg width="13px" height="10px" viewBox="0 0 13 10">
@@ -136,7 +136,7 @@
                     <div class="single_tp">
                         <h3>Expert Instructors</h3>
                         <p>Learn from IT professionals and experienced mentors who guide you through hands-on projects.</p>
-                        <p> 💡 Practical Learning | 📚 Live Sessions | 🎓 Career Mentorship</p>
+                        <p> Practical Learning |  Live Sessions |  Career Mentorship</p>
                         <a href="javascript:void(0)" class="cta open-enquiry-form"><span>Enquire Now</span>
                             <svg width="13px" height="10px" viewBox="0 0 13 10">
                                 <path d="M1,5 L11,5"></path>
@@ -150,7 +150,7 @@
                     <div class="single_tp">
                         <h3>Advanced Learning Environment</h3>
                         <p>Experience cutting-edge technology with world-class facilities designed for IT excellence.</p>
-                        <p>💻 High-Tech Labs | 🖥 Practical | 📜 Certification of Completion</p>
+                        <p> High-Tech Labs |  Practical |  Certification of Completion</p>
                         <a href="javascript:void(0)" class="cta open-enquiry-form"><span>Enquire Now</span>
                             <svg width="13px" height="10px" viewBox="0 0 13 10">
                                 <path d="M1,5 L11,5"></path>
@@ -361,7 +361,7 @@
     <!-- END WHY CHOOSE US -->
 
     <!-- Swiper -->
-    <section class="marketing_content_area section-padding">
+    <section class="marketing_content_area section-padding custombackground">
         <div class="container">
             <div class="section-title">
                 <h2>Gallery</h2>

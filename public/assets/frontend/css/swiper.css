@@ -4,12 +4,21 @@ img:not([draggable]), embed, object, video {
     height: auto;
 }
 
+.marketing_content_area.custombackground{
+
+background-image: url(../images/section-bg-custom.png);
+background-size: 100% 100%;
+background-repeat: no-repeat;
+
+}
+
 .swiper-container {
     margin-left: auto;
     margin-right: auto;
     position: relative;
     overflow: hidden;
-    z-index: 1
+    z-index: 1;
+        left: -45px;
 }
 
 .swiper-container-no-flexbox .swiper-slide {
@@ -611,4 +620,18 @@ button.swiper-pagination-bullet {
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     width: 12px;
+}
+
+
+.slider-image{
+    width: 500px;
+}
+
+.swiper-slide{
+     filter: blur(5px);
+}
+
+.swiper-slide.swiper-slide-active{
+      filter: blur(0px);
+
 }
