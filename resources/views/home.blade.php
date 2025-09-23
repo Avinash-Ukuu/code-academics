@@ -71,6 +71,10 @@
         }
     </script>
 @endsection
+@section('headerLinks')
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/swiper.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/swiper.min.css') }}">
+@endsection
 @section('content')
     <!-- START HOME -->
     <section id="home" class="home_bg"
@@ -92,10 +96,15 @@
                         </a>
                     </div>
                 </div><!-- END COL-->
-                <div class="col-lg-6 col-sm-6 col-xs-12">
+                <div class="col-lg-6 col-sm-6 col-xs-12 bannerVideoParent">
                     <div class="home_me_img">
-                        <img src="{{ asset('assets/frontend/images/home-image.png') }}"
-                            style="aspect-ratio: unset !important;" class="img-fluid" alt="image">
+                        {{-- <img src="{{ asset('assets/frontend/images/home-image.png') }}"
+                            style="aspect-ratio: unset !important;" class="img-fluid" alt="image"> --}}
+
+                        <video class="img-fluid bannerVideo" autoplay muted loop playsinline>
+                            <source src="{{ asset('uploads/gallery/gallery_1757321107-1.mp4') }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div><!-- END COL-->
             </div><!--- END ROW -->
@@ -351,6 +360,35 @@
     </section>
     <!-- END WHY CHOOSE US -->
 
+    <!-- Swiper -->
+    <section class="marketing_content_area section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Gallery</h2>
+                <p>Life At <span><u>Code Academics.</u></span> </p>
+            </div>
+            <div class="swiper-container two">
+                <div class="swiper-wrapper">
+                    @foreach($galleries as $gallery)
+                        @php
+                            $extension = pathinfo($gallery->url, PATHINFO_EXTENSION);
+                        @endphp
+                        <div class="swiper-slide">
+                            <div class="slider-image">
+                                @if (in_array(strtolower($extension), ['jpg', 'jpeg', 'png', 'gif']))
+                                    <img src="{{ asset('uploads/gallery/'.$gallery->url) }}" alt="{{ $gallery->title }}">
+                                @endif
+                            </div>
+                        </div>
+                    @endforeach
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+
     <!--START COURSE -->
     <div class="best-cpurse section-padding">
         <div class="container">
@@ -368,14 +406,17 @@
                         <div class="course-slide">
                             <div class="course-img">
                                 @if ($course->image && file_exists('uploads/courses/' . $course->image))
-                                    <img src="{{ asset('uploads/courses/' . $course->image) }}" loading="lazy" alt="{{ $course->name }} course in Jalandhar">
+                                    <img src="{{ asset('uploads/courses/' . $course->image) }}" loading="lazy"
+                                        alt="{{ $course->name }} course in Jalandhar">
                                 @else
-                                    <img src="{{ asset('assets/frontend/images/c1.png') }}" loading="lazy" alt="{{ $course->name }} course in Jalandhar">
+                                    <img src="{{ asset('assets/frontend/images/c1.png') }}" loading="lazy"
+                                        alt="{{ $course->name }} course in Jalandhar">
                                 @endif
 
                             </div>
                             <div class="course-content">
-                                <h3><a href="{{ route('courseDetail',['slug'=>$course->slug]) }}">{{ $course->name }}</a></h3>
+                                <h3><a href="{{ route('courseDetail', ['slug' => $course->slug]) }}">{{ $course->name }}</a>
+                                </h3>
                             </div>
                         </div><!--END COURSE SLIDE -->
                     </div><!--END COL -->
@@ -419,11 +460,11 @@
                 <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s"
                     data-wow-offset="0">
                     <div class="cp_img">
-                        <img src="{{ asset('assets/frontend/images/promo.png') }}" style="aspect-ratio: unset !important;"
-                            class="img-fluid" alt="image">
+                        <img src="{{ asset('assets/frontend/images/promo.png') }}"
+                            style="aspect-ratio: unset !important;" class="img-fluid" alt="image">
                         <!-- <div class="wc_year">
-                                                    <h3>20 Years of Experience <br />from 2002</h3>
-                                                </div> -->
+                                                        <h3>20 Years of Experience <br />from 2002</h3>
+                                                    </div> -->
                     </div>
                 </div><!--- END COL -->
             </div><!--- END ROW -->
@@ -562,7 +603,8 @@
                     <div class="col-lg-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"
                         data-wow-offset="0">
                         <div class="single_blog">
-                            <img src="{{ asset('uploads/blogs/' . $blog->image) }}" class="img-fluid" alt="{{ Str::limit($blog->title, 60) }}">
+                            <img src="{{ asset('uploads/blogs/' . $blog->image) }}" class="img-fluid"
+                                alt="{{ Str::limit($blog->title, 60) }}">
                             <div class="content_box">
                                 <span>{{ $blog->blog_created_at }}</span>
                                 <h2><a
@@ -611,7 +653,7 @@
     <!-- END BLOG -->
     <!-- Start Map -->
     <div style="width: 100%; max-width: 100%; overflow: hidden; position: relative; padding-top: 43.25%;">
-        <iframe  title="Map of reaching Code Academics"
+        <iframe title="Map of reaching Code Academics"
             src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d109076.43892059589!2d75.50858480128626!3d31.313729190279737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x391a5b95f7ff43df%3A0x189190600fd09f58!2sFirst%20Floor%2C%20Badwal%20complex%2C%20SCO%20-%20207%2C%20Near%20Narinder%20Cinema%2C%20Jawahar%20Nagar%2C%20Jalandhar%2C%20Punjab%20144001!3m2!1d31.3137555!2d75.5909861!5e0!3m2!1sen!2sin!4v1757049818988!5m2!1sen!2sin"
             width="600" height="450" style="border:0; position: absolute; top:0; left:0; width:100%; height:100%;"
             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -619,4 +661,24 @@
     <!-- End map -->
 
     <!-- START FOOTER -->
+@endsection
+@section('footerScript')
+    <script src="{{ asset('assets/frontend/js/swiper.min.js')}}"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container.two', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            effect: 'coverflow',
+            loop: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflow: {
+                rotate: 0,
+                stretch: 100,
+                depth: 150,
+                modifier: 1.5,
+                slideShadows: false,
+            }
+        });
+    </script>
 @endsection

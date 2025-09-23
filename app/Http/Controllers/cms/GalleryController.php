@@ -93,24 +93,19 @@ class GalleryController extends Controller
         $request->validate([
             'gallery_category_id'   => 'required|exists:gallery_categories,id',
             'title'                 => 'nullable|string|max:255',
-            'media.*'               => 'required|file|mimes:jpg,jpeg,png,mp4,mov|max:20480',
+            'media'                 => 'required|file|mimes:jpg,jpeg,png|max:3072',
         ]);
 
+        $gallery            =   new Gallery();
+        $gallery->title     =   $request->title;
+        $gallery->gallery_category_id     =   $request->gallery_category_id;
         if ($request->hasFile('media')) {
-            foreach ($request->file('media') as $key => $file) {
-
-                $gallery            =   new Gallery();
-                $gallery->title     =   $request->title;
-                $gallery->gallery_category_id     =   $request->gallery_category_id;
-                if ($file) {
-                    $imageName  = "gallery_" . Carbon::now()->timestamp.'-'. ($key + 1) . '.' . $file->getClientOriginalExtension();
-                    $file->move(public_path('uploads/gallery/'), $imageName);
-                    $gallery->url   =  $imageName;
-                }
-
-                $gallery->save();
-            }
+            $imageName  = "gallery_" . Carbon::now()->timestamp. '.' . $request->file('media')->getClientOriginalExtension();
+            $request->file('media')->move(public_path('uploads/gallery/'), $imageName);
+            $gallery->url   =  $imageName;
         }
+
+        $gallery->save();
 
         return redirect()->route('gallery.index')->with('success', 'Gallery files uploaded successfully.');
     }
@@ -150,7 +145,7 @@ class GalleryController extends Controller
         $request->validate([
             'gallery_category_id'   => 'required|exists:gallery_categories,id',
             'title'                 => 'nullable|string|max:255',
-            'media'                 => 'nullable|file|mimes:jpg,jpeg,png,mp4,mov|max:20480',
+            'media'                 => 'nullable|file|mimes:jpg,jpeg,png|max:3072',
         ]);
 
         $gallery            =   Gallery::find($id);

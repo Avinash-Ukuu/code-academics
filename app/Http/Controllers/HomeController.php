@@ -16,7 +16,7 @@ class HomeController extends Controller
     {
         $data['courses']        =       Course::where('is_active',1)->get();
         $data['blogs']          =       Blog::where('publish_type','publish')->take(5)->orderBy('blog_created_at','desc')->get();
-        $data['gallery']        =       Gallery::take(5)->get();
+        $data['galleries']      =       Gallery::take(10)->get();
 
         return view('home',$data);
     }

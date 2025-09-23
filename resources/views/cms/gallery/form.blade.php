@@ -1,4 +1,7 @@
 @extends('cms.layouts.master')
+@section('headerLinks')
+    <link href="{{ asset('assets/adminlte/dist/css/cropper.min.css') }}" rel="stylesheet" />
+@endsection
 @section('content')
     <div class="content-header">
         <div class="container-fluid">
@@ -45,33 +48,35 @@
                 </div>
 
                 <div class="row">
+                    <div class="form-group">
+                        {!! Form::label('media', 'Upload Image/Video') !!}
+                        {!! Form::file('media', [
+                            'class' => 'form-control-file',
+                            'id' => 'media',
+                            'accept' => '.jpg,.jpeg,.png,.mp4,.mov',
+                        ]) !!}
+                        <small class="form-text text-muted">
+                            Allowed types: jpg, jpeg, png, mp4, mov
+                        </small>
+                    </div>
 
-                    @if (empty($object->url))
-                        <div class="form-group">
-                            {!! Form::label('media', 'Upload Image/Video') !!}
-                            {!! Form::file('media[]', [
-                                'class' => 'form-control-file',
-                                'id' => 'media',
-                                'multiple',
-                                'accept' => '.jpg,.jpeg,.png,.mp4,.mov',
-                            ]) !!}
-                            <small class="form-text text-muted">
-                                Allowed types: jpg, jpeg, png, mp4, mov
-                            </small>
+                    <!-- Cropper Modal -->
+                    <div class="modal fade" id="cropperModal" tabindex="-1" role="dialog">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Crop Image</h5>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body text-center">
+                                    <img id="imageToCrop" style="max-width:100%;" />
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" id="cropImageBtn" class="btn btn-primary">Crop & Save</button>
+                                </div>
+                            </div>
                         </div>
-                    @else
-                        <div class="form-group">
-                            {!! Form::label('media', 'Upload Image/Video') !!}
-                            {!! Form::file('media', [
-                                'class' => 'form-control-file',
-                                'id' => 'media',
-                                'accept' => '.jpg,.jpeg,.png,.mp4,.mov',
-                            ]) !!}
-                            <small class="form-text text-muted">
-                                Allowed types: jpg, jpeg, png, mp4, mov
-                            </small>
-                        </div>
-                    @endif
+                    </div>
 
 
 
@@ -108,61 +113,104 @@
     </div>
 @endsection
 @section('footerScript')
+    <script src="{{ asset('assets/adminlte/dist/js/cropper.min.js') }}"></script>
     <script>
+        let cropper;
+        let selectedFile;
+        let cropDone = false; // track if crop finished
         $(document).ready(function() {
             $("#media").on("change", function(e) {
-                $("#preview").html(""); // clear old previews
-                let validExtensions = ["jpg", "jpeg", "png", "mp4", "mov"];
-                let files = e.target.files;
-                let isValid = true;
+                $("#preview").html("");
+                cropDone = false;
+                let file = e.target.files[0];
+                if (!file) return;
 
-                $.each(files, function(i, file) {
-                    let fileExt = file.name.split(".").pop().toLowerCase();
-                    if ($.inArray(fileExt, validExtensions) === -1) {
-                        alert("Invalid file type: " + file.name);
-                        isValid = false;
-                        return false; // stop loop
-                    }
+                let validExtensions = ["jpg", "jpeg", "png"];
+                let fileExt = file.name.split(".").pop().toLowerCase();
+                if ($.inArray(fileExt, validExtensions) === -1) {
+                    alert("Only images (jpg, jpeg, png) are allowed.");
+                    $(this).val("");
+                    return;
+                }
 
-                    // Preview for images
-                    if (file.type.match("image.*")) {
+                selectedFile = file;
+
+                // Check image dimensions
+                let img = new Image();
+                img.onload = function() {
+                    if (img.width > 304 || img.height > 304) {
+                        // Must crop
                         let reader = new FileReader();
-                        reader.onload = function(e) {
-                            $("#preview").append(
-                                `<img src="${e.target.result}" class="m-2" width="150" style="border:1px solid #ddd; border-radius:8px;">`
-                            );
+                        reader.onload = function(event) {
+                            $("#imageToCrop").attr("src", event.target.result);
+                            $("#cropperModal").modal("show");
+                        };
+                        reader.readAsDataURL(file);
+                    } else {
+                        // Already small enough, accept directly
+                        let reader = new FileReader();
+                        reader.onload = function(event) {
+                            $("#preview").html(
+                                `<img src="${event.target.result}" class="m-2" width="150" style="border:1px solid #ddd; border-radius:8px;">`
+                                );
                         };
                         reader.readAsDataURL(file);
                     }
+                };
+                img.src = URL.createObjectURL(file);
+            });
 
-                    // Preview for videos
-                    if (file.type.match("video.*")) {
-                        let reader = new FileReader();
-                        reader.onload = function(e) {
-                            $("#preview").append(
-                                `<video width="250" class="m-2" controls>
-                            <source src="${e.target.result}" type="${file.type}">
-                            Your browser does not support the video tag.
-                        </video>`
-                            );
-                        };
-                        reader.readAsDataURL(file);
-                    }
+            // Init cropper
+            $('#cropperModal').on('shown.bs.modal', function() {
+                cropper = new Cropper(document.getElementById('imageToCrop'), {
+                    aspectRatio: 1,
+                    viewMode: 1,
+                    responsive: true,
+                    zoomable: true
                 });
+            }).on('hidden.bs.modal', function() {
+                cropper.destroy();
+                cropper = null;
 
-                if (!isValid) {
-                    $(this).val(""); // reset file input
+                // If user closed without cropping → reset input
+                if (!cropDone) {
+                    $("#media").val("");
                     $("#preview").html("");
                 }
             });
 
+            // Crop & save
+            $("#cropImageBtn").on("click", function() {
+                let canvas = cropper.getCroppedCanvas({
+                    width: 304,
+                    height: 304
+                });
+
+                canvas.toBlob(function(blob) {
+                    cropDone = true; // mark as cropped
+                    let fileInput = $("#media");
+                    let file = new File([blob], selectedFile.name, {
+                        type: "image/jpeg",
+                        lastModified: new Date().getTime()
+                    });
+
+                    let dataTransfer = new DataTransfer();
+                    dataTransfer.items.add(file);
+                    fileInput[0].files = dataTransfer.files;
+
+                    $("#preview").html(
+                        `<img src="${canvas.toDataURL()}" class="m-2" width="150" style="border:1px solid #ddd; border-radius:8px;">`
+                        );
+                    $("#cropperModal").modal("hide");
+                }, 'image/jpeg');
+            });
             // Form validation before submit
             $("#galleryForm").on("submit", function() {
                 let objectId = $("input[name='id']").val(); // get hidden id
                 let fileCount = $("#media")[0].files.length;
 
                 if ((objectId === "" || objectId === "0") && fileCount === 0) {
-                    alert("Please select at least one file (image/video).");
+                    alert("Please select at least one file (image).");
                     return false;
                 }
                 return true;

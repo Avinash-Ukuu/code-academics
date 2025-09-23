@@ -159,6 +159,20 @@ span {
     color: #1a2d62;
 }
 
+.bannerVideoParent{
+    position: relative;
+}
+
+.bannerVideo{
+       /* height: 555px; */
+    width: auto;
+    aspect-ratio: 13 / 13;
+    /* border-radius: 50%; */
+    /* transform: scale(1.8); */
+    object-fit: cover;
+    object-position: center 6%;
+}
+
 @media only screen and (max-width:480px) {
     .section-title p {
         width: 100%;
@@ -1095,9 +1109,13 @@ p.section-title-white {
 }
 
 .home_me_img {
-    position: absolute;
+position: absolute;
     z-index: 9;
-    bottom: 0;
+    top: 215px;
+    left: 133px;
+    overflow: hidden;
+    border-radius: 50%;
+
 }
 
 .home_me_img img {
@@ -2738,6 +2756,7 @@ blockquote::before,
 .testimonial_content p {
     overflow: hidden;
     margin-top: 15px;
+    min-height: 260px;
 }
 
 .testi_pic_title {
