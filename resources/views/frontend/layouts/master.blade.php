@@ -79,11 +79,32 @@
             outline: none;
             font-size: 20px;
         }
+
+        .mega-menu {
+            width: 800px;
+            /* adjust size */
+            left: 50%;
+            transform: translateX(-50%);
+            top: 100%;
+            border-radius: 10px;
+        }
+
+        /* On hover for desktop */
+        @media (min-width: 992px) {
+            .mega-dropdown:hover>.dropdown-menu {
+                display: block;
+            }
+        }
     </style>
     @yield('headerLinks')
 </head>
 
 <body>
+
+    @php
+        use App\Models\Course;
+        $courses = Course::where('is_active',1)->get();
+    @endphp
 
     <!-- START PRELOADER -->
     <div id="loader-wrapper">
@@ -109,7 +130,23 @@
                         <nav id="main-menu" class="ms-auto">
                             <ul>
                                 <li><a class="nav-link" href="{{ route('home') }}">Home</a></li>
-                                <li><a class="nav-link" href="{{ route('coursePage') }}">Courses</a></li>
+                                <li class="nav-item dropdown mega-dropdown">
+                                    <a class="nav-link dropdown-toggle" href="{{ route('coursePage') }}"
+                                        id="coursesDropdown" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Courses
+                                    </a>
+                                    <div class="dropdown-menu mega-menu p-4" aria-labelledby="coursesDropdown">
+                                        <div class="row">
+                                            @foreach($courses as $course)
+                                                <div class="col-md-3">
+                                                    <a class="dropdown-item" href="{{ route('courseDetail',['slug'=>$course->slug]) }}">{{$course->name}}</a>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </li>
+                                
                                 <li><a class="nav-link" href="{{ route('blogPage') }}">Blog</a></li>
                                 <li><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
                                 <li><a class="nav-link" href="{{ route('gallery') }}">Gallery</a></li>
@@ -130,10 +167,7 @@
         </div><!--- END CONTAINER -->
     </div>
     <!-- END NAVBAR -->
-    @php
-        $courses = new App\Models\Course();
-        $courses = $courses->where('is_active', 1)->get();
-    @endphp
+
     @yield('content')
 
 
@@ -205,7 +239,8 @@
                         <ul>
                             @foreach ($courses as $course)
                                 <li><a
-                                        href="{{ route('courseDetail',['slug'=>$course->slug]) }}">{{ ucfirst($course->name) }}</a></li>
+                                        href="{{ route('courseDetail', ['slug' => $course->slug]) }}">{{ ucfirst($course->name) }}</a>
+                                </li>
                             @endforeach
                         </ul>
                     </div>
@@ -262,6 +297,11 @@
         </div><!--- END CONTAINER -->
     </div>
     <!-- END FOOTER -->
+
+    <a href="https://wa.me/919592258369" target="_blank" class="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+
 
     <!-- Latest jQuery -->
     <script src="{{ asset('assets/frontend/js/jquery-1.12.4.min.js') }}"></script>

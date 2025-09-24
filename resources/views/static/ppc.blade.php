@@ -1,21 +1,21 @@
 @extends('frontend.layouts.master')
-@section('meta_title','Best ' . $course->name . ' Course in Jalandhar | Code Academics')
-@section('meta_description', $course->meta_description)
-@section('meta_keywords', $course->meta_keywords)
+@section('meta_title','Best PPC Course in Jalandhar | Code Academics')
+@section('meta_description', 'Maximize ROI with professional PPC advertising. Get targeted traffic, leads, and conversions with our pay-per-click marketing services.')
+@section('meta_keywords', 'PPC advertising, pay-per-click marketing, Google Ads, Facebook Ads, targeted traffic, online advertising, paid search, PPC campaigns')
 
 @section('schema')
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "Course",
-            "name": "{{$course->name}} Course",
-            "description": "{{$course->meta_description}}",
+            "name": "PPC Course",
+            "description": "Maximize ROI with professional PPC advertising. Get targeted traffic, leads, and conversions with our pay-per-click marketing services.",
             "provider": {
                 "@type": "EducationalOrganization",
                 "name": "Code Academics",
                 "sameAs": "{{route('home')}}"
             },
-            "url": "{{ route('courseDetail',['slug'=>$course->slug]) }}"
+            "url": "{{ route('ppcDetail') }}"
         }
     </script>
 @endsection
@@ -25,7 +25,7 @@
         <div class="container">
             <div class="col-lg-10 offset-lg-1 text-center">
                 <div class="section-top-title wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
-                    <h1>{{ $course->name }} Course in Jalandhar – Code Academics</h1>
+                    <h1>PPC Course in Jalandhar – Code Academics</h1>
                     <ul>
                         <li><a href="{{ route('home') }}">Home</a></li>
                         <li> / Course Detail</li>
@@ -43,14 +43,10 @@
                 <div class="col-lg-7 col-sm-12 col-xs-12">
                     <div class="arti_single">
                         <div class="arti_img_two">
-                            @if ($course->image && file_exists('uploads/courses/' . $course->image))
-                                <img src="{{ asset('uploads/courses/' . $course->image) }}" class="img-fluid" alt="{{ $course->name }} course in Jalandhar">
-                            @else
-                                <img src="{{ asset('assets/frontend/images/c1.png') }}" alt="{{ $course->name }} course in Jalandhar">
-                            @endif
+                            <img src="{{ asset('assets/frontend/images/c1.png') }}" alt="ppc course in Jalandhar">
                         </div>
                         <div class="arti_sp blog-content">
-                            {!! $course->description !!}
+                            <p>Maximize ROI with professional PPC advertising. Get targeted traffic, leads, and conversions with our pay-per-click marketing services.</p>
                         </div>
                     </div><!-- END ARTI SINGLE  -->
 

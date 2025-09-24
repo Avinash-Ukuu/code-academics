@@ -570,13 +570,18 @@ button.swiper-pagination-bullet {
     width: 100%;
 }
 
-.swiper-slide {
+/* .swiper-slide {
     width: 390px;
     height: auto;
     padding: 0 15px;
 }
 .two .swiper-slide {
     width: 300px;
+} */
+
+.swiper-slide {
+    width: auto !important;
+    max-width: 90%;
 }
 .swiper-slide img {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);

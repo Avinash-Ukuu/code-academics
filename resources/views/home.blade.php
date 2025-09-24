@@ -101,10 +101,37 @@
                         {{-- <img src="{{ asset('assets/frontend/images/home-image.png') }}"
                             style="aspect-ratio: unset !important;" class="img-fluid" alt="image"> --}}
 
-                        <video class="img-fluid bannerVideo" autoplay muted loop playsinline>
+
+                        <div class="youtube img-fluid bannerVideo" data-embed="IaYpubnP9Ug">
+                            {{-- <img src="https://img.youtube.com/vi/IaYpubnP9Ug/maxresdefault.jpg"
+                                style="width:100%;height:100%;display:block;"> --}}
+                            <img src="{{ asset('assets/frontend/images/code-academics-banner.jpg') }}"
+                                style="width:100%;height:100%;display:block;">
+                            {{-- <div
+                                style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:100px;color:#FF0000;border-radius:10px;text-shadow:0 0 10px black;cursor: pointer;">
+                                ▶</div> --}}
+                            <div
+                                style="position:absolute;top:50%;left:60%;transform:translate(-50%,-50%);height: 40px;">
+                                <span class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
+                                    <div style="width: 100%;height: 100%;display: block;fill: #ff0033;"><svg
+                                            xmlns="http://www.w3.org/2000/svg" id="yt-ringo2-svg_yt10" width="93"
+                                            height="20" viewBox="0 0 93 20" focusable="false" aria-hidden="true"
+                                            style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                            <g>
+                                                <path
+                                                    d="M14.4848 20C14.4848 20 23.5695 20 25.8229 19.4C27.0917 19.06 28.0459 18.08 28.3808 16.87C29 14.65 29 9.98 29 9.98C29 9.98 29 5.34 28.3808 3.14C28.0459 1.9 27.0917 0.94 25.8229 0.61C23.5695 0 14.4848 0 14.4848 0C14.4848 0 5.42037 0 3.17711 0.61C1.9286 0.94 0.954148 1.9 0.59888 3.14C0 5.34 0 9.98 0 9.98C0 9.98 0 14.65 0.59888 16.87C0.954148 18.08 1.9286 19.06 3.17711 19.4C5.42037 20 14.4848 20 14.4848 20Z"
+                                                    fill="#FF0033"></path>
+                                                <path d="M19 10L11.5 5.75V14.25L19 10Z" fill="white"></path>
+                                            </g>
+
+                                        </svg></div>
+                                </span>
+                            </div>
+                        </div>
+                        {{-- <video class="img-fluid bannerVideo" autoplay muted loop playsinline>
                             <source src="{{ asset('uploads/gallery/gallery_1757321107-1.mp4') }}" type="video/mp4">
                             Your browser does not support the video tag.
-                        </video>
+                        </video> --}}
                     </div>
                 </div><!-- END COL-->
             </div><!--- END ROW -->
@@ -136,7 +163,7 @@
                     <div class="single_tp">
                         <h3>Expert Instructors</h3>
                         <p>Learn from IT professionals and experienced mentors who guide you through hands-on projects.</p>
-                        <p> Practical Learning |  Live Sessions |  Career Mentorship</p>
+                        <p> Practical Learning | Live Sessions | Career Mentorship</p>
                         <a href="javascript:void(0)" class="cta open-enquiry-form"><span>Enquire Now</span>
                             <svg width="13px" height="10px" viewBox="0 0 13 10">
                                 <path d="M1,5 L11,5"></path>
@@ -150,7 +177,7 @@
                     <div class="single_tp">
                         <h3>Advanced Learning Environment</h3>
                         <p>Experience cutting-edge technology with world-class facilities designed for IT excellence.</p>
-                        <p> High-Tech Labs |  Practical |  Certification of Completion</p>
+                        <p> High-Tech Labs | Practical | Certification of Completion</p>
                         <a href="javascript:void(0)" class="cta open-enquiry-form"><span>Enquire Now</span>
                             <svg width="13px" height="10px" viewBox="0 0 13 10">
                                 <path d="M1,5 L11,5"></path>
@@ -369,15 +396,10 @@
             </div>
             <div class="swiper-container two">
                 <div class="swiper-wrapper">
-                    @foreach($galleries as $gallery)
-                        @php
-                            $extension = pathinfo($gallery->url, PATHINFO_EXTENSION);
-                        @endphp
+                    @foreach ($galleries as $gallery)
                         <div class="swiper-slide">
                             <div class="slider-image">
-                                @if (in_array(strtolower($extension), ['jpg', 'jpeg', 'png', 'gif']))
-                                    <img src="{{ asset('uploads/gallery/'.$gallery->url) }}" alt="{{ $gallery->title }}">
-                                @endif
+                                <img src="{{ asset('uploads/gallery/' . $gallery->url) }}" alt="{{ $gallery->title }}">
                             </div>
                         </div>
                     @endforeach
@@ -415,7 +437,8 @@
 
                             </div>
                             <div class="course-content">
-                                <h3><a href="{{ route('courseDetail', ['slug' => $course->slug]) }}">{{ $course->name }}</a>
+                                <h3><a
+                                        href="{{ route('courseDetail', ['slug' => $course->slug]) }}">{{ $course->name }}</a>
                                 </h3>
                             </div>
                         </div><!--END COURSE SLIDE -->
@@ -463,8 +486,8 @@
                         <img src="{{ asset('assets/frontend/images/promo.png') }}"
                             style="aspect-ratio: unset !important;" class="img-fluid" alt="image">
                         <!-- <div class="wc_year">
-                                                        <h3>20 Years of Experience <br />from 2002</h3>
-                                                    </div> -->
+                                                                <h3>20 Years of Experience <br />from 2002</h3>
+                                                            </div> -->
                     </div>
                 </div><!--- END COL -->
             </div><!--- END ROW -->
@@ -663,11 +686,27 @@
     <!-- START FOOTER -->
 @endsection
 @section('footerScript')
-    <script src="{{ asset('assets/frontend/js/swiper.min.js')}}"></script>
+    <script src="{{ asset('assets/frontend/js/swiper.min.js') }}"></script>
     <script>
+        document.querySelectorAll(".youtube").forEach(el => {
+            el.addEventListener("click", function() {
+                let iframe = document.createElement("iframe");
+                iframe.setAttribute("frameborder", "0");
+                iframe.setAttribute("allowfullscreen", "");
+                iframe.setAttribute("allow",
+                    "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    );
+                iframe.style.width = "100%";
+                iframe.style.height = "100%";
+                iframe.style.marginTop = "10px";
+                iframe.src = "https://www.youtube.com/embed/" + this.dataset.embed + "?autoplay=1";
+                iframe.classList.add("youtube-iframe");
+                this.innerHTML = "";
+                this.appendChild(iframe);
+            });
+        });
+
         var swiper = new Swiper('.swiper-container.two', {
-            pagination: '.swiper-pagination',
-            paginationClickable: true,
             effect: 'coverflow',
             loop: true,
             centeredSlides: true,
@@ -678,7 +717,11 @@
                 depth: 150,
                 modifier: 1.5,
                 slideShadows: false,
-            }
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
         });
     </script>
 @endsection

@@ -95,6 +95,27 @@ class HomeController extends Controller
         return view('courseDetail',$data);
     }
 
+    public function ppcDetail()
+    {
+        $data['otherCourses']   =   Course::where('is_active',1)->get();
+
+        return view('static.ppc',$data);
+    }
+
+    public function seoDetail()
+    {
+        $data['otherCourses']   =   Course::where('is_active',1)->get();
+
+        return view('static.seo',$data);
+    }
+
+    public function smmDetail()
+    {
+        $data['otherCourses']   =   Course::where('is_active',1)->get();
+
+        return view('static.smm',$data);
+    }
+
     public function sitemap()
     {
         $urls = [
@@ -104,6 +125,9 @@ class HomeController extends Controller
             ['loc' => url('/contact'), 'lastmod' => Carbon::now()->toAtomString(), 'priority' => '0.6'],
             ['loc' => url('/gallery'), 'lastmod' => Carbon::now()->toAtomString(), 'priority' => '0.5'],
             ['loc' => url('/verification'), 'lastmod' => Carbon::now()->toAtomString(), 'priority' => '0.4'],
+            ['loc' => url('/ppc-course-in-jalandhar'), 'lastmod' => Carbon::now()->toAtomString(), 'priority' => '0.7'],
+            ['loc' => url('/seo-course-in-jalandhar'), 'lastmod' => Carbon::now()->toAtomString(), 'priority' => '0.7'],
+            ['loc' => url('/smm-course-in-jalandhar'), 'lastmod' => Carbon::now()->toAtomString(), 'priority' => '0.7'],
         ];
 
         // Get all blogs
@@ -119,7 +143,7 @@ class HomeController extends Controller
         $courses = Course::where('is_active', 1)->latest()->get();
         foreach ($courses as $course) {
             $urls[] = [
-                'loc' => url('/course/in/jalandhar/' . $course->slug),
+                'loc' => url($course->slug . '-course-in-jalandhar'),
                 'lastmod' => $course->updated_at->toAtomString(),
                 'priority' => '0.7'
             ];
