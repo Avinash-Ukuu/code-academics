@@ -33,5 +33,8 @@ Route::get('ppc-course-in-jalandhar',       [HomeController::class,'ppcDetail'])
 Route::get('seo-course-in-jalandhar',       [HomeController::class,'seoDetail'])->name('seoDetail');
 Route::get('smm-course-in-jalandhar',       [HomeController::class,'smmDetail'])->name('smmDetail');
 Route::get('/{slug}-course-in-jalandhar',   [HomeController::class,'courseDetail'])->where('slug', '[A-Za-z0-9\-]+')->name('courseDetail');
+Route::get('/course/in/jalandhar/{slug}', function ($slug) {
+    return redirect()->to("/{$slug}-course-in-jalandhar", 301);
+});
 
 require __DIR__.'/auth.php';
