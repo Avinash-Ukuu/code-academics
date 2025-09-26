@@ -1429,6 +1429,12 @@ position: relative;
     margin-bottom: 30px;
 }
 
+.customSticky{
+        position: sticky;
+    top: 100px;
+    height: 100%;
+}
+
 .ab_content p {
     margin-bottom: 30px;
 }
@@ -1657,10 +1663,38 @@ position: relative;
     margin-bottom: 30px;
 }
 
+.customSection{
+    position: relative;
+}
+
+.reviewButton {
+    position: absolute;
+    right: 170px;
+    top: 6px;
+}
+
 @media only screen and (max-width:480px) {
     .course-slide {
         margin-bottom: 30px;
     }
+
+    .customSticky{
+        position: initial;
+    }
+
+    .reviewButton {
+           position: absolute;
+        left: 0;
+        /* bottom: 0; */
+        top: 130%;
+}
+.customSpace{
+    margin-bottom: 120px!important;
+}
+
+.testimonial{
+        margin: 0!important;
+}
 }
 
 .course-slide .course-img {

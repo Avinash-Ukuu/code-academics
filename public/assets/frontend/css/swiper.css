@@ -645,11 +645,11 @@ button.swiper-pagination-bullet {
     width: 500px;
 }
 
-.swiper-slide{
+/* .swiper-slide{
      filter: blur(5px);
 }
 
 .swiper-slide.swiper-slide-active{
       filter: blur(0px);
 
-}
+} */
