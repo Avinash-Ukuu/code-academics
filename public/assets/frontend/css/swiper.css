@@ -70,7 +70,9 @@ background-repeat: no-repeat;
     -ms-flex: 0 0 auto;
     -ms-flex-negative: 0;
     flex-shrink: 0;
-    width: 100%;
+    /* width: 100%; */
+     width: auto !important; /* This is good for auto-sizing... */
+    max-width: 90%;
     height: 100%;
     position: relative
 }
@@ -590,6 +592,17 @@ button.swiper-pagination-bullet {
 .swiper-slide .slider-image .preview-icon {
     z-index: -1;
     width: calc(100% - 30px);
+}
+
+.slider-image {
+    width: 500px; /* This is a fixed, non-responsive width for the content */
+}
+
+
+.slider-image img {
+    /* Ensures the image itself is always responsive within its container */
+    max-width: 100%;
+    height: auto;
 }
 
 .swiper-slide.swiper-slide-active .slider-image:hover .preview-icon {

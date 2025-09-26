@@ -722,6 +722,14 @@
                 el: '.swiper-pagination',
                 clickable: true,
             },
+            breakpoints: {
+                768: {
+                    coverflow: {
+                        stretch: 50,
+                        depth: 80,
+                    }
+                }
+            }
         });
     </script>
 @endsection
