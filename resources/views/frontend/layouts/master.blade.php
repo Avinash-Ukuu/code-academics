@@ -13,6 +13,15 @@
     <meta name="author" content="code academics">
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="sJl9KNsLmOUjr8KhFBNifQSa6tXtJi30PUJOtv8e1vM" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S3PWT98TZB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-S3PWT98TZB');
+    </script>
     @yield('schema')
     <link rel="canonical" href="@yield('canonical', url()->current())">
     <link rel="icon" type="image/png" sizes="16x16"
@@ -146,7 +155,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                
+
                                 <li><a class="nav-link" href="{{ route('blogPage') }}">Blog</a></li>
                                 <li><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
                                 <li><a class="nav-link" href="{{ route('gallery') }}">Gallery</a></li>
