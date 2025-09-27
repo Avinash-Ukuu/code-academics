@@ -14,7 +14,7 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $data['courses']        =       Course::where('is_active',1)->get();
+        $data['courses']        =       Course::with('durations')->where('is_active',1)->get();
         $data['blogs']          =       Blog::where('publish_type','publish')->take(5)->orderBy('blog_created_at','desc')->get();
         $data['galleries']      =       Gallery::take(10)->get();
 

@@ -72,8 +72,15 @@
     </script>
 @endsection
 @section('headerLinks')
-    <link rel="stylesheet" href="{{ asset('assets/frontend/css/swiper.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/swiper.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/style_1.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/validnavs.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/helper.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/unit-test.css') }}">
 @endsection
 @section('content')
     <!-- START HOME -->
@@ -85,7 +92,8 @@
                     <div class="home_content">
                         {{-- <h1><span> Future</span> Starts With <span>CODE ACADEMICS</span></h1> --}}
                         <h1>Future Stats with Us: <span> Best Coding Institute in Jalandhar</span></h1>
-                        <p>Upgrade your career with the best programming courses in Jalandhar. Learn coding, design, and IT skills from experts at Code Academics Jalandhar.</p>
+                        <p>Upgrade your career with the best programming courses in Jalandhar. Learn coding, design, and IT
+                            skills from experts at Code Academics Jalandhar.</p>
                     </div>
                     <div class="home_btn">
                         <a href="{{ route('coursePage') }}" class="cta"><span>Explore Courses</span>
@@ -101,8 +109,7 @@
                         <div class="youtube img-fluid bannerVideo" data-embed="IaYpubnP9Ug">
                             <img src="{{ asset('assets/frontend/images/code-academics-banner.jpg') }}"
                                 style="width:100%;height:100%;display:block;">
-                            <div
-                                style="position:absolute;top:50%;left:60%;transform:translate(-50%,-50%);height: 40px;">
+                            <div style="position:absolute;top:50%;left:60%;transform:translate(-50%,-50%);height: 40px;">
                                 <span class="yt-icon-shape style-scope yt-icon ytSpecIconShapeHost">
                                     <div style="width: 100%;height: 100%;display: block;fill: #ff0033;">
                                         <svg xmlns="http://www.w3.org/2000/svg" id="yt-ringo2-svg_yt10" width="93"
@@ -178,8 +185,8 @@
     <section class="ab_one section-padding">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp customSticky" data-wow-duration="1s" data-wow-delay="0.2s"
-                    data-wow-offset="0">
+                <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp customSticky" data-wow-duration="1s"
+                    data-wow-delay="0.2s" data-wow-offset="0">
                     <div class="ab_img">
                         <img src="{{ asset('assets/frontend/images/about.jpg') }}" style="aspect-ratio: unset !important;"
                             class="img-fluid" alt="career guidance">
@@ -188,24 +195,32 @@
                 <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"
                     data-wow-offset="0">
                     <div class="ab_content">
-                        <h2>Why <span>Code Academics</span> is the <u><span>Best Coding Institute</span></u> in Jalandhar</h2>
-                        <p>At Code Academics Jalandhar, we prepare students with practical, career-oriented training in the latest technologies. As the best coding institute in Jalandhar,
-                            our focus is to make every learner job-ready with live projects, expert guidance, and globally relevant skills.</p>
+                        <h2>Why <span>Code Academics</span> is the <u><span>Best Coding Institute</span></u> in Jalandhar
+                        </h2>
+                        <p>At Code Academics Jalandhar, we prepare students with practical, career-oriented training in the
+                            latest technologies. As the best coding institute in Jalandhar,
+                            our focus is to make every learner job-ready with live projects, expert guidance, and globally
+                            relevant skills.</p>
                         <p>From Python classes in Jalandhar to full stack development courses, digital marketing training,
-                            and even video editing courses, we offer a wide range of programs that match today’s IT industry requirements.</p>
-                        <p>Our structured courses and supportive mentors ensure that every student gains confidence in coding, problem-solving, and professional IT skills.
+                            and even video editing courses, we offer a wide range of programs that match today’s IT industry
+                            requirements.</p>
+                        <p>Our structured courses and supportive mentors ensure that every student gains confidence in
+                            coding, problem-solving, and professional IT skills.
                         </p>
                     </div>
                     <div class="abmv">
                         <span class="ti-medall"></span>
                         <h4>Our Mission</h4>
-                        <p>To empower students with industry-relevant knowledge through hands-on learning at the best IT coaching center in Jalandhar.
+                        <p>To empower students with industry-relevant knowledge through hands-on learning at the best IT
+                            coaching center in Jalandhar.
                             Our mission is to build confident professionals who can excel in the global IT market.</p>
                     </div>
                     <div class="abmv">
                         <span class="ti-wand"></span>
                         <h4>Our Vision</h4>
-                        <p>To become the most trusted professional coding academy in Jalandhar, bridging the gap between education and industry by offering advanced programming courses in Jalandhar that prepare students for future technologies.</p>
+                        <p>To become the most trusted professional coding academy in Jalandhar, bridging the gap between
+                            education and industry by offering advanced programming courses in Jalandhar that prepare
+                            students for future technologies.</p>
                     </div>
                     <a class="btn_one open-enquiry-form" href="javascript:void(0)">Start Learning Today</a>
                 </div><!--- END COL -->
@@ -297,7 +312,8 @@
         <div class="container">
             <div class="ab_content">
                 <h2>What Makes <span>Code Academics</span> the Best Coding Institute in Jalandhar</h2>
-                <p>As the leading IT training institute in Jalandhar, we offer practical learning, expert mentors, and complete career support for students who want to excel in programming and IT skills.</p>
+                <p>As the leading IT training institute in Jalandhar, we offer practical learning, expert mentors, and
+                    complete career support for students who want to excel in programming and IT skills.</p>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s"
@@ -307,7 +323,8 @@
                             <span class="ti-book ss_one"></span>
                             <h2><a href="javascript:void(0)">Structured Offline Learning</a></h2>
                         </div>
-                        <p>Experience interactive, in-person classes at the best coding institute in Jalandhar. With classes from 9 AM to 6 PM, you’ll enjoy focused sessions and real-world coding practice.</p>
+                        <p>Experience interactive, in-person classes at the best coding institute in Jalandhar. With classes
+                            from 9 AM to 6 PM, you’ll enjoy focused sessions and real-world coding practice.</p>
                     </div>
                 </div><!-- END COL -->
                 <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s"
@@ -317,7 +334,8 @@
                             <span class="ti-heart ss_two"></span>
                             <h2><a href="javascript:void(0)">Expert <br>Instructor</a></h2>
                         </div>
-                        <p>Learn from industry professionals at the top software training institute in Jalandhar, bringing years of real-world expertise and in-demand IT skills.</p>
+                        <p>Learn from industry professionals at the top software training institute in Jalandhar, bringing
+                            years of real-world expertise and in-demand IT skills.</p>
                     </div>
                 </div><!-- END COL -->
                 <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s"
@@ -327,7 +345,8 @@
                             <span class="ti-user ss_three"></span>
                             <h2><a href="javascript:void(0)">Efficient Team<br> Management</a></h2>
                         </div>
-                        <p>Our dedicated team ensures smooth learning at Code Academics Jalandhar, making us a trusted computer classes institute in Jalandhar with top-notch support.
+                        <p>Our dedicated team ensures smooth learning at Code Academics Jalandhar, making us a trusted
+                            computer classes institute in Jalandhar with top-notch support.
                         </p>
                     </div>
                 </div><!-- END COL -->
@@ -338,7 +357,8 @@
                             <span class="ti-eye ss_four"></span>
                             <h2><a href="javascript:void(0)">Strategic Course <br> Planning</a></h2>
                         </div>
-                        <p>Follow structured learning paths that cover everything from basics to advanced programming. Ideal for students seeking the best programming courses in Jalandhar.</p>
+                        <p>Follow structured learning paths that cover everything from basics to advanced programming. Ideal
+                            for students seeking the best programming courses in Jalandhar.</p>
                     </div>
                 </div><!-- END COL -->
                 <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s"
@@ -348,7 +368,8 @@
                             <span class="ti-light-bulb ss_five"></span>
                             <h2><a href="javascript:void(0)">Teacher Guidance & Support</a></h2>
                         </div>
-                        <p>Personalized mentorship from experts at our professional coding academy in Jalandhar, helping you track progress and achieve your career goals.</p>
+                        <p>Personalized mentorship from experts at our professional coding academy in Jalandhar, helping you
+                            track progress and achieve your career goals.</p>
                     </div>
                 </div><!-- END COL -->
                 <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s"
@@ -358,7 +379,8 @@
                             <span class="ti-email ss_six"></span>
                             <h2><a href="javascript:void(0)">Dedicated Support During Class Hours</a></h2>
                         </div>
-                        <p>Get continuous assistance during your sessions at Code Academics, the most reliable IT coaching center in Jalandhar. Our mentors are available full-time to answer your queries.</p>
+                        <p>Get continuous assistance during your sessions at Code Academics, the most reliable IT coaching
+                            center in Jalandhar. Our mentors are available full-time to answer your queries.</p>
                     </div>
                 </div><!-- END COL -->
             </div><!-- END ROW -->
@@ -367,7 +389,7 @@
     <!-- END WHY CHOOSE US -->
 
     <!-- Swiper -->
-    <section class="marketing_content_area section-padding custombackground">
+    {{-- <section class="marketing_content_area section-padding custombackground">
         <div class="container">
             <div class="section-title">
                 <h2>Gallery</h2>
@@ -387,11 +409,43 @@
                 <div class="swiper-pagination"></div>
             </div>
         </div>
-    </section>
+    </section> --}}
+
+    <div class="testimonial-style-two-area default-padding">
+        {{-- <div class="container">
+            <div class="row">
+                    <div class="site-heading text-left ab_content">
+                        <h2>Gallery</h2>
+                        <h2 class="title split-text">Life At <span><u>Code Academics.</u></span> </h2>
+                    </div>
+            </div>
+        </div> --}}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="testimonial-style-two-carousel swiper">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Single Item -->
+                             @foreach ($galleries as $gallery)
+                            <div class="swiper-slide">
+                                <div class="testimonial-style-two">
+                                   <img style="width: 100%" src="{{ asset('uploads/gallery/' . $gallery->url) }}" alt="{{ $gallery->title }}">
+                                </div>
+                            </div>
+                             @endforeach
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!--START COURSE -->
-    <div class="best-cpurse section-padding">
+    {{-- <div class="best-cpurse section-padding">
         <div class="container">
             <div class="section-title">
                 <h2>Popular Courses</h2>
@@ -430,7 +484,162 @@
                 </div><!--END COL -->
             </div><!--END ROW -->
         </div><!--END CONTAINER -->
+    </div> --}}
+
+
+    <!-- Start Course
+                ============================================= -->
+    <div class="course-style-two-area default-padding bottom-less bg-gray-gradient-secondary overflow-hidden">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="site-heading text-center">
+                        <h4 class="sub-title">Latest Courses</h4>
+                        <h2 class="title">Most Popular Courses</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            {{-- <div class="row">
+                <div class="col-lg-12">
+                    <div class="course-style-one-bullet swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="course-bullet-item">
+                                    <div class="icon">
+                                        <img src="{{ asset('assets/frontend/images/26.png') }}" alt="Image Not Found">
+                                    </div>
+                                    <div class="info">
+                                        <h4>Design</h4>
+                                        <span>14 Courses</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="course-bullet-item">
+                                    <div class="icon">
+                                        <img src="{{ asset('assets/frontend/images/27.png') }}" alt="Image Not Found">
+                                    </div>
+                                    <div class="info">
+                                        <h4>App Development</h4>
+                                        <span>26 Courses</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="course-bullet-item">
+                                    <div class="icon">
+                                        <img src="{{ asset('assets/frontend/images/28.png') }}" alt="Image Not Found">
+                                    </div>
+                                    <div class="info">
+                                        <h4>Spoken English</h4>
+                                        <span>15 Courses</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="course-bullet-item">
+                                    <div class="icon">
+                                        <img src="{{ asset('assets/frontend/images/29.png') }}" alt="Image Not Found">
+                                    </div>
+                                    <div class="info">
+                                        <h4>Development</h4>
+                                        <span>12 Courses</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="course-bullet-item">
+                                    <div class="icon">
+                                        <img src="{{ asset('assets/frontend/images/30.png') }}" alt="Image Not Found">
+                                    </div>
+                                    <div class="info">
+                                        <h4>Security</h4>
+                                        <span>23 Courses</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+
+            <div class="course-style-one-carousel swiper">
+                <div class="swiper-wrapper">
+                    <!-- Single Item -->
+                    <div class="swiper-slide">
+                        <div class="row">
+                            <div class="course-inner-carousel swiper">
+                                <div class="swiper-wrapper">
+                                    @foreach($courses as $course)
+                                        <!-- Single Item -->
+                                        <div class="swiper-slide">
+                                            <div class="course-style-one-item hover-less style-two">
+                                                <div class="thumb">
+                                                    @if ($course->image && file_exists('uploads/courses/' . $course->image))
+                                                        <img src="{{ asset('uploads/courses/' . $course->image) }}" loading="lazy"
+                                                            alt="{{ $course->name }} course in Jalandhar">
+                                                    @else
+                                                        <img src="{{ asset('assets/frontend/images/c1.png') }}" loading="lazy"
+                                                            alt="{{ $course->name }} course in Jalandhar">
+                                                    @endif
+                                                </div>
+                                                {{-- <div class="top-meta">
+                                                    <ul>
+                                                        <li>
+                                                            <div class="course-rating">
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star-half-alt"></i>
+                                                                <span>(4.8)</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="bookmark">
+                                                        <a href="#"><i class="fas fa-bookmark"></i></a>
+                                                    </div>
+                                                </div> --}}
+                                                <div class="info">
+                                                    <h4><a href="{{ route('courseDetail', ['slug' => $course->slug]) }}">{{ $course->name }}</a></h4>
+                                                    <div class="course-meta">
+                                                        <ul style="margin-top: 10px">
+                                                            @foreach ($course->durations as $data)
+                                                                <li>
+                                                                    {{ $data->duration }} Months
+                                                                </li>
+                                                            @endforeach
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="course-bottom-meta">
+                                                    <a href="{{ route('courseDetail', ['slug' => $course->slug]) }}"> Enroll Now To Course</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Single Item -->
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Item -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-center">
+                    <a class="btn_one" href="{{ route('coursePage') }}">View All Courses</a>
+                </div>
+            </div>
+        </div>
     </div>
+    <!-- End Course -->
+
+
+
+
     <!--END COURSE -->
 
     <!-- START COURSE PROMOTION -->
@@ -442,29 +651,37 @@
                     <div class="cp_content">
                         <h4>One Platform & Many Courses For You</h4>
                         <h2>Best <span><u>Offline Learning Platform</u></span> in Jalandhar</h2>
-                        <p>At Code Academics, we believe learning is most effective when it’s offline, practical, and mentor-guided.
-                            That’s why we provide a structured environment where students can focus fully on coding, designing, and IT skills without distractions.</p>
-                        <p>As the best coding institute in Jalandhar, we offer multiple in-demand courses under one roof — from web development and Python classes in Jalandhar to digital marketing, video editing, and full stack development courses.</p>
-                        <p>Every program is designed to give you real-world project experience, so you don’t just learn theory — you build actual skills that companies want.</p>
+                        <p>At Code Academics, we believe learning is most effective when it’s offline, practical, and
+                            mentor-guided.
+                            That’s why we provide a structured environment where students can focus fully on coding,
+                            designing, and IT skills without distractions.</p>
+                        <p>As the best coding institute in Jalandhar, we offer multiple in-demand courses under one roof —
+                            from web development and Python classes in Jalandhar to digital marketing, video editing, and
+                            full stack development courses.</p>
+                        <p>Every program is designed to give you real-world project experience, so you don’t just learn
+                            theory — you build actual skills that companies want.</p>
                         <ul>
                             <li><span class="ti-check"></span>9/10 Average Satisfaction Rate
                                 <ul>
                                     <li>
-                                        <p>Students rate Code Academics as the top IT training institute in Jalandhar, thanks to practical learning and dedicated guidance.</p>
+                                        <p>Students rate Code Academics as the top IT training institute in Jalandhar,
+                                            thanks to practical learning and dedicated guidance.</p>
                                     </li>
                                 </ul>
                             </li>
                             <li><span class="ti-check"></span>96% Completitation Rate
                                 <ul>
                                     <li>
-                                        <p>With structured offline classes and step-by-step mentoring, our students successfully complete even advanced programming courses in Jalandhar.</p>
+                                        <p>With structured offline classes and step-by-step mentoring, our students
+                                            successfully complete even advanced programming courses in Jalandhar.</p>
                                     </li>
                                 </ul>
                             </li>
                             <li><span class="ti-check"></span>Supportive Learning Environment & Expert Instructors
                                 <ul>
                                     <li>
-                                        <p>We combine a friendly classroom setup with experienced mentors, making us the most reliable professional coding academy in Jalandhar.</p>
+                                        <p>We combine a friendly classroom setup with experienced mentors, making us the
+                                            most reliable professional coding academy in Jalandhar.</p>
                                     </li>
                                 </ul>
                             </li>
@@ -479,8 +696,8 @@
                         </a>
                     </div>
                 </div><!--- END COL -->
-                <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp customSticky" data-wow-duration="1s" data-wow-delay="0.2s"
-                    data-wow-offset="0">
+                <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp customSticky" data-wow-duration="1s"
+                    data-wow-delay="0.2s" data-wow-offset="0">
                     <div class="cp_img">
                         <img src="{{ asset('assets/frontend/images/avinew.webp') }}"
                             style="aspect-ratio: unset !important;" class="img-fluid" alt="image">
@@ -491,7 +708,7 @@
     </section>
     <!-- END COURSE PROMOTION -->
 
-<!-- START FAQ -->
+    <!-- START FAQ -->
     <section class="faq_area section-padding">
         <div class="container">
             <div class="section-title">
@@ -511,7 +728,10 @@
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    Code Academics is recognized as the best coding institute in Jalandhar, offering practical training in web development, Python, digital marketing, video editing, and more. Our offline classes, expert instructors, and placement guidance make us the top choice for students and professionals.
+                                    Code Academics is recognized as the best coding institute in Jalandhar, offering
+                                    practical training in web development, Python, digital marketing, video editing, and
+                                    more. Our offline classes, expert instructors, and placement guidance make us the top
+                                    choice for students and professionals.
                                 </div>
                             </div>
                         </div><!-- END ACCORDION ITEM  -->
@@ -525,7 +745,9 @@
                             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    Yes, Code Academics offers beginner to advanced python classes in Jalandhar. Students learn coding fundamentals, data structures, and real-world applications to prepare for careers in software development and data science
+                                    Yes, Code Academics offers beginner to advanced python classes in Jalandhar. Students
+                                    learn coding fundamentals, data structures, and real-world applications to prepare for
+                                    careers in software development and data science
                                 </div>
                             </div>
                         </div><!-- END ACCORDION ITEM  -->
@@ -539,7 +761,9 @@
                             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    Beginners can start with our web development institute in Jalandhar, Python programming, or digital marketing courses. These courses are designed step-by-step, making them easy to follow while building strong career skills.
+                                    Beginners can start with our web development institute in Jalandhar, Python programming,
+                                    or digital marketing courses. These courses are designed step-by-step, making them easy
+                                    to follow while building strong career skills.
                                 </div>
                             </div>
                         </div><!-- END ACCORDION ITEM  -->
@@ -553,7 +777,9 @@
                             <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    Yes, we provide a comprehensive full stack development course in Jalandhar, covering frontend (HTML, CSS, JavaScript, React) and backend (Node.js, MongoDB) with live project experience.
+                                    Yes, we provide a comprehensive full stack development course in Jalandhar, covering
+                                    frontend (HTML, CSS, JavaScript, React) and backend (Node.js, MongoDB) with live project
+                                    experience.
                                 </div>
                             </div>
                         </div><!-- END ACCORDION ITEM  -->
@@ -567,7 +793,10 @@
                             <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    Code Academics is more than just a computer classes institute in Punjab — it’s a professional coding academy in Jalandhar. We offer 100% practical training, supportive mentorship, a 96% completion rate, and certificates that add value to your career profile.
+                                    Code Academics is more than just a computer classes institute in Punjab — it’s a
+                                    professional coding academy in Jalandhar. We offer 100% practical training, supportive
+                                    mentorship, a 96% completion rate, and certificates that add value to your career
+                                    profile.
                                 </div>
                             </div>
                         </div><!-- END ACCORDION ITEM  -->
@@ -575,7 +804,8 @@
                 </div><!-- END COL  -->
                 <div class="col-lg-6 col-sm-6 col-xs-12">
                     <div class="pt_faq">
-                        <img src="{{ asset('assets/frontend/images/faq.png')}}" style="aspect-ratio: unset !important;" class="img-fluid" alt="image">
+                        <img src="{{ asset('assets/frontend/images/faq.png') }}" style="aspect-ratio: unset !important;"
+                            class="img-fluid" alt="image">
                     </div>
                 </div><!-- END COL  -->
             </div><!--END  ROW  -->
@@ -589,11 +819,11 @@
             <div class="section-title customSection">
                 <h2>Testimonial</h2>
                 <p class="customSpace">What Says <span><u>Our Students</u></span></p>
-                <a class="reviewButton" href="https://search.google.com/local/writereview?placeid=ChIJ30P_95VbGjkRWJ_QD2CQkRg"
-                        target="_blank"
-                        style="background:#1a73e8;color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none;">
-                        Review us on Google
-                        </a>
+                <a class="reviewButton"
+                    href="https://search.google.com/local/writereview?placeid=ChIJ30P_95VbGjkRWJ_QD2CQkRg" target="_blank"
+                    style="background:#1a73e8;color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none;">
+                    Review us on Google
+                </a>
             </div>
             <div class="row">
                 <div class="col-lg-12">
@@ -770,15 +1000,35 @@
     <div style="width: 100%; max-width: 100%; overflow: hidden; position: relative; padding-top: 43.25%;">
         <iframe title="Map of reaching Code Academics"
             src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d109076.43892059589!2d75.50858480128626!3d31.313729190279737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x391a5b95f7ff43df%3A0x189190600fd09f58!2sFirst%20Floor%2C%20Badwal%20complex%2C%20SCO%20-%20207%2C%20Near%20Narinder%20Cinema%2C%20Jawahar%20Nagar%2C%20Jalandhar%2C%20Punjab%20144001!3m2!1d31.3137555!2d75.5909861!5e0!3m2!1sen!2sin!4v1757049818988!5m2!1sen!2sin"
-            width="600" height="450" style="border:0; position: absolute; top:0; left:0; width:100%; height:100%;"
-            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            width="600" height="450"
+            style="border:0; position: absolute; top:0; left:0; width:100%; height:100%;" allowfullscreen=""
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <!-- End map -->
 
     <!-- START FOOTER -->
 @endsection
+
 @section('footerScript')
     <script src="{{ asset('assets/frontend/js/swiper.min.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/bootstrap.bundle.min.js ') }}"></script>
+    <script src="{{ asset('assets/frontend/js/jquery.appear.js ') }}"></script>
+    <script src="{{ asset('assets/frontend/js/jquery.easing.min.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/progress-bar.min.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/count-to.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/wow.min.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/YTPlayer.min.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/loopcounter.js ') }}"></script>
+    <script src="{{ asset('assets/frontend/js/validnavs.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/gsap.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/ScrollTrigger.min.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/SplitText.min.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/main.js ') }}"></script>
     <script>
         document.querySelectorAll(".youtube").forEach(el => {
             el.addEventListener("click", function() {
@@ -787,7 +1037,7 @@
                 iframe.setAttribute("allowfullscreen", "");
                 iframe.setAttribute("allow",
                     "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    );
+                );
                 iframe.style.width = "100%";
                 iframe.style.height = "100%";
                 iframe.style.marginTop = "10px";
