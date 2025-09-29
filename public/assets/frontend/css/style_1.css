@@ -270,6 +270,39 @@ input:focus {
 	box-shadow: inherit;
 }
 
+.reviewButton{
+    position: absolute;
+    right: 170px;
+    top: 6px;
+
+}
+
+.customSection{
+    position: relative;
+}
+
+.customSticky{
+        position: sticky;
+    top: 100px;
+    height: 100%;
+}
+
+
+@media only screen and (max-width:480px) {
+
+      .customSticky{
+        position: initial;
+    }
+
+    .reviewButton {
+           position: absolute;
+        left: 0;
+        /* bottom: 0; */
+        top: 130%;
+}
+
+}
+
 textarea:focus {
 	outline: none;
 	-webkit-box-shadow: inherit;

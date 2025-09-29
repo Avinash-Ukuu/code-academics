@@ -1667,11 +1667,15 @@ position: relative;
     position: relative;
 }
 
-.reviewButton {
+.reviewButton{
     position: absolute;
     right: 170px;
     top: 6px;
+
 }
+
+
+
 
 @media only screen and (max-width:480px) {
     .course-slide {
