@@ -290,7 +290,7 @@
                         <h4>Courses</h4>
                         <ul>
                             @foreach ($courses as $course)
-                                <li><a
+                                <li><a style="text-decoration:none"
                                         href="{{ route('courseDetail', ['slug' => $course->slug]) }}">{{ ucfirst($course->name) }}</a>
                                 </li>
                             @endforeach
@@ -301,11 +301,11 @@
                     <div class="single_footer">
                         <h4>Company</h4>
                         <ul>
-                            <li><a href="{{ route('aboutUs') }}">About us</a></li>
-                            <li><a href="{{ route('contact') }}">Contact</a></li>
-                            <li><a href="{{ route('gallery') }}">Gallery</a></li>
-                            <li><a href="{{ route('verification') }}">Verification</a></li>
-                            <li><a href="{{ route('sitemap') }}">Sitemap</a></li>
+                            <li><a style="text-decoration:none" href="{{ route('aboutUs') }}">About us</a></li>
+                            <li><a style="text-decoration:none" href="{{ route('contact') }}">Contact</a></li>
+                            <li><a style="text-decoration:none" href="{{ route('gallery') }}">Gallery</a></li>
+                            <li><a style="text-decoration:none" href="{{ route('verification') }}">Verification</a></li>
+                            <li><a style="text-decoration:none" href="{{ route('sitemap') }}">Sitemap</a></li>
                         </ul>
                     </div>
                 </div><!--- END COL -->
