@@ -17,7 +17,10 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S3PWT98TZB"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'G-S3PWT98TZB');
@@ -89,18 +92,53 @@
             font-size: 20px;
         }
 
-        .mega-menu {
-            width: 800px;
-            /* adjust size */
-            left: 50%;
-            transform: translateX(-50%);
+        /* Dropdown style */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
             top: 100%;
-            border-radius: 10px;
+            left: 0;
+            background: #fff;
+            list-style: none;
+            min-width: 200px;
+            z-index: 1000;
+            border: 1px solid #ddd;
         }
 
-        /* On hover for desktop */
-        @media (min-width: 992px) {
-            .mega-dropdown:hover>.dropdown-menu {
+        .dropdown-menu li a {
+            display: block;
+            padding: 10px 14px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .dropdown-menu li a:hover {
+            background: #444;
+        }
+
+        /* Hover open (desktop) */
+        .dropdown:hover>.dropdown-menu {
+            display: block;
+        }
+
+        /* Sub-menu */
+        .dropdown-menu .dropdown-menu {
+            top: 0;
+            left: 100%;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .dropdown-menu {
+                position: static;
+            }
+
+            .dropdown:hover>.dropdown-menu {
+                display: none;
+            }
+
+            .dropdown:focus-within>.dropdown-menu,
+            .dropdown>a:focus+.dropdown-menu {
                 display: block;
             }
         }
@@ -112,7 +150,7 @@
 
     @php
         use App\Models\Course;
-        $courses = Course::where('is_active',1)->get();
+        $courses = Course::where('is_active', 1)->get();
     @endphp
 
     <!-- START PRELOADER -->
@@ -139,23 +177,28 @@
                         <nav id="main-menu" class="ms-auto">
                             <ul>
                                 <li><a class="nav-link" href="{{ route('home') }}">Home</a></li>
-                                <li class="nav-item dropdown mega-dropdown">
-                                    <a class="nav-link dropdown-toggle" href="{{ route('coursePage') }}"
-                                        id="coursesDropdown" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        Courses
-                                    </a>
-                                    <div class="dropdown-menu mega-menu p-4" aria-labelledby="coursesDropdown">
-                                        <div class="row">
-                                            @foreach($courses as $course)
-                                                <div class="col-md-3">
-                                                    <a class="dropdown-item" href="{{ route('courseDetail',['slug'=>$course->slug]) }}">{{$course->name}}</a>
-                                                </div>
-                                            @endforeach
-                                        </div>
-                                    </div>
+                                <li class="dropdown">
+                                    <a class="nav-link" href="{{ route('coursePage') }}">Courses ▾</a>
+                                    <ul class="dropdown-menu">
+                                        @foreach ($courses as $course)
+                                            @if ($course->slug == 'digital-marketing')
+                                                <li class="dropdown">
+                                                    <a href="{{ route('courseDetail', ['slug' => $course->slug]) }}">{{ $course->name }}
+                                                        ▸</a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="{{ route('ppcDetail') }}">PPC</a></li>
+                                                        <li><a href="{{ route('seoDetail') }}">SEO</a></li>
+                                                        <li><a href="{{ route('smmDetail') }}">SMM</a></li>
+                                                    </ul>
+                                                </li>
+                                            @else
+                                                <li><a
+                                                        href="{{ route('courseDetail', ['slug' => $course->slug]) }}">{{ $course->name }}</a>
+                                                </li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
                                 </li>
-
                                 <li><a class="nav-link" href="{{ route('blogPage') }}">Blog</a></li>
                                 <li><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
                                 <li><a class="nav-link" href="{{ route('gallery') }}">Gallery</a></li>
