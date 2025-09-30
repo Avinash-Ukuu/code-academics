@@ -228,7 +228,7 @@
     <div id="enquiryModal" class="modal fade" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header bg-dark text-white">
+                <div class="modal-header  text-white">
                     <h5 class="modal-title">Enquiry Form</h5>
                     <button type="button" data-bs-dismiss="modal" class="buttonclose">X</button>
                 </div>
