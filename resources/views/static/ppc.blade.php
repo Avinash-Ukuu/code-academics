@@ -1,7 +1,9 @@
 @extends('frontend.layouts.master')
-@section('meta_title','Best PPC Course in Jalandhar | Code Academics')
-@section('meta_description', 'Maximize ROI with professional PPC advertising. Get targeted traffic, leads, and conversions with our pay-per-click marketing services.')
-@section('meta_keywords', 'PPC advertising, pay-per-click marketing, Google Ads, Facebook Ads, targeted traffic, online advertising, paid search, PPC campaigns')
+@section('meta_title', 'Best PPC Course in Jalandhar | Code Academics')
+@section('meta_description', 'Maximize ROI with professional PPC advertising. Get targeted traffic, leads, and
+    conversions with our pay-per-click marketing services.')
+@section('meta_keywords', 'PPC advertising, pay-per-click marketing, Google Ads, Facebook Ads, targeted traffic, online
+    advertising, paid search, PPC campaigns')
 
 @section('schema')
     <script type="application/ld+json">
@@ -46,7 +48,44 @@
                             <img src="{{ asset('assets/frontend/images/c1.png') }}" alt="ppc course in Jalandhar">
                         </div>
                         <div class="arti_sp blog-content">
-                            <p>Maximize ROI with professional PPC advertising. Get targeted traffic, leads, and conversions with our pay-per-click marketing services.</p>
+                            <p>Our PPC Marketing Course is tailored to equip students, entrepreneurs, and professionals with
+                                skills to excel in executing effective paid ad campaigns. Learning with our course, you will
+                                understand how to set up, manage, and optimize PPC campaigns on Google Ads, Bing Ads, and
+                                social media platforms.</p>
+                            <p>From learning keyword research to crafting effective ad copies and reporting on campaign
+                                performance, this course offers functional knowledge and experiential training to drive
+                                leads, boost conversions, and amplify ROI.</p>
+                            &nbsp;<h4>What You'll Learn</h4>&nbsp;
+                            <ul>
+                                <li>PPC and digital advertising fundamentals</li>
+                                <li>Google Ads configuration (Search, Display, Video & Shopping campaigns)</li>
+                                <li>Bing Ads and other ad networks</li>
+                                <li>Keyword research and targeting techniques</li>
+                                <li>Crafting high-performing ad copies</li>
+                                <li>Quality Score and Ad Rank optimization</li>
+                                <li>Audience targeting & remarketing strategies</li>
+                                <li>Budgeting and bidding strategies</li>
+                                <li>Conversion tracking and analysis</li>
+                                <li>A/B testing and campaign optimization</li>
+                                <li>Reporting and performance monitoring</li>
+                            </ul>
+
+                            &nbsp;<h4>Who Can Join</h4>
+                            &nbsp;<ul>
+                                <li>Students seeking to establish a career in digital marketing</li>
+                                <li>Business owners seeking to market their brand online</li>
+                                <li>Marketing professionals seeking to upskill</li>
+                                <li>Freelancers seeking to provide PPC services</li>
+                            </ul>
+
+                            &nbsp;<h4>Career Opportunities After the Course</h4>&nbsp;
+                            <ul>
+                                <li>PPC Specialist</li>
+                                <li>Google Ads Manager</li>
+                                <li>Digital Marketing Executive</li>
+                                <li>SEM (Search Engine Marketing) Expert</li>
+                                <li>Freelance PPC Consultant</li>
+                            </ul>
                         </div>
                     </div><!-- END ARTI SINGLE  -->
 
@@ -56,16 +95,20 @@
                         <div class="sidebar_title">
                             <h4>Popular Courses</h4>
                         </div>
-                        @foreach($otherCourses as $otherCourse)
+                        @foreach ($otherCourses as $otherCourse)
                             <div class="single_popular">
-                                <a href="{{ route('courseDetail',['slug'=>$otherCourse->slug]) }}">
+                                <a href="{{ route('courseDetail', ['slug' => $otherCourse->slug]) }}">
                                     @if ($otherCourse->image && file_exists('uploads/courses/' . $otherCourse->image))
-                                        <img src="{{ asset('uploads/courses/' . $otherCourse->image) }}" alt="{{ $otherCourse->name }} course in Jalandhar">
+                                        <img src="{{ asset('uploads/courses/' . $otherCourse->image) }}"
+                                            alt="{{ $otherCourse->name }} course in Jalandhar">
                                     @else
-                                        <img src="{{ asset('assets/frontend/images/c1.png') }}" alt="{{ $otherCourse->name }} course in Jalandhar">
+                                        <img src="{{ asset('assets/frontend/images/c1.png') }}"
+                                            alt="{{ $otherCourse->name }} course in Jalandhar">
                                     @endif
                                 </a>
-                                <h5><a href="{{ route('courseDetail',['slug'=>$otherCourse->slug]) }}">{{ $otherCourse->name }}</a></h5>
+                                <h5><a
+                                        href="{{ route('courseDetail', ['slug' => $otherCourse->slug]) }}">{{ $otherCourse->name }}</a>
+                                </h5>
                             </div><!-- END Other Courses -->
                         @endforeach
                     </div><!-- END SIDEBAR POST -->

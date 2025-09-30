@@ -46,7 +46,28 @@
                             <img src="{{ asset('assets/frontend/images/c1.png') }}" alt="smm course in Jalandhar">
                         </div>
                         <div class="arti_sp blog-content">
-                            <p>Grow your brand on social media with expert SMM services. Engage your audience, increase followers, and drive conversions.</p>
+                            <p>Advance your digital marketing capabilities with the Social Media Marketing (SMM) Course at Code Academics, Jalandhar. The course is curated to assist beginners, business owners, and marketing specialists in learning the art of marketing brands and businesses on social media channels optimally.</p>
+
+                            &nbsp;<h4>What You Will Learn:</h4>&nbsp;
+                            <ul>
+                                <li><b>Social Media Strategy:</b> Discover how to organize and execute effective social media campaigns for various business objectives.</li>
+                                <li><b>Platform Optimization:</b> Master the art of Facebook, Instagram, LinkedIn, Twitter, and YouTube marketing to increase your brand's presence online.</li>
+                                <li><b>Content Creation & Marketing:</b> Develop compelling posts, stories, and videos that engage and retain people.</li>
+                                <li><b>Paid Advertising:</b> Discover how to operate economical ad campaigns on platforms such as Facebook Ads and Instagram Ads to ensure maximum ROI.</li>
+                                <li><b>Analytics & Reporting:</b> Learn about insights and metrics to monitor performance and optimize marketing strategies.</li>
+                                <li><b>Tools & Automation:</b> Learn the latest social media tools hands-on with Canva, Buffer, Hootsuite, and Meta Business Suite.</li>
+                            </ul>
+
+                            &nbsp;<h4>Why Code Academics:</h4>&nbsp;
+                            <ul>
+                                <li><b>Hands-on Training:</b> Practical experience through real-time projects.</li>
+                                <li><b>Expert Trainers:</b> Learn from experienced digital marketing professionals.</li>
+                                <li><b>Career Support:</b> Guidance for freelance jobs, internships, and job placements in digital marketing.</li>
+                                <li><b>Flexible Learning:</b> Classroom and online learning options to accommodate your schedule.</li>
+                            </ul>&nbsp;
+                            <p>By the end of the course, you’ll be able to create, manage, and analyze social media campaigns that drive engagement, increase followers, and convert audiences into loyal customers.</p>&nbsp;
+                            <p>Enroll now in Jalandhar’s leading SMM course at Code Academics and become a certified social media marketing expert!</p>
+
                         </div>
                     </div><!-- END ARTI SINGLE  -->
 
