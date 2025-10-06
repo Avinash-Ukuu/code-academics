@@ -81,6 +81,11 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/validnavs.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/helper.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/unit-test.css') }}">
+    <style>
+        a{
+            text-decoration: none
+        }
+    </style>
 @endsection
 @section('content')
     <!-- START HOME -->
