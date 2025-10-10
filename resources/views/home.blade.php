@@ -29,8 +29,8 @@
             },
             "geo": {
                 "@type": "GeoCoordinates",
-                "latitude": "31.3137601",
-                "longitude": "75.5884112"
+                "latitude": "31.313724",
+                "longitude": "75.590905"
             },
             "contactPoint": {
                 "@type": "ContactPoint",
