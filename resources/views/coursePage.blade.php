@@ -3,7 +3,7 @@
     $meta_title = 'Explore Our Courses | Code Academics Jalandhar';
     $meta_description = 'Explore professional courses in coding, web development, digital marketing, and more at Code Academics.';
     $meta_keywords = 'coding courses, web development course, web design course, mobile application course, basic computer course, video editing course, digital marketing course, laravel course , php course, python course, react js course';
-    $meta_image = asset('uploads/courses/' . $courses[0]->image);
+    $meta_image = url('uploads/courses/' . $courses[0]->image);
 @endphp
 @section('schema')
     <script type="application/ld+json">
