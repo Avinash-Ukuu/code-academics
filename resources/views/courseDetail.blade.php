@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 @php
-    $meta_title = 'Best ' . $course->name . ' Course in Jalandhar | Code Academics';
+    $meta_title = !empty($course->meta_title) ? $course->meta_title : 'Best ' . $course->name . ' Course in Jalandhar | Code Academics';
     $meta_description = $course->meta_description;
     $meta_keywords = $course->meta_keywords;
     $meta_image = url('uploads/courses/' . $course->image);

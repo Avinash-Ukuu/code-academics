@@ -89,6 +89,7 @@ class CourseController extends Controller
         $course                     =       new Course();
         $course->name               =       $request->name;
         $course->description        =       $request->description;
+        $course->meta_title         =       $request->meta_title;
         $course->meta_description   =       $request->meta_description;
         $course->meta_keywords      =       $request->meta_keywords;
         $course->slug               =       Str::slug($request->name, '-');
@@ -154,6 +155,7 @@ class CourseController extends Controller
         $course                     =       Course::find($id);
         $course->name               =       $request->name;
         $course->slug               =       Str::slug($request->name, '-');
+        $course->meta_title         =       $request->meta_title;
         $course->description        =       $request->description;
         $course->meta_description   =       $request->meta_description;
         $course->meta_keywords      =       $request->meta_keywords;

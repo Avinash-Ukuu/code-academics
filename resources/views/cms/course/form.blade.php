@@ -31,9 +31,16 @@
                 </div>
 
                 <div class="row">
-                    <div class="form-group col-4">
-                        {{ Form::label('name', 'Name', []) }}<span style="color: red;"> *</span>
-                        {{ Form::text('name', null, ['class' => 'form-control name', 'placeholder' => 'Enter Name', 'required']) }}
+                    <div class="col-4">
+                        <div class="form-group ">
+                            {{ Form::label('name', 'Name', []) }}<span style="color: red;"> *</span>
+                            {{ Form::text('name', null, ['class' => 'form-control name', 'placeholder' => 'Enter Name', 'required']) }}
+                        </div>
+
+                        <div class="form-group ">
+                            {{ Form::label('meta_title', 'Meta Title', []) }}<span style="color: red;"> *</span>
+                            {{ Form::text('meta_title', null, ['class' => 'form-control meta_title', 'placeholder' => 'Enter Meta Title', 'required']) }}
+                        </div>
                     </div>
 
                     <div class="form-group col-4">
