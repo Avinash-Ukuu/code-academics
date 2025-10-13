@@ -1,7 +1,10 @@
 @extends('frontend.layouts.master')
-@section('meta_title', $blog->title)
-@section('meta_description', $blog->description)
-@section('meta_keywords', $blog->meta_keywords)
+@php
+    $meta_title = $blog->title;
+    $meta_description = $blog->description;
+    $meta_keywords = $blog->meta_keywords;
+    $meta_image = url('uploads/blogs/' . $blog->image);
+@endphp
 @section('schema')
     <script type="application/ld+json">
     {

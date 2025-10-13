@@ -1,9 +1,10 @@
 @extends('frontend.layouts.master')
-@section('meta_title', 'Best PPC Course in Jalandhar | Code Academics')
-@section('meta_description', 'Maximize ROI with professional PPC advertising. Get targeted traffic, leads, and
-    conversions with our pay-per-click marketing services.')
-@section('meta_keywords', 'PPC advertising, pay-per-click marketing, Google Ads, Facebook Ads, targeted traffic, online
-    advertising, paid search, PPC campaigns')
+@php
+    $meta_title = 'Best PPC Course in Jalandhar | Code Academics';
+    $meta_description = 'Maximize ROI with professional PPC advertising. Get targeted traffic, leads, and conversions with our pay-per-click marketing services.';
+    $meta_keywords = 'PPC advertising, pay-per-click marketing, Google Ads, Facebook Ads, targeted traffic, online advertising, paid search, PPC campaigns';
+    $meta_image = url('assets/frontend/images/c1.png');
+@endphp
 
 @section('schema')
     <script type="application/ld+json">

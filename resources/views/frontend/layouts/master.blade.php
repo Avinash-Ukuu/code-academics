@@ -7,9 +7,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- SITE TITLE -->
-    <title>@yield('meta_title', 'Code Academics')</title>
-    <meta name="description" content="@yield('meta_description', 'Join Code Academics in Jalandhar City to master web development, programming, and software skills. Learn from expert instructors with hands-on training in Laravel, PHP, Python, React, and more. Start your coding journey today!')">
-    <meta name="keywords" content="@yield('meta_keywords', 'Code Academics,Code Academics Jalandhar, Best coding institute in Jalandhar, Programming courses in Jalandhar, Software training institute Jalandhar, IT training institute in Jalandhar, Computer classes in Jalandhar Punjab, Web development institute in Jalandhar, Video editing training in Jalandhar, Python classes in Jalandhar, best programming courses in Jalandhar, Full stack development course Jalandhar, Digital marketing institute in Jalandhar, Best IT coaching center Jalandhar, Advanced programming courses in Jalandhar, Professional coding academy Jalandhar,coding institute Jalandhar, programming courses Jalandhar, web development training, Laravel course Jalandhar, PHP training, Python classes, React JS course, best IT institute in Jalandhar, software development training')">
+    <title>{{ $meta_title ?? 'Code Academics | Best Coding Institute in Jalandhar' }}</title>
+    <meta name="description" content="{{ $meta_description ?? 'Join Code Academics in Jalandhar City to master web development, programming, and software skills. Learn from expert instructors with hands-on training in Laravel, PHP, Python, React, and more. Start your coding journey today!' }}">
+    <meta name="keywords" content="{{ $meta_keywords ?? 'Code Academics,Code Academics Jalandhar, Best coding institute in Jalandhar, Programming courses in Jalandhar, Software training institute Jalandhar, IT training institute in Jalandhar, Computer classes in Jalandhar Punjab, Web development institute in Jalandhar, Video editing training in Jalandhar, Python classes in Jalandhar, best programming courses in Jalandhar, Full stack development course Jalandhar, Digital marketing institute in Jalandhar, Best IT coaching center Jalandhar, Advanced programming courses in Jalandhar, Professional coding academy Jalandhar,coding institute Jalandhar, programming courses Jalandhar, web development training, Laravel course Jalandhar, PHP training, Python classes, React JS course, best IT institute in Jalandhar, software development training' }}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="{{ $meta_title ?? 'Code Academics | Best Coding Institute in Jalandhar' }}">
+    <meta property="og:description" content="{{ $meta_description ?? 'Learn coding, web development, and digital marketing at Code Academics — Jalandhar’s most trusted IT institute.' }}">
+    <meta property="og:image" content="{{ $meta_image ?? url('assets/frontend/images/logo.png') }}">
+    <meta property="og:site_name" content="Code Academics">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ $meta_url ?? url()->current() }}">
+    <meta name="twitter:title" content="{{ $meta_title ?? 'Code Academics | Best Coding Institute in Jalandhar' }}">
+    <meta name="twitter:description" content="{{ $meta_description ?? 'Learn coding, web development, and digital marketing at Code Academics — Jalandhar’s most trusted IT institute.' }}">
+    <meta name="twitter:image" content="{{ $meta_image ?? url('assets/frontend/images/logo.png') }}">
+
     <meta name="author" content="code academics">
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="sJl9KNsLmOUjr8KhFBNifQSa6tXtJi30PUJOtv8e1vM" />
@@ -304,7 +320,8 @@
                             <li><a style="text-decoration:none" href="{{ route('aboutUs') }}">About us</a></li>
                             <li><a style="text-decoration:none" href="{{ route('contact') }}">Contact</a></li>
                             <li><a style="text-decoration:none" href="{{ route('gallery') }}">Gallery</a></li>
-                            <li><a style="text-decoration:none" href="{{ route('verification') }}">Verification</a></li>
+                            <li><a style="text-decoration:none" href="{{ route('verification') }}">Verification</a>
+                            </li>
                             <li><a style="text-decoration:none" href="{{ route('sitemap') }}">Sitemap</a></li>
                         </ul>
                     </div>

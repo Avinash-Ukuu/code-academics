@@ -1,8 +1,10 @@
 @extends('frontend.layouts.master')
-@section('meta_title','Best ' . $course->name . ' Course in Jalandhar | Code Academics')
-@section('meta_description', $course->meta_description)
-@section('meta_keywords', $course->meta_keywords)
-
+@php
+    $meta_title = 'Best ' . $course->name . ' Course in Jalandhar | Code Academics';
+    $meta_description = $course->meta_description;
+    $meta_keywords = $course->meta_keywords;
+    $meta_image = url('uploads/courses/' . $course->image);
+@endphp
 @section('schema')
     <script type="application/ld+json">
         {

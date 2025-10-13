@@ -1,6 +1,10 @@
 @extends('frontend.layouts.master')
-@section('meta_title', 'About Us - Code Academics')
-@section('meta_description', 'Learn more about Code Academics and our mission dedicated to knowledge sharing.')
+@php
+    $meta_title = 'About Code Academics | Jalandhar’s Leading Coding Institute';
+    $meta_description = 'Code Academics is dedicated to transforming students into skilled developers through expert training and mentorship.';
+    $meta_keywords = 'about code academics, coding institute jalandhar, programming classes';
+    $meta_image = url('assets/frontend/images/faq.png');
+@endphp
 @section('schema')
     <script type="application/ld+json">
     {

@@ -1,12 +1,10 @@
 @extends('frontend.layouts.master')
-@section('meta_title', 'Best SEO Course in Jalandhar | Code Academics')
-@section('meta_description',
-    'Boost your websites visibility with expert SEO services. Increase traffic, improve
-    rankings, and grow your business online.')
-@section('meta_keywords',
-    'SEO course in jalandhar, search engine optimization, website ranking, organic traffic,
-    digital marketing, on-page SEO, off-page SEO, keyword research')
-
+@php
+    $meta_title = 'Best SEO Course in Jalandhar | Code Academics';
+    $meta_description = 'Boost your websites visibility with expert SEO services. Increase traffic, improve rankings, and grow your business online.';
+    $meta_keywords = 'SEO course in jalandhar, search engine optimization, website ranking, organic traffic, digital marketing, on-page SEO, off-page SEO, keyword research';
+    $meta_image = url('assets/frontend/images/c1.png');
+@endphp
 @section('schema')
     <script type="application/ld+json">
         {

@@ -1,6 +1,10 @@
 @extends('frontend.layouts.master')
-@section('meta_title', 'Get in Touch - Code Academics')
-@section('meta_description', 'Get in touch with us for inquiries, support, and collaboration. We’re here to help!')
+@php
+    $meta_title = 'Get in Touch - Code Academics';
+    $meta_description = 'Have questions? Contact Code Academics for course inquiries, admissions, or support. We’re happy to help!';
+    $meta_keywords = 'contact code academics, reach us, admission enquiry, courses enquiry';
+    $meta_image = url('assets/frontend/images/avinew.webp');
+@endphp
 @section('schema')
     <script type="application/ld+json">
         {

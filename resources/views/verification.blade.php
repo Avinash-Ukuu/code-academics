@@ -1,6 +1,8 @@
 @extends('frontend.layouts.master')
-@section('meta_title', 'Verify Details - Code Academics')
-@section('meta_description', 'Verify the students details!')
+@php
+    $meta_title = 'Verify Details - Code Academics';
+    $meta_description = 'Verify the students details!';
+@endphp
 @section('headerLinks')
     <style>
         #codeEmail {

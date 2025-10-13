@@ -1,6 +1,10 @@
 @extends('frontend.layouts.master')
-@section('meta_title', 'Latest Tech & Coding Blogs - Code Academics')
-@section('meta_description', 'Read the latest tech blogs on web development, programming, and AI trends. Stay updated!')
+@php
+    $meta_title = 'Latest Tech & Coding Blogs - Code Academics';
+    $meta_description = 'Stay updated with coding tutorials, web development insights, and tech news from Code Academics.';
+    $meta_keywords = 'coding blog, web development blog, web design blog, python blog, digital marketing blog, code academics articles';
+    $meta_image = url('uploads/blogs/'.$blogs[0]->image);
+@endphp
 @section('schema')
     <script type="application/ld+json">
             {

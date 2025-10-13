@@ -1,8 +1,10 @@
 @extends('frontend.layouts.master')
-@section('meta_title','Best SMM Course in Jalandhar | Code Academics')
-@section('meta_description', 'Grow your brand on social media with expert SMM services. Engage your audience, increase followers, and drive conversions.')
-@section('meta_keywords', 'social media marketing, SMM services, Facebook marketing, Instagram marketing, Twitter marketing, social media strategy, brand engagement, digital marketing')
-
+@php
+    $meta_title = 'Best SMM Course in Jalandhar | Code Academics';
+    $meta_description = 'Grow your brand on social media with expert SMM services. Engage your audience, increase followers, and drive conversions.';
+    $meta_keywords = 'social media marketing, SMM services, Facebook marketing, Instagram marketing, Twitter marketing, social media strategy, brand engagement, digital marketing';
+    $meta_image = url('assets/frontend/images/c1.png');
+@endphp
 @section('schema')
     <script type="application/ld+json">
         {

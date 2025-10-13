@@ -1,6 +1,10 @@
 @extends('frontend.layouts.master')
-@section('meta_title', 'Gallery - Code Academics')
-@section('meta_description', 'Photos and Videos of students work, review and infrastructure!')
+@php
+    $meta_title = 'Gallery - Code Academics';
+    $meta_description = 'Photos and Videos of students work, review and infrastructure!';
+    $meta_keywords = 'code academics review, code academics work, code academics infrastructure, student certificate';
+    $meta_image = url('uploads/gallery/' . $allGalleries[0]->url);
+@endphp
 @section('schema')
     <script type="application/ld+json">
         {
