@@ -96,7 +96,7 @@
                 <div class="col-lg-6 col-sm-6 col-xs-12">
                     <div class="home_content">
                         {{-- <h1><span> Future</span> Starts With <span>CODE ACADEMICS</span></h1> --}}
-                        <h1>Future Stats with Us: <span> Best Coding Institute in Jalandhar</span></h1>
+                        <h1>Future Start with Us: <span> Best Coding Institute in Jalandhar</span></h1>
                         <p>Upgrade your career with the best programming courses in Jalandhar. Learn coding, design, and IT
                             skills from experts at Code Academics Jalandhar.</p>
                     </div>
