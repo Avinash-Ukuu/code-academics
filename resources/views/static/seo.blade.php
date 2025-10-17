@@ -135,7 +135,7 @@
                             <p>Yes, students receive a recognized SEO certificate in Jalandhar from Code Academics after successfully completing the course.</p>
                             <h4 class="customSpacelower"> 3. Which tools will I learn during the course?</h4>
                             <p> You’ll learn tools like Google Analytics, Search Console, Ahrefs, SEMrush, and Ubersuggest for keyword and performance tracking.</p>
-                            <h4 class="customSpacelower"> 4. Is this SEO course suitable for beginners?/h4>
+                            <h4 class="customSpacelower"> 4. Is this SEO course suitable for beginners</h4>
                             <p>Absolutely. Our professional SEO training in Jalandhar starts from the basics and gradually covers advanced topics with live projects..</p>
                             <h4 class="customSpacelower"> 5. Do you provide job assistance?</h4>
                             <p>Yes. Code Academics, the best PPC training institute in Jalandhar, offers 100% placement
