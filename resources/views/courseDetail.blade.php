@@ -20,6 +20,11 @@
             "url": "{{ route('courseDetail',['slug'=>$course->slug]) }}"
         }
     </script>
+    <style>
+        *{
+             font-family: 'Mulish', sans-serif;
+        }
+    </style>
 @endsection
 @section('content')
     <!-- START SECTION TOP -->
