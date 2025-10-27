@@ -172,6 +172,37 @@
                     </ul>
                 </li>
 
+                <li class="nav-item @if (in_array(Route::currentRouteName(), ['quizCategory','quiz-subcategory.index','quiz-questions.index'])) menu-open @endif">
+                    <a href="#" class="nav-link  @if (in_array(Route::currentRouteName(), ['quizCategory','quiz-subcategory.index','quiz-questions.index'])) active @endif">
+                        <i class="nav-icon fas fa-arrow-right-from-file"></i>
+                        <p> Quiz Management <i class="right fas fa-angle-left"></i></p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('quizCategory') }}"
+                                class="nav-link @if (Route::currentRouteName() == 'quizCategory') active @endif">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Quiz Category</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('quiz-subcategory.index') }}"
+                                class="nav-link @if (Route::currentRouteName() == 'quiz-subcategory.index') active @endif">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Quiz Sub Category</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('quiz-questions.index') }}"
+                                class="nav-link @if (Route::currentRouteName() == 'quiz-questions.index') active @endif">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Quiz Question</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
                 <li class="nav-item">
                     <a href="{{ route('monthlyCollection') }}"
                         class="nav-link @if (Route::currentRouteName() == 'monthlyCollection') active @endif">
