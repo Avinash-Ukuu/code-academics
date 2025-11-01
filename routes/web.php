@@ -3,8 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\QuizApiController;
+use App\Http\Controllers\QuizStatController;
+use App\Http\Controllers\QuizUserController;
+use App\Http\Controllers\QuizAnswerController;
 use App\Http\Controllers\cms\EnquiryController;
 use App\Http\Controllers\cms\StudentController;
+use App\Http\Controllers\QuizAttemptController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,5 +41,27 @@ Route::get('/{slug}-course-in-jalandhar',   [HomeController::class,'courseDetail
 Route::get('/course/in/jalandhar/{slug}', function ($slug) {
     return redirect()->to("/{$slug}-course-in-jalandhar", 301);
 });
+
+Route::get('/quiz/play', function () {
+    return view('quiz.play');
+});
+
+
+
+
+// Frontend quiz APIs
+Route::get('/quiz/api/categories', [QuizApiController::class, 'getCategories']);
+Route::get('/quiz/api/subcategories/{category_id}', [QuizApiController::class, 'getSubcategories']);
+Route::get('/quiz/api/questions/{subcategory_id}', [QuizApiController::class, 'getQuestions']);
+
+// User & attempt endpoints (existing controllers)
+Route::post('/quiz/user/start-or-get', [QuizUserController::class, 'startOrGetGuest']);
+Route::post('/quiz/start', [QuizAttemptController::class, 'start'])->name('quiz.start');
+Route::post('/quiz/answer', [QuizAnswerController::class, 'store'])->name('quiz.answer');
+Route::post('/quiz/end/{id}', [QuizAttemptController::class, 'end'])->name('quiz.end');
+
+// Optional stat view
+
+Route::get('/quiz/stats/{quizUserId}', [QuizStatController::class, 'show']);
 
 require __DIR__.'/auth.php';

@@ -121,7 +121,7 @@ class ModuleController extends Controller
         $data['module']           =   "module";
         $data['object']           =   $module;
         saveLogs($data);
-        Permission::where('id',$module->id)->delete();
+        Permission::where('module_id',$module->id)->delete();
         $module->delete();
         Session::flash("success","Module Deleted");
 
