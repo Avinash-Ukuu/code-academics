@@ -8,14 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- SITE TITLE -->
     <title>{{ $meta_title ?? 'Code Academics | Best Coding Institute in Jalandhar' }}</title>
-    <meta name="description" content="{{ $meta_description ?? 'Join Code Academics in Jalandhar City to master web development, programming, and software skills. Learn from expert instructors with hands-on training in Laravel, PHP, Python, React, and more. Start your coding journey today!' }}">
-    <meta name="keywords" content="{{ $meta_keywords ?? 'Code Academics,Code Academics Jalandhar, Best coding institute in Jalandhar, Programming courses in Jalandhar, Software training institute Jalandhar, IT training institute in Jalandhar, Computer classes in Jalandhar Punjab, Web development institute in Jalandhar, Video editing training in Jalandhar, Python classes in Jalandhar, best programming courses in Jalandhar, Full stack development course Jalandhar, Digital marketing institute in Jalandhar, Best IT coaching center Jalandhar, Advanced programming courses in Jalandhar, Professional coding academy Jalandhar,coding institute Jalandhar, programming courses Jalandhar, web development training, Laravel course Jalandhar, PHP training, Python classes, React JS course, best IT institute in Jalandhar, software development training' }}">
+    <meta name="description"
+        content="{{ $meta_description ?? 'Join Code Academics in Jalandhar City to master web development, programming, and software skills. Learn from expert instructors with hands-on training in Laravel, PHP, Python, React, and more. Start your coding journey today!' }}">
+    <meta name="keywords"
+        content="{{ $meta_keywords ?? 'Code Academics,Code Academics Jalandhar, Best coding institute in Jalandhar, Programming courses in Jalandhar, Software training institute Jalandhar, IT training institute in Jalandhar, Computer classes in Jalandhar Punjab, Web development institute in Jalandhar, Video editing training in Jalandhar, Python classes in Jalandhar, best programming courses in Jalandhar, Full stack development course Jalandhar, Digital marketing institute in Jalandhar, Best IT coaching center Jalandhar, Advanced programming courses in Jalandhar, Professional coding academy Jalandhar,coding institute Jalandhar, programming courses Jalandhar, web development training, Laravel course Jalandhar, PHP training, Python classes, React JS course, best IT institute in Jalandhar, software development training' }}">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="{{ $meta_title ?? 'Code Academics | Best Coding Institute in Jalandhar' }}">
-    <meta property="og:description" content="{{ $meta_description ?? 'Learn coding, web development, and digital marketing at Code Academics — Jalandhar’s most trusted IT institute.' }}">
+    <meta property="og:description"
+        content="{{ $meta_description ?? 'Learn coding, web development, and digital marketing at Code Academics — Jalandhar’s most trusted IT institute.' }}">
     <meta property="og:image" content="{{ $meta_image ?? url('assets/frontend/images/logo.png') }}">
     <meta property="og:site_name" content="Code Academics">
 
@@ -23,7 +26,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="{{ $meta_url ?? url()->current() }}">
     <meta name="twitter:title" content="{{ $meta_title ?? 'Code Academics | Best Coding Institute in Jalandhar' }}">
-    <meta name="twitter:description" content="{{ $meta_description ?? 'Learn coding, web development, and digital marketing at Code Academics — Jalandhar’s most trusted IT institute.' }}">
+    <meta name="twitter:description"
+        content="{{ $meta_description ?? 'Learn coding, web development, and digital marketing at Code Academics — Jalandhar’s most trusted IT institute.' }}">
     <meta name="twitter:image" content="{{ $meta_image ?? url('assets/frontend/images/logo.png') }}">
 
     <meta name="author" content="code academics">
@@ -42,6 +46,7 @@
         gtag('config', 'G-S3PWT98TZB');
     </script>
     @yield('schema')
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/lenis.css') }}">
     <link rel="canonical" href="@yield('canonical', url()->current())">
     <link rel="icon" type="image/png" sizes="16x16"
         href="{{ asset('assets/frontend/favicon/favicon-16x16.png') }}">
@@ -371,7 +376,9 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
     </a>
 
-
+    {{-- lenis script --}}
+    <script src="{{ asset('assets/frontend/js/lenis.min.js') }}"></script>
+    {{-- lenis script --}}
     <!-- Latest jQuery -->
     <script src="{{ asset('assets/frontend/js/jquery-1.12.4.min.js') }}"></script>
     <!-- Latest compiled and minified Bootstrap -->
@@ -473,6 +480,20 @@
                 }
             });
         });
+
+
+        // Initialize Lenis
+        const lenis = new Lenis({
+             duration: 3.2
+        });
+
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
     </script>
     @yield('footerScript')
 
