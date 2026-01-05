@@ -15,9 +15,6 @@ use App\Http\Controllers\cms\BlogController;
 use App\Http\Controllers\cms\EnquiryController;
 use App\Http\Controllers\cms\GalleryCategoryController;
 use App\Http\Controllers\cms\GalleryController;
-use App\Http\Controllers\cms\QuizCategoryController;
-use App\Http\Controllers\cms\QuizQuestionController;
-use App\Http\Controllers\cms\QuizSubCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,14 +76,6 @@ Route::resource('gallery-category',         GalleryCategoryController::class);
 //Gallery
 Route::resource('gallery',                  GalleryController::class);
 
-//Quiz Category
-Route::get('/quiz-category',                [QuizCategoryController::class,'index'])->name('quizCategory');
-
-//Quiz Sub Category
-Route::resource('quiz-subcategory',         QuizSubCategoryController::class);
-
-//Quiz Questions
-Route::resource('quiz-questions',           QuizQuestionController::class);
 
 //Ajax Routes
 Route::get('get-course-details/{id}',       [CommonController::class, 'getCourse'])->name('getCourse');

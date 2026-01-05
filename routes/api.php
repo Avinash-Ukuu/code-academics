@@ -2,7 +2,6 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\QuizUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +17,3 @@ use App\Http\Controllers\QuizUserController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::prefix('quiz')->group(function () {
-    Route::post('/start-or-get-user',       [QuizUserController::class, 'startOrGetGuest']);
-    Route::post('/update-user-info',        [QuizUserController::class, 'updateInfo']);
-    Route::get('/user/{id}',                [QuizUserController::class, 'getUser']);
-});
-
