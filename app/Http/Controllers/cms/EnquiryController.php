@@ -20,7 +20,7 @@ class EnquiryController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data       =   Enquiry::join('courses', 'courses.id', '=', 'enquiries.course_id')->select(
+            $data       =   Enquiry::leftJoin('courses', 'courses.id', '=', 'enquiries.course_id')->select(
                 'enquiries.id as id',
                 'enquiries.name as name',
                 'enquiries.email as email',
@@ -42,7 +42,13 @@ class EnquiryController extends Controller
                     $sql = "courses.name LIKE ?";
                     $query->whereRaw($sql, ["%{$keyword}%"]);
                 })
-                ->rawColumns(['course_name'])
+                ->editColumn('education_level', function($data){
+                    return $data->education_level ?? 'N/A';
+                })
+                ->editColumn('course_name', function($data){
+                    return $data->course_name ?? 'N/A';
+                })
+                ->rawColumns(['education_level','course_name'])
                 ->make(true);
         }
 
@@ -146,14 +152,22 @@ class EnquiryController extends Controller
 
     public function storeEnquiry(Request $request)
     {
-        $validated  =    $request->validate([
-                                'name'      => 'required|string|max:255',
-                                'email'     => 'required|email',
-                                'phone'     => 'required|string|max:15',
-                                'message'   => 'required|string',
-                            ]);
+        $request->validate([
+                    'name'      => 'required|string|max:255',
+                    'email'     => 'required|email',
+                    'phone'     => 'required|string|max:15',
+                    'message'   => 'required|string',
+                ]);
 
-        Mail::to('codeacademicss@gmail.com')->send(new EnquiryMail($validated));
+        // Mail::to('codeacademicss@gmail.com')->send(new EnquiryMail($validated));
+        $enquiry                    =       new Enquiry();
+        $enquiry->name              =       $request->name;
+        $enquiry->email             =       $request->email;
+        $enquiry->phone             =       $request->phone;
+        $enquiry->date              =       Carbon::today()->toDateString();
+        $enquiry->source            =       'website';
+        $enquiry->notes             =       $request->notes;
+        $enquiry->save();
 
         return response()->json(['success' => 'Enquiry submitted successfully!']);
     }
