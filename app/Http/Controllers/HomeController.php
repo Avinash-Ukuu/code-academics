@@ -14,7 +14,7 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $data['courses']        =       Course::with('durations')->where('is_active',1)->get();
+        $data['courses']        =       Course::with('durations')->where('is_active',1)->whereNull('parent_id')->get();
         $data['blogs']          =       Blog::where('publish_type','publish')->take(5)->orderBy('blog_created_at','desc')->get();
         $data['galleries']      =       Gallery::take(10)->get();
 
@@ -28,7 +28,7 @@ class HomeController extends Controller
 
     public function coursePage()
     {
-        $data['courses']        =       Course::where('is_active',1)->get();
+        $data['courses']        =       Course::whereNull('parent_id')->where('is_active',1)->get();
 
         return view('coursePage',$data);
     }
@@ -59,7 +59,7 @@ class HomeController extends Controller
                                         ];
 
         $data['otherBlogs']     =       Blog::where('slug','<>',$slug)->where('publish_type','publish')->take(10)->get();
-        $data['courses']        =       Course::where('is_active',1)->get();
+        $data['courses']        =       Course::where('is_active',1)->whereNull('parent_id')->get();
 
         return view('blogDeatil',$data);
     }
@@ -91,27 +91,27 @@ class HomeController extends Controller
     {
         $data['course']         =   Course::where('slug',$slug)->first();
         abort_if(empty($data['course']), 404);
-        $data['otherCourses']   =   Course::where('is_active',1)->where('slug','<>',$slug)->get();
+        $data['otherCourses']   =   Course::where('is_active',1)->where('slug','<>',$slug)->whereNull('parent_id')->get();
         return view('courseDetail',$data);
     }
 
     public function ppcDetail()
     {
-        $data['otherCourses']   =   Course::where('is_active',1)->get();
+        $data['otherCourses']   =   Course::where('is_active',1)->whereNull('parent_id')->get();
 
         return view('static.ppc',$data);
     }
 
     public function seoDetail()
     {
-        $data['otherCourses']   =   Course::where('is_active',1)->get();
+        $data['otherCourses']   =   Course::where('is_active',1)->whereNull('parent_id')->get();
 
         return view('static.seo',$data);
     }
 
     public function smmDetail()
     {
-        $data['otherCourses']   =   Course::where('is_active',1)->get();
+        $data['otherCourses']   =   Course::where('is_active',1)->whereNull('parent_id')->get();
 
         return view('static.smm',$data);
     }

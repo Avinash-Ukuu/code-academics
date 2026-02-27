@@ -426,32 +426,32 @@ class StudentController extends Controller
         }
     }
 
-    public function verifyStudentCertificate(Request $request)
-    {
-        $request->validate([
-            'roll_number' => 'required',
-            'father_name' => 'required'
-        ]);
+    // public function verifyStudentCertificate(Request $request)
+    // {
+    //     $request->validate([
+    //         'roll_number' => 'required',
+    //         'father_name' => 'required'
+    //     ]);
 
-        $student    =   Student::where('unique_id', $request->roll_number)
-            ->where('father_name', $request->father_name)
-            ->with('studentCourse.course')
-            ->first();
-            
-        if ($student) {
-            return response()->json([
-                'status' => 'success',
-                'data' => [
-                    'name' => $student->first_name . ' ' . $student->last_name,
-                    'course_name' => $student->studentCourse->course->name ?? 'N/A',
-                    'status' => $student->is_completed ? 'Completed' : 'Not Completed',
-                ]
-            ]);
-        } else {
-            return response()->json([
-                'status' => 'error',
-                'message' => 'Student not found'
-            ]);
-        }
-    }
+    //     $student    =   Student::where('unique_id', $request->roll_number)
+    //         ->where('father_name', $request->father_name)
+    //         ->with('studentCourse.course')
+    //         ->first();
+
+    //     if ($student) {
+    //         return response()->json([
+    //             'status' => 'success',
+    //             'data' => [
+    //                 'name' => $student->first_name . ' ' . $student->last_name,
+    //                 'course_name' => $student->studentCourse->course->name ?? 'N/A',
+    //                 'status' => $student->is_completed ? 'Completed' : 'Not Completed',
+    //             ]
+    //         ]);
+    //     } else {
+    //         return response()->json([
+    //             'status' => 'error',
+    //             'message' => 'Student not found'
+    //         ]);
+    //     }
+    // }
 }
