@@ -735,15 +735,13 @@
                     45 Days & 6 Weeks Industrial Training in Jalandhar
                 </h2>
 
-                <p class="traning-lead">
-                    Upgrade your technical skills with our <strong>industry-focused 45 days industrial training in
-                        Jalandhar</strong>
-                    and <strong>6 weeks industrial training in Jalandhar</strong>, specially designed for
-                    <strong>B.Tech, BCA, MCA, and Diploma students</strong>.
+                <p>
+                    Upgrade your technical skills with our industry-focused 45 days industrial training in Jalandhar
+                    and 6 weeks industrial training in Jalandhar, specially designed for B.Tech, BCA, MCA, and Diploma students.
                 </p>
 
                 <p>
-                    At <strong>Code Academics</strong>, we provide hands-on practical training with live projects to
+                    At Code Academics, we provide hands-on practical training with live projects to
                     help students gain
                     real industry exposure. Our training programs are structured to bridge the gap between academic
                     knowledge and
@@ -761,15 +759,16 @@
                 </ul>
 
                 <p>
-                    Whether you choose our <strong>45 days industrial training in Jalandhar</strong> for intensive
+                    Whether you choose our 45 days industrial training in Jalandhar for intensive
                     short-term learning
-                    or our <strong>6 weeks industrial training in Jalandhar</strong> for deeper technical exposure,
+                    or our 6 weeks industrial training in Jalandhar for deeper technical exposure,
                     you’ll gain the
                     confidence and skills required to excel in today’s competitive job market.
                 </p>
 
                 <div class="cta-box">
-                    <p class="limited">
+                    <p>
+                    {{-- <p class="limited"> --}}
                         Limited seats available – Enroll now and start your professional journey today!
                     </p>
                     <a href="javascript:void(0)" class="cta open-enquiry-form"><span>Enquire Now</span>
