@@ -81,8 +81,9 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/validnavs.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/helper.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/unit-test.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/css/traningsection.css') }}">
     <style>
-        a{
+        a {
             text-decoration: none
         }
     </style>
@@ -432,13 +433,14 @@
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
                             <!-- Single Item -->
-                             @foreach ($galleries as $gallery)
-                            <div class="swiper-slide">
-                                <div class="testimonial-style-two">
-                                   <img style="width: 100%" src="{{ asset('uploads/gallery/' . $gallery->url) }}" alt="{{ $gallery->title }}">
+                            @foreach ($galleries as $gallery)
+                                <div class="swiper-slide">
+                                    <div class="testimonial-style-two">
+                                        <img style="width: 100%" src="{{ asset('uploads/gallery/' . $gallery->url) }}"
+                                            alt="{{ $gallery->title }}">
+                                    </div>
                                 </div>
-                            </div>
-                             @endforeach
+                            @endforeach
 
                         </div>
 
@@ -493,7 +495,7 @@
 
 
     <!-- Start Course
-                ============================================= -->
+                    ============================================= -->
     <div class="course-style-two-area default-padding bottom-less bg-gray-gradient-secondary overflow-hidden">
         <div class="container">
             <div class="row">
@@ -577,17 +579,17 @@
                         <div class="row">
                             <div class="course-inner-carousel swiper">
                                 <div class="swiper-wrapper">
-                                    @foreach($courses as $course)
+                                    @foreach ($courses as $course)
                                         <!-- Single Item -->
                                         <div class="swiper-slide">
                                             <div class="course-style-one-item hover-less style-two">
                                                 <div class="thumb">
                                                     @if ($course->image && file_exists('uploads/courses/' . $course->image))
-                                                        <img src="{{ asset('uploads/courses/' . $course->image) }}" loading="lazy"
-                                                            alt="{{ $course->name }} course in Jalandhar">
+                                                        <img src="{{ asset('uploads/courses/' . $course->image) }}"
+                                                            loading="lazy" alt="{{ $course->name }} course in Jalandhar">
                                                     @else
-                                                        <img src="{{ asset('assets/frontend/images/c1.png') }}" loading="lazy"
-                                                            alt="{{ $course->name }} course in Jalandhar">
+                                                        <img src="{{ asset('assets/frontend/images/c1.png') }}"
+                                                            loading="lazy" alt="{{ $course->name }} course in Jalandhar">
                                                     @endif
                                                 </div>
                                                 {{-- <div class="top-meta">
@@ -608,7 +610,9 @@
                                                     </div>
                                                 </div> --}}
                                                 <div class="info">
-                                                    <h4><a href="{{ route('courseDetail', ['slug' => $course->slug]) }}">{{ $course->name }}</a></h4>
+                                                    <h4><a
+                                                            href="{{ route('courseDetail', ['slug' => $course->slug]) }}">{{ $course->name }}</a>
+                                                    </h4>
                                                     <div class="course-meta">
                                                         <ul style="margin-top: 10px">
                                                             @foreach ($course->durations as $data)
@@ -620,7 +624,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="course-bottom-meta">
-                                                    <a href="{{ route('courseDetail', ['slug' => $course->slug]) }}"> Enroll Now To Course</a>
+                                                    <a href="{{ route('courseDetail', ['slug' => $course->slug]) }}">
+                                                        Enroll Now To Course</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -712,6 +717,77 @@
         </div><!--- END CONTAINER -->
     </section>
     <!-- END COURSE PROMOTION -->
+
+    <!-- 45 Days Training section -->
+    <section class="industrial-training-section">
+        <div class="section-custom-container">
+
+            <!-- Left Image -->
+            <div class="training-image">
+                <img src="{{ asset('assets/frontend/images/industrial-training.png') }}"
+                    alt="45 Days and 6 Weeks Industrial Training in Jalandhar at Code Academics" loading="lazy">
+            </div>
+
+            <!-- Right Content -->
+            <div class="training-content">
+
+                <h2>
+                    45 Days & 6 Weeks Industrial Training in Jalandhar
+                </h2>
+
+                <p class="traning-lead">
+                    Upgrade your technical skills with our <strong>industry-focused 45 days industrial training in
+                        Jalandhar</strong>
+                    and <strong>6 weeks industrial training in Jalandhar</strong>, specially designed for
+                    <strong>B.Tech, BCA, MCA, and Diploma students</strong>.
+                </p>
+
+                <p>
+                    At <strong>Code Academics</strong>, we provide hands-on practical training with live projects to
+                    help students gain
+                    real industry exposure. Our training programs are structured to bridge the gap between academic
+                    knowledge and
+                    real-world application.
+                </p>
+
+                <h3 class="benefits-heading">What You’ll Get:</h3>
+
+                <ul class="training-benefits">
+                    <li>Live Project Experience</li>
+                    <li>Industry-Expert Trainers</li>
+                    <li>Internship Certificate</li>
+                    <li>Practical Learning Environment</li>
+                    <li>Career & Interview Guidance</li>
+                </ul>
+
+                <p>
+                    Whether you choose our <strong>45 days industrial training in Jalandhar</strong> for intensive
+                    short-term learning
+                    or our <strong>6 weeks industrial training in Jalandhar</strong> for deeper technical exposure,
+                    you’ll gain the
+                    confidence and skills required to excel in today’s competitive job market.
+                </p>
+
+                <div class="cta-box">
+                    <p class="limited">
+                        Limited seats available – Enroll now and start your professional journey today!
+                    </p>
+                    <a href="javascript:void(0)" class="cta open-enquiry-form"><span>Enquire Now</span>
+                            <svg width="13px" height="10px" viewBox="0 0 13 10">
+                                <path d="M1,5 L11,5"></path>
+                                <polyline points="8 1 12 5 8 9"></polyline>
+                            </svg>
+                        </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- 45 Days Training End section -->
+
 
     <!-- START FAQ -->
     <section class="faq_area section-padding">
@@ -1005,9 +1081,8 @@
     <div style="width: 100%; max-width: 100%; overflow: hidden; position: relative; padding-top: 43.25%;">
         <iframe title="Map of reaching Code Academics"
             src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d109076.43892059589!2d75.50858480128626!3d31.313729190279737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x391a5b95f7ff43df%3A0x189190600fd09f58!2sFirst%20Floor%2C%20Badwal%20complex%2C%20SCO%20-%20207%2C%20Near%20Narinder%20Cinema%2C%20Jawahar%20Nagar%2C%20Jalandhar%2C%20Punjab%20144001!3m2!1d31.3137555!2d75.5909861!5e0!3m2!1sen!2sin!4v1757049818988!5m2!1sen!2sin"
-            width="600" height="450"
-            style="border:0; position: absolute; top:0; left:0; width:100%; height:100%;" allowfullscreen=""
-            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            width="600" height="450" style="border:0; position: absolute; top:0; left:0; width:100%; height:100%;"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <!-- End map -->
 
