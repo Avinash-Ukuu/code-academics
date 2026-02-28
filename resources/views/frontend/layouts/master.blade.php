@@ -171,7 +171,8 @@
 
     @php
         use App\Models\Course;
-        $courses = Course::where('is_active', 1)->whereNull('parent_id')->get();
+        $courses = Course::where('is_active', 1)->get();
+        // $courses = Course::where('is_active', 1)->whereNull('parent_id')->get();
     @endphp
 
     <!-- START PRELOADER -->

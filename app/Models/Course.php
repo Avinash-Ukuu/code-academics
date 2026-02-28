@@ -20,15 +20,15 @@ class Course extends Model
         return $this->hasMany(CourseDuration::class);
     }
 
-    public function children():HasMany
-    {
-        return $this->hasMany(Course::class, 'parent_id');
-    }
+    // public function children():HasMany
+    // {
+    //     return $this->hasMany(Course::class, 'parent_id');
+    // }
 
-    public function parent():BelongsTo
-    {
-        return $this->belongsTo(Course::class, 'parent_id');
-    }
+    // public function parent():BelongsTo
+    // {
+    //     return $this->belongsTo(Course::class, 'parent_id');
+    // }
 
     protected function name(): Attribute
     {
