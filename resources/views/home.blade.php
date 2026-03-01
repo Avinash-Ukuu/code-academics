@@ -495,7 +495,7 @@
 
 
     <!-- Start Course
-                    ============================================= -->
+                        ============================================= -->
     <div class="course-style-two-area default-padding bottom-less bg-gray-gradient-secondary overflow-hidden">
         <div class="container">
             <div class="row">
@@ -737,7 +737,8 @@
 
                 <p>
                     Upgrade your technical skills with our industry-focused 45 days industrial training in Jalandhar
-                    and 6 weeks industrial training in Jalandhar, specially designed for B.Tech, BCA, MCA, and Diploma students.
+                    and 6 weeks industrial training in Jalandhar, specially designed for B.Tech, BCA, MCA, and Diploma
+                    students.
                 </p>
 
                 <p>
@@ -768,15 +769,15 @@
 
                 <div class="cta-box">
                     <p>
-                    {{-- <p class="limited"> --}}
+                        {{-- <p class="limited"> --}}
                         Limited seats available – Enroll now and start your professional journey today!
                     </p>
                     <a href="javascript:void(0)" class="cta open-enquiry-form"><span>Enquire Now</span>
-                            <svg width="13px" height="10px" viewBox="0 0 13 10">
-                                <path d="M1,5 L11,5"></path>
-                                <polyline points="8 1 12 5 8 9"></polyline>
-                            </svg>
-                        </a>
+                        <svg width="13px" height="10px" viewBox="0 0 13 10">
+                            <path d="M1,5 L11,5"></path>
+                            <polyline points="8 1 12 5 8 9"></polyline>
+                        </svg>
+                    </a>
                 </div>
 
             </div>
@@ -1078,10 +1079,10 @@
     <!-- END BLOG -->
     <!-- Start Map -->
     <div style="width: 100%; max-width: 100%; overflow: hidden; position: relative; padding-top: 43.25%;">
-        <iframe title="Map of reaching Code Academics"
-            src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d109076.43892059589!2d75.50858480128626!3d31.313729190279737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x391a5b95f7ff43df%3A0x189190600fd09f58!2sFirst%20Floor%2C%20Badwal%20complex%2C%20SCO%20-%20207%2C%20Near%20Narinder%20Cinema%2C%20Jawahar%20Nagar%2C%20Jalandhar%2C%20Punjab%20144001!3m2!1d31.3137555!2d75.5909861!5e0!3m2!1sen!2sin!4v1757049818988!5m2!1sen!2sin"
-            width="600" height="450" style="border:0; position: absolute; top:0; left:0; width:100%; height:100%;"
-            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3408.637599152545!2d75.58841117623629!3d31.313760057319723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a5b95f7ff43df%3A0x189190600fd09f58!2sCode%20Academics%20-%20Best%20Coding%20Institute%20in%20Jalandhar!5e0!3m2!1sen!2sin!4v1772339721920!5m2!1sen!2sin"
+            width="600" height="450" style="border:0; position: absolute; top:0; left:0; width:100%; height:100%;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <!-- End map -->
 
