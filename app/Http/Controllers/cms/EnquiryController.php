@@ -166,7 +166,7 @@ class EnquiryController extends Controller
         $enquiry->phone             =       $request->phone;
         $enquiry->date              =       Carbon::today()->toDateString();
         $enquiry->source            =       'website';
-        $enquiry->notes             =       $request->notes;
+        $enquiry->message           =       $request->message;
         $enquiry->save();
 
         return response()->json(['success' => 'Enquiry submitted successfully!']);
